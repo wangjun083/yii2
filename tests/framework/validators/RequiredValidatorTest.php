@@ -30,6 +30,10 @@ class RequiredValidatorTest extends TestCase
         $val = new RequiredValidator(['requiredValue' => 55]);
         $this->assertTrue($val->validate(55));
         $this->assertTrue($val->validate("55"));
+<<<<<<< HEAD
+=======
+        $this->assertTrue($val->validate("0x37"));
+>>>>>>> official/master
         $this->assertFalse($val->validate("should fail"));
         $this->assertTrue($val->validate(true));
         $val->strict = true;

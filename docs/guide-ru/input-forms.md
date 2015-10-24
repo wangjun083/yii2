@@ -1,7 +1,11 @@
 Создание форм
 ==============
 
+<<<<<<< HEAD
 Основной способ использования форм в Yii является использование [[yii\widgets\ActiveForm]]. Этот подход должен быть
+=======
+Основной способ использования форм в Yii является использоваение [[yii\widgets\ActiveForm]]. Этот подход должен быть
+>>>>>>> official/master
 применён, когда форма основана на модели. Кроме того, имеются дополнительные методы в [[yii\helpers\Html]], которые
 используются для добавления кнопок и текстовых подсказок к любой форме.
 
@@ -61,7 +65,11 @@ $form = ActiveForm::begin([
 CSS класс и идентификатор ID будет прикреплён к открывающемуся тегу `<form>`. Для просмотра всех доступных настроек,
 пожалуйста обратитесь к API документации [[yii\widgets\ActiveForm]].
 
+<<<<<<< HEAD
 Для создания в форме элемента с меткой и любой применимой Javascript валидацией, вызывается [[yii\widgets\ActiveForm::field()|ActiveForm::field()]],
+=======
+Для создания в форме элемента с меткой и любой применимой Javascript валадиацией, вызывается [[yii\widgets\ActiveForm::field()|ActiveForm::field()]],
+>>>>>>> official/master
 который возвращает экземпляр [[yii\widgets\ActiveField]]. Когда этот метод вызывается непосредственно, то результатом 
 будет текстовый элемент (`input type="text"`). Для того, чтобы настроить элемент, можно вызвать одни за одним дополнительные
 методы [[yii\widgets\ActiveField|ActiveField]]:
@@ -115,5 +123,9 @@ echo $form->field($model, 'items[]')->checkboxList(['a' => 'Item A', 'b' => 'Ite
 Если вы хотите более подробно изучить информацию по использованию форм, то обратитесь к главам:
 
 - [Collecting tabular input](input-tabular-input.md) for collecting data for multiple models of the same kind.
+<<<<<<< HEAD
 - [Работа с несколькими моделями](input-multiple-models.md) для обработки нескольких разных моеделй в рамках одной формы.
+=======
+- [Complex Forms with Multiple Models](input-multiple-models.md) for handling multiple different models in the same form.
+>>>>>>> official/master
 - [Загрузка файлов](input-file-upload.md) - как использовать формы для загрузки файлов.

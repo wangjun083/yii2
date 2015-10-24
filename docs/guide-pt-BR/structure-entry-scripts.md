@@ -3,7 +3,11 @@ Scripts de Entrada
 
 Scripts de entrada são o primeiro passo no processo de inicialização da aplicação.
 Uma aplicação (seja uma aplicação Web ou uma aplicação console) possui um único script de
+<<<<<<< HEAD
 entrada. Os usuários finais fazem requisições nos scripts de entrada que criam
+=======
+entrada. Os usuários finais fazem requisições a scripts de entrada que criam
+>>>>>>> official/master
 as instâncias da aplicação e redirecionam as requisições para elas.
 
 Os scripts de entrada para aplicações Web devem estar armazenados em diretórios
@@ -69,6 +73,13 @@ do console:
 
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 
+<<<<<<< HEAD
+=======
+// o fcgi não tem STDIN e STDOUT definidos por padrão
+defined('STDIN') or define('STDIN', fopen('php://stdin', 'r'));
+defined('STDOUT') or define('STDOUT', fopen('php://stdout', 'w'));
+
+>>>>>>> official/master
 // registra o autoloader do Composer
 require(__DIR__ . '/vendor/autoload.php');
 

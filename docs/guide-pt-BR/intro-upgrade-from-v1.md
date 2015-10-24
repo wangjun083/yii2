@@ -120,8 +120,13 @@ $object = Yii::createObject([
 ], [$param1, $param2]);
 ```
 
+<<<<<<< HEAD
 Mais detalhes sobre configurações podem ser encontradas na seção de
 [Configurações](concept-configurations.md).
+=======
+Mais detalhes sobre configurações podem ser encontradas na seção
+[Configurações de Objetos](concept-configurations.md).
+>>>>>>> official/master
 
 
 Eventos

@@ -160,7 +160,11 @@ class Breadcrumbs extends Widget
      */
     protected function renderItem($link, $template)
     {
+<<<<<<< HEAD
         $encodeLabel = ArrayHelper::remove($link, 'encode', $this->encodeLabels);
+=======
+        $encodeLabel = $encode = ArrayHelper::remove($link, 'encode', $this->encodeLabels);
+>>>>>>> official/master
         if (array_key_exists('label', $link)) {
             $label = $encodeLabel ? Html::encode($link['label']) : $link['label'];
         } else {

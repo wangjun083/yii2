@@ -65,7 +65,11 @@ trait QueryTrait
      * }
      * ~~~
      *
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself.
+>>>>>>> official/master
      */
     public function indexBy($column)
     {
@@ -79,7 +83,11 @@ trait QueryTrait
      * See [[QueryInterface::where()]] for detailed documentation.
      *
      * @param string|array $condition the conditions that should be put in the WHERE part.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself.
+>>>>>>> official/master
      * @see andWhere()
      * @see orWhere()
      */
@@ -94,7 +102,11 @@ trait QueryTrait
      * The new condition and the existing one will be joined using the 'AND' operator.
      * @param string|array $condition the new WHERE condition. Please refer to [[where()]]
      * on how to specify this parameter.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself.
+>>>>>>> official/master
      * @see where()
      * @see orWhere()
      */
@@ -113,7 +125,11 @@ trait QueryTrait
      * The new condition and the existing one will be joined using the 'OR' operator.
      * @param string|array $condition the new WHERE condition. Please refer to [[where()]]
      * on how to specify this parameter.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself.
+>>>>>>> official/master
      * @see where()
      * @see andWhere()
      */
@@ -149,7 +165,11 @@ trait QueryTrait
      *
      * @param array $condition the conditions that should be put in the WHERE part.
      * See [[where()]] on how to specify this parameter.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself.
+>>>>>>> official/master
      * @see where()
      * @see andFilterWhere()
      * @see orFilterWhere()
@@ -173,7 +193,11 @@ trait QueryTrait
      *
      * @param array $condition the new WHERE condition. Please refer to [[where()]]
      * on how to specify this parameter.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself.
+>>>>>>> official/master
      * @see filterWhere()
      * @see orFilterWhere()
      */
@@ -196,7 +220,11 @@ trait QueryTrait
      *
      * @param array $condition the new WHERE condition. Please refer to [[where()]]
      * on how to specify this parameter.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself.
+>>>>>>> official/master
      * @see filterWhere()
      * @see andFilterWhere()
      */
@@ -300,7 +328,11 @@ trait QueryTrait
      * Note that if your order-by is an expression containing commas, you should always use an array
      * to represent the order-by information. Otherwise, the method will not be able to correctly determine
      * the order-by columns.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself.
+>>>>>>> official/master
      * @see addOrderBy()
      */
     public function orderBy($columns)
@@ -316,7 +348,11 @@ trait QueryTrait
      * (e.g. `['id' => SORT_ASC, 'name' => SORT_DESC]`).
      * The method will automatically quote the column names unless a column contains some parenthesis
      * (which means the column contains a DB expression).
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself.
+>>>>>>> official/master
      * @see orderBy()
      */
     public function addOrderBy($columns)
@@ -357,7 +393,11 @@ trait QueryTrait
     /**
      * Sets the LIMIT part of the query.
      * @param integer $limit the limit. Use null or negative value to disable limit.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself.
+>>>>>>> official/master
      */
     public function limit($limit)
     {
@@ -368,7 +408,11 @@ trait QueryTrait
     /**
      * Sets the OFFSET part of the query.
      * @param integer $offset the offset. Use null or negative value to disable offset.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself.
+>>>>>>> official/master
      */
     public function offset($offset)
     {

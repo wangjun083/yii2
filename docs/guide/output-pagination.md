@@ -30,8 +30,13 @@ $count = $query->count();
 $pagination = new Pagination(['totalCount' => $count]);
 
 // limit the query using the pagination and retrieve the articles
+<<<<<<< HEAD
 $articles = $query->offset($pagination->offset)
     ->limit($pagination->limit)
+=======
+$articles = $query->offset($pages->offset)
+    ->limit($pages->limit)
+>>>>>>> official/master
     ->all();
 ```
 

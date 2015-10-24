@@ -40,12 +40,19 @@
         /**
          * afterValidate event is triggered after validating the whole form.
          * The signature of the event handler should be:
+<<<<<<< HEAD
          *     function (event, messages, errorAttributes)
+=======
+         *     function (event, messages)
+>>>>>>> official/master
          * where
          *  - event: an Event object.
          *  - messages: an associative array with keys being attribute IDs and values being error message arrays
          *    for the corresponding attributes.
+<<<<<<< HEAD
          *  - errorAttributes: an array of attributes that have validation errors. Please refer to attributeDefaults for the structure of this parameter.
+=======
+>>>>>>> official/master
          */
         afterValidate: 'afterValidate',
         /**
@@ -98,7 +105,11 @@
          * where
          *  - event: an Event object.
          *  - jqXHR: a jqXHR object
+<<<<<<< HEAD
          *  - textStatus: the status of the request ("success", "notmodified", "error", "timeout", "abort", or "parsererror").
+=======
+         *  - settings: the status of the request ("success", "notmodified", "error", "timeout", "abort", or "parsererror").
+>>>>>>> official/master
          */
         ajaxComplete: 'ajaxComplete'
     };
@@ -122,9 +133,13 @@
         // the type of data that you're expecting back from the server
         ajaxDataType: 'json',
         // the URL for performing AJAX-based validation. If not set, it will use the the form's action
+<<<<<<< HEAD
         validationUrl: undefined,
         // whether to scroll to first visible error after validation.
         scrollToError: true
+=======
+        validationUrl: undefined
+>>>>>>> official/master
     };
 
     // NOTE: If you change any of these defaults, make sure you update yii\widgets\ActiveField::getClientOptions() as well
@@ -161,6 +176,7 @@
         value: undefined
     };
 
+<<<<<<< HEAD
 
     var submitDefer;
 
@@ -179,6 +195,8 @@
     };
 
 
+=======
+>>>>>>> official/master
     var methods = {
         init: function (attributes, options) {
             return this.each(function () {
@@ -294,7 +312,10 @@
                 $form.trigger(event, [messages, deferreds]);
                 if (event.result === false) {
                     data.submitting = false;
+<<<<<<< HEAD
                     submitFinalize($form);
+=======
+>>>>>>> official/master
                     return;
                 }
             }
@@ -363,7 +384,10 @@
                         },
                         error: function () {
                             data.submitting = false;
+<<<<<<< HEAD
                             submitFinalize($form);
+=======
+>>>>>>> official/master
                         }
                     });
                 } else if (data.submitting) {
@@ -382,20 +406,29 @@
                 data = $form.data('yiiActiveForm');
 
             if (data.validated) {
+<<<<<<< HEAD
                 // Second submit's call (from validate/updateInputs)
+=======
+>>>>>>> official/master
                 data.submitting = false;
                 var event = $.Event(events.beforeSubmit);
                 $form.trigger(event);
                 if (event.result === false) {
                     data.validated = false;
+<<<<<<< HEAD
                     submitFinalize($form);
+=======
+>>>>>>> official/master
                     return false;
                 }
                 return true;   // continue submitting the form since validation passes
             } else {
+<<<<<<< HEAD
                 // First submit's call (from yii.js/handleAction) - execute validating
                 setSubmitFinalizeDefer($form);
 
+=======
+>>>>>>> official/master
                 if (data.settings.timer !== undefined) {
                     clearTimeout(data.settings.timer);
                 }
@@ -426,6 +459,7 @@
                 });
                 $form.find(data.settings.errorSummary).hide().find('ul').html('');
             }, 1);
+<<<<<<< HEAD
         },
 
         /**
@@ -460,6 +494,9 @@
             }
         }
 
+=======
+        }
+>>>>>>> official/master
     };
 
     var watchAttribute = function ($form, attribute) {
@@ -524,7 +561,11 @@
             methods.validate.call($form);
         }, validationDelay ? validationDelay : 200);
     };
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> official/master
     /**
      * Returns an array prototype with a shortcut method for adding a new deferred.
      * The context of the callback will be the deferred object so it can be resolved like ```this.resolve()```
@@ -548,6 +589,7 @@
         var data = $form.data('yiiActiveForm');
 
         if (submitting) {
+<<<<<<< HEAD
             var errorAttributes = [];
             $.each(data.attributes, function () {
                 if (!this.cancelled && updateInput($form, this, messages)) {
@@ -568,6 +610,24 @@
                     if (top < wtop || top > wtop + $(window).height()) {
                         $(window).scrollTop(top);
                     }
+=======
+            var errorInputs = [];
+            $.each(data.attributes, function () {
+                if (!this.cancelled && updateInput($form, this, messages)) {
+                    errorInputs.push(this.input);
+                }
+            });
+
+            $form.trigger(events.afterValidate, [messages]);
+
+            updateSummary($form, messages);
+
+            if (errorInputs.length) {
+                var top = $form.find(errorInputs.join(',')).first().closest(':visible').offset().top;
+                var wtop = $(window).scrollTop();
+                if (top < wtop || top > wtop + $(window).height) {
+                    $(window).scrollTop(top);
+>>>>>>> official/master
                 }
                 data.submitting = false;
             } else {
@@ -596,7 +656,10 @@
                 }
             });
         }
+<<<<<<< HEAD
         submitFinalize($form);
+=======
+>>>>>>> official/master
     };
 
     /**

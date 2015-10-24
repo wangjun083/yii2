@@ -50,7 +50,11 @@ use yii\widgets\InputWidget;
  * method, for example like this:
  *
  * ```php
+<<<<<<< HEAD
  * <?= $form->field($model, 'captcha')->widget(\yii\captcha\Captcha::classname(), [
+=======
+ * <?= $form->field($model, 'captcha')->widget(\yii\widgets\Captcha::classname(), [
+>>>>>>> official/master
  *     // configure additional widget properties here
  * ]) ?>
  * ```

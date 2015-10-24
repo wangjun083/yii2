@@ -301,7 +301,11 @@ var keys = $('#grid').yiiGridView('getSelectedRows');
 
 #### Serial column
 
+<<<<<<< HEAD
 [[yii\grid\SerialColumn|Serial column]] renders row numbers starting with `1` and going forward.
+=======
+Serial column renders row numbers starting with `1` and going forward.
+>>>>>>> official/master
 
 Usage is as simple as the following:
 
@@ -325,7 +329,11 @@ echo GridView::widget([
 For filtering data the GridView needs a [model](structure-models.md) that takes the input from, the filtering
 form and adjusts the query of the dataProvider to respect the search criteria.
 A common practice when using [active records](db-active-record.md) is to create a search Model class
+<<<<<<< HEAD
 that provides needed functionality (it can be generated for you by [Gii](start-gii.md)). This class defines the validation 
+=======
+that provides needed functionality (it can be generated for you by Gii). This class defines the validation 
+>>>>>>> official/master
 rules for the search and provides a `search()` method that will return the data provider.
 
 To add the search capability for the `Post` model, we can create `PostSearch` like the following example:
@@ -364,7 +372,11 @@ class PostSearch extends Post
             'query' => $query,
         ]);
 
+<<<<<<< HEAD
         // load the search form data and validate
+=======
+        // load the seach form data and validate
+>>>>>>> official/master
         if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }

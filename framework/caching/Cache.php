@@ -30,7 +30,11 @@ use yii\helpers\StringHelper;
  * }
  * ```
  *
+<<<<<<< HEAD
  * Because Cache implements the [[\ArrayAccess]] interface, it can be used like an array. For example,
+=======
+ * Because Cache implements the ArrayAccess interface, it can be used like an array. For example,
+>>>>>>> official/master
  *
  * ```php
  * $cache['foo'] = 'some data';
@@ -423,7 +427,11 @@ abstract class Cache extends Component implements \ArrayAccess
 
     /**
      * Returns whether there is a cache entry with a specified key.
+<<<<<<< HEAD
      * This method is required by the interface [[\ArrayAccess]].
+=======
+     * This method is required by the interface ArrayAccess.
+>>>>>>> official/master
      * @param string $key a key identifying the cached value
      * @return boolean
      */
@@ -434,7 +442,11 @@ abstract class Cache extends Component implements \ArrayAccess
 
     /**
      * Retrieves the value from cache with a specified key.
+<<<<<<< HEAD
      * This method is required by the interface [[\ArrayAccess]].
+=======
+     * This method is required by the interface ArrayAccess.
+>>>>>>> official/master
      * @param string $key a key identifying the cached value
      * @return mixed the value stored in cache, false if the value is not in the cache or expired.
      */
@@ -447,7 +459,11 @@ abstract class Cache extends Component implements \ArrayAccess
      * Stores the value identified by a key into cache.
      * If the cache already contains such a key, the existing value will be
      * replaced with the new ones. To add expiration and dependencies, use the [[set()]] method.
+<<<<<<< HEAD
      * This method is required by the interface [[\ArrayAccess]].
+=======
+     * This method is required by the interface ArrayAccess.
+>>>>>>> official/master
      * @param string $key the key identifying the value to be cached
      * @param mixed $value the value to be cached
      */
@@ -458,7 +474,11 @@ abstract class Cache extends Component implements \ArrayAccess
 
     /**
      * Deletes the value with the specified key from cache
+<<<<<<< HEAD
      * This method is required by the interface [[\ArrayAccess]].
+=======
+     * This method is required by the interface ArrayAccess.
+>>>>>>> official/master
      * @param string $key the key of the value to be deleted
      */
     public function offsetUnset($key)

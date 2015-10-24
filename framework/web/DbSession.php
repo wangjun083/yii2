@@ -30,13 +30,21 @@ use yii\di\Instance;
  * ]
  * ~~~
  *
+<<<<<<< HEAD
  * DbSession extends [[MultiFieldSession]], thus it allows saving extra fields into the [[sessionTable]].
  * Refer to [[MultiFieldSession]] for more details.
+=======
+ * @property boolean $useCustomStorage Whether to use custom storage. This property is read-only.
+>>>>>>> official/master
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
+<<<<<<< HEAD
 class DbSession extends MultiFieldSession
+=======
+class DbSession extends Session
+>>>>>>> official/master
 {
     /**
      * @var Connection|array|string the DB connection object or the application component ID of the DB connection.
@@ -87,6 +95,19 @@ class DbSession extends MultiFieldSession
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Returns a value indicating whether to use custom session storage.
+     * This method overrides the parent implementation and always returns true.
+     * @return boolean whether to use custom storage.
+     */
+    public function getUseCustomStorage()
+    {
+        return true;
+    }
+
+    /**
+>>>>>>> official/master
      * Updates the current session ID with a newly generated one .
      * Please refer to <http://php.net/session_regenerate_id> for more details.
      * @param boolean $deleteOldSession Whether to delete the old associated session file or not.
@@ -103,7 +124,11 @@ class DbSession extends MultiFieldSession
         parent::regenerateID(false);
         $newID = session_id();
 
+<<<<<<< HEAD
         $query = new Query();
+=======
+        $query = new Query;
+>>>>>>> official/master
         $row = $query->from($this->sessionTable)
             ->where(['id' => $oldID])
             ->createCommand($this->db)
@@ -122,8 +147,15 @@ class DbSession extends MultiFieldSession
         } else {
             // shouldn't reach here normally
             $this->db->createCommand()
+<<<<<<< HEAD
                 ->insert($this->sessionTable, $this->composeFields($newID, ''))
                 ->execute();
+=======
+                ->insert($this->sessionTable, [
+                    'id' => $newID,
+                    'expire' => time() + $this->getTimeout(),
+                ])->execute();
+>>>>>>> official/master
         }
     }
 
@@ -135,6 +167,7 @@ class DbSession extends MultiFieldSession
      */
     public function readSession($id)
     {
+<<<<<<< HEAD
         $query = new Query();
         $query->from($this->sessionTable)
             ->where('[[expire]]>:expire AND [[id]]=:id', [':expire' => time(), ':id' => $id]);
@@ -145,6 +178,15 @@ class DbSession extends MultiFieldSession
         }
 
         $data = $query->select(['data'])->scalar($this->db);
+=======
+        $query = new Query;
+        $data = $query->select(['data'])
+            ->from($this->sessionTable)
+            ->where('[[expire]]>:expire AND [[id]]=:id', [':expire' => time(), ':id' => $id])
+            ->createCommand($this->db)
+            ->queryScalar();
+
+>>>>>>> official/master
         return $data === false ? '' : $data;
     }
 
@@ -160,12 +202,17 @@ class DbSession extends MultiFieldSession
         // exception must be caught in session write handler
         // http://us.php.net/manual/en/function.session-set-save-handler.php
         try {
+<<<<<<< HEAD
+=======
+            $expire = time() + $this->getTimeout();
+>>>>>>> official/master
             $query = new Query;
             $exists = $query->select(['id'])
                 ->from($this->sessionTable)
                 ->where(['id' => $id])
                 ->createCommand($this->db)
                 ->queryScalar();
+<<<<<<< HEAD
             $fields = $this->composeFields($id, $data);
             if ($exists === false) {
                 $this->db->createCommand()
@@ -175,6 +222,18 @@ class DbSession extends MultiFieldSession
                 unset($fields['id']);
                 $this->db->createCommand()
                     ->update($this->sessionTable, $fields, ['id' => $id])
+=======
+            if ($exists === false) {
+                $this->db->createCommand()
+                    ->insert($this->sessionTable, [
+                        'id' => $id,
+                        'data' => $data,
+                        'expire' => $expire,
+                    ])->execute();
+            } else {
+                $this->db->createCommand()
+                    ->update($this->sessionTable, ['data' => $data, 'expire' => $expire], ['id' => $id])
+>>>>>>> official/master
                     ->execute();
             }
         } catch (\Exception $e) {

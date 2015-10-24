@@ -41,9 +41,12 @@ git remote add upstream git://github.com/yiisoft/yii2.git
   このコマンドは後日、依存パッケージを更新するためにも使用されます。
   このコマンドは内部的に `composer update` を実行します。
 
+<<<<<<< HEAD
 > Note|注意: デフォルトの git レポジトリの Url を使うため、SSH 経由で github からクローンすることになります。
 > `build` コマンドに `--useHttp` フラグを追加すれば、代りに HTTP を使うことが出来ます。
 
+=======
+>>>>>>> official/master
 **これであなたは Yii 2 をハックするための作業用の遊び場を手に入れました。**
 
 以下のステップはオプションです。
@@ -58,17 +61,26 @@ phpunit をグローバルにインストールしていない場合は、代り
 
 取り組んでいるグループのものだけにテストを限定することが出来ます。
 例えば、バリデータと redis のためのテストだけを走らせるためには、`phpunit --group=validators,redis` とします。
+<<<<<<< HEAD
 利用できるグループのリストを取得するためには、`phpunit --list-groups` を実行してください。
+=======
+利用できるグループのリストを取得するためには、`phpunit --groups` を実行してください。
+>>>>>>> official/master
 
 ### エクステンション
 
 エクステンションに取り組むためには、エクステンションのレポジトリをクローンする必要があります。
 私たちは、あなたに代ってそれをするコマンドを作っています。
 
+<<<<<<< HEAD
 ```
 php build/build dev/ext <extension-name>
 ```
 
+=======
+    php build/build dev/ext <extension-name>
+    
+>>>>>>> official/master
 ここで `<extension-name>` がエクステンションの名前、例えば `redis` です。
 
 エクステンションをアプリケーションテンプレートのどちらかでテストしたい場合は、通常そうするように、アプリケーションの `composer.json` にそれを追加するだけです。
@@ -76,8 +88,11 @@ php build/build dev/ext <extension-name>
 `php build/build dev/app basic` を実行すると、エクステンションとその依存パッケージがインストールされ、`extensions/redis` に対するシンボリックリンクが作成されます。
 こうすることで、composer の vendor ディレクトリではなく、直接に yii2 のレポジトリで作業をすることが出来るようになります。
 
+<<<<<<< HEAD
 > Note|注意: デフォルトの git レポジトリの Url を使うため、SSH 経由で github からクローンすることになります。
 > `build` コマンドに `--useHttp` フラグを追加すれば、代りに HTTP を使うことが出来ます。
+=======
+>>>>>>> official/master
 
 バグ修正と機能改良に取り組む
 ----------------------------
@@ -155,7 +170,11 @@ git add path/to/my/file.php
 github があなたのコミットを自動的にチケットとリンクするように、必ず `#XXX` でチケット番号に言及してください。
 
 ```
+<<<<<<< HEAD
 git commit -m "#999 を解決する変更の短い説明をここに入れる"
+=======
+git commit -m "#42 を解決する変更の短い説明をここに入れる"
+>>>>>>> official/master
 ```
 
 ### 7. 最新の Yii コードを upstream からあなたのブランチにプルする
@@ -233,7 +252,11 @@ git checkout -b 999-name-of-your-branch-goes-here
 /* 魔法を使い、必要なら changelog を更新 */
 
 git add path/to/my/file.php
+<<<<<<< HEAD
 git commit -m "A brief description of this change which fixes #999 goes here"
+=======
+git commit -m "A brief description of this change which fixes #42 goes here"
+>>>>>>> official/master
 git pull upstream master
 git push -u origin 999-name-of-your-branch-goes-here
 ```

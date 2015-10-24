@@ -67,6 +67,13 @@ yii migrate/up 5 --migrationTable=migrations
 
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 
+<<<<<<< HEAD
+=======
+// fcgi では、デフォルトでは、STDIN と STDOUT が定義されていない
+defined('STDIN') or define('STDIN', fopen('php://stdin', 'r'));
+defined('STDOUT') or define('STDOUT', fopen('php://stdout', 'w'));
+
+>>>>>>> official/master
 require(__DIR__ . '/vendor/autoload.php');
 require(__DIR__ . '/vendor/yiisoft/yii2/Yii.php');
 

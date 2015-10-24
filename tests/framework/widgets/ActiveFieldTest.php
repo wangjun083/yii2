@@ -16,6 +16,7 @@ use yii\web\AssetManager;
  */
 class ActiveFieldTest extends \yiiunit\TestCase
 {
+<<<<<<< HEAD
     /**
      * @var ActiveField
      */
@@ -27,6 +28,10 @@ class ActiveFieldTest extends \yiiunit\TestCase
     /**
      * @var ActiveForm
      */
+=======
+    private $activeField;
+    private $helperModel;
+>>>>>>> official/master
     private $helperForm;
     private $attributeName = 'attributeName';
 
@@ -242,6 +247,7 @@ EOD;
 EOD;
         $this->activeField->listBox(["1" => "Item One", "2" => "Item 2"]);
         $this->assertEqualsWithoutLE($expectedValue, $this->activeField->parts['{input}']);
+<<<<<<< HEAD
 
         // https://github.com/yiisoft/yii2/issues/8848
         $expectedValue = <<<EOD
@@ -269,6 +275,11 @@ EOD;
         ]]);
         $this->assertEqualsWithoutLE($expectedValue, $this->activeField->parts['{input}']);
     }
+=======
+    }
+
+
+>>>>>>> official/master
 
     public function testGetClientOptionsReturnEmpty()
     {

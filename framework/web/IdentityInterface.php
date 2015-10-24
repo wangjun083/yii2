@@ -56,7 +56,10 @@ interface IdentityInterface
      * or the identity is not in an active state (disabled, deleted, etc.)
      */
     public static function findIdentity($id);
+<<<<<<< HEAD
 
+=======
+>>>>>>> official/master
     /**
      * Finds an identity by the given token.
      * @param mixed $token the token to be looked for
@@ -67,13 +70,19 @@ interface IdentityInterface
      * or the identity is not in an active state (disabled, deleted, etc.)
      */
     public static function findIdentityByAccessToken($token, $type = null);
+<<<<<<< HEAD
 
+=======
+>>>>>>> official/master
     /**
      * Returns an ID that can uniquely identify a user identity.
      * @return string|integer an ID that uniquely identifies a user identity.
      */
     public function getId();
+<<<<<<< HEAD
 
+=======
+>>>>>>> official/master
     /**
      * Returns a key that can be used to check the validity of a given identity ID.
      *
@@ -87,7 +96,10 @@ interface IdentityInterface
      * @see validateAuthKey()
      */
     public function getAuthKey();
+<<<<<<< HEAD
 
+=======
+>>>>>>> official/master
     /**
      * Validates the given auth key.
      *

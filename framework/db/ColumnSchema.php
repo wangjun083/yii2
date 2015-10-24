@@ -127,6 +127,7 @@ class ColumnSchema extends Object
                 }
                 if (is_float($value)) {
                     // ensure type cast always has . as decimal separator in all locales
+<<<<<<< HEAD
                     return str_replace(',', '.', (string) $value);
                 }
                 return (string) $value;
@@ -136,6 +137,15 @@ class ColumnSchema extends Object
                 // treating a 0 bit value as false too
                 // https://github.com/yiisoft/yii2/issues/9006
                 return (bool) $value && $value !== "\0";
+=======
+                    return str_replace(',', '.', (string)$value);
+                }
+                return (string)$value;
+            case 'integer':
+                return (int) $value;
+            case 'boolean':
+                return (bool) $value;
+>>>>>>> official/master
             case 'double':
                 return (double) $value;
         }

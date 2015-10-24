@@ -341,6 +341,7 @@ class UrlRule extends Object implements UrlRuleInterface
 
         return $url;
     }
+<<<<<<< HEAD
 
     /**
      * Returns list of regex for matching parameter.
@@ -352,4 +353,6 @@ class UrlRule extends Object implements UrlRuleInterface
     {
         return $this->_paramRules;
     }
+=======
+>>>>>>> official/master
 }

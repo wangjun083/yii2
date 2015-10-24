@@ -376,7 +376,11 @@ class FixtureController extends Controller
     }
 
     /**
+<<<<<<< HEAD
      * Finds fixtures to be loaded, for example "User", if no fixtures were specified then all of them
+=======
+     * Finds fixtures to be loaded, for example "User", if no fixtures were specified then all of them 
+>>>>>>> official/master
      * will be searching by suffix "Fixture.php".
      * @param array $fixtures fixtures to be loaded
      * @return array Array of found fixtures. These may differ from input parameter as not all fixtures may exists.
@@ -433,7 +437,11 @@ class FixtureController extends Controller
      * Filters fixtures by splitting them in two categories: one that should be applied and not.
      * If fixture is prefixed with "-", for example "-User", that means that fixture should not be loaded,
      * if it is not prefixed it is considered as one to be loaded. Returns array:
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> official/master
      * ~~~
      * [
      *     'apply' => [

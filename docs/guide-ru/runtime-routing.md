@@ -123,7 +123,11 @@ return [
 ];
 ```
 
+<<<<<<< HEAD
 Обратите внимание, что конфигурация с `'showScriptName' => false` будет работать только, если веб сервер был должным образом сконфигурирован. Смотрите раздел [Установка Yii](start-installation.md#recommended-apache-configuration).
+=======
+Обратите внимание, что конфигурация с `'showScriptName' => false` будет работать только, если веб сервер был должным образом сконфигурирован. Смотрите раздел [installation](installation.md#recommended-apache-configuration) (ссылка не работает).
+>>>>>>> official/master
 
 ###Именованные параметры
 

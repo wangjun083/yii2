@@ -16,7 +16,10 @@ DROP TABLE IF EXISTS "type";
 DROP TABLE IF EXISTS "null_values";
 DROP TABLE IF EXISTS "animal";
 DROP TABLE IF EXISTS "default_pk";
+<<<<<<< HEAD
 DROP TABLE IF EXISTS "document";
+=======
+>>>>>>> official/master
 DROP VIEW IF EXISTS "animal_view";
 
 CREATE TABLE "profile" (
@@ -88,7 +91,11 @@ CREATE TABLE "composite_fk" (
 );
 
 CREATE TABLE "null_values" (
+<<<<<<< HEAD
   id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+=======
+  id INTEGER UNSIGNED PRIMARY KEY NOT NULL,
+>>>>>>> official/master
   var1 INTEGER UNSIGNED,
   var2 INTEGER,
   var3 INTEGER DEFAULT NULL,
@@ -124,6 +131,7 @@ CREATE TABLE "default_pk" (
   PRIMARY KEY (id)
 );
 
+<<<<<<< HEAD
 CREATE TABLE "document" (
   id INTEGER NOT NULL,
   title VARCHAR(255) NOT NULL,
@@ -132,6 +140,8 @@ CREATE TABLE "document" (
   PRIMARY KEY (id)
 );
 
+=======
+>>>>>>> official/master
 CREATE VIEW "animal_view" AS SELECT * FROM "animal";
 
 INSERT INTO "animal" ("type") VALUES ('yiiunit\data\ar\Cat');
@@ -175,8 +185,11 @@ INSERT INTO "order_item_with_null_fk" (order_id, item_id, quantity, subtotal) VA
 INSERT INTO "order_item_with_null_fk" (order_id, item_id, quantity, subtotal) VALUES (2, 3, 1, 8.0);
 INSERT INTO "order_item_with_null_fk" (order_id, item_id, quantity, subtotal) VALUES (3, 2, 1, 40.0);
 
+<<<<<<< HEAD
 INSERT INTO "document" (title, content, version) VALUES ('Yii 2.0 guide', 'This is Yii 2.0 guide', 0);
 
+=======
+>>>>>>> official/master
 /**
  * (SqLite-)Database Schema for validator tests
  */
@@ -205,6 +218,7 @@ INSERT INTO "validator_ref" (id, a_field, ref) VALUES (3, 'ref_to_3', 3);
 INSERT INTO "validator_ref" (id, a_field, ref) VALUES (4, 'ref_to_4', 4);
 INSERT INTO "validator_ref" (id, a_field, ref) VALUES (5, 'ref_to_4', 4);
 INSERT INTO "validator_ref" (id, a_field, ref) VALUES (6, 'ref_to_5', 5);
+<<<<<<< HEAD
 
 /* bit test, see https://github.com/yiisoft/yii2/issues/9006 */
 
@@ -218,3 +232,5 @@ CREATE TABLE "bit_values" (
 
 INSERT INTO "bit_values" (id, val) VALUES (1, 0);
 INSERT INTO "bit_values" (id, val) VALUES (2, 1);
+=======
+>>>>>>> official/master

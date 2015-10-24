@@ -401,7 +401,11 @@ class BaseConsole
                 }
 
                 $return = '';
+<<<<<<< HEAD
                 while ($reset && $tags > 0) {
+=======
+                while($reset && $tags > 0) {
+>>>>>>> official/master
                     $return .= '</span>';
                     $tags--;
                 }
@@ -433,7 +437,11 @@ class BaseConsole
                 }
 
                 $styleString = '';
+<<<<<<< HEAD
                 foreach ($currentStyle as $name => $value) {
+=======
+                foreach($currentStyle as $name => $value) {
+>>>>>>> official/master
                     if (is_array($value)) {
                         $value = implode(' ', $value);
                     }
@@ -444,7 +452,11 @@ class BaseConsole
             },
             $string
         );
+<<<<<<< HEAD
         while ($tags > 0) {
+=======
+        while($tags > 0) {
+>>>>>>> official/master
             $result .= '</span>';
             $tags--;
         }
@@ -665,7 +677,11 @@ class BaseConsole
         $pad = str_repeat(' ', $indent);
         $lines = explode("\n", wordwrap($text, $size[0] - $indent, "\n", true));
         $first = true;
+<<<<<<< HEAD
         foreach ($lines as $i => $line) {
+=======
+        foreach($lines as $i => $line) {
+>>>>>>> official/master
             if ($first) {
                 $first = false;
                 continue;
@@ -817,11 +833,19 @@ class BaseConsole
                 return $default;
             }
 
+<<<<<<< HEAD
             if (!strcasecmp($input, 'y') || !strcasecmp($input, 'yes')) {
                 return true;
             }
 
             if (!strcasecmp($input, 'n') || !strcasecmp($input, 'no')) {
+=======
+            if (!strcasecmp ($input, 'y') || !strcasecmp ($input, 'yes') ) {
+                return true;
+            }
+
+            if (!strcasecmp ($input, 'n') || !strcasecmp ($input, 'no') ) {
+>>>>>>> official/master
                 return false;
             }
         }
@@ -857,9 +881,12 @@ class BaseConsole
     private static $_progressStart;
     private static $_progressWidth;
     private static $_progressPrefix;
+<<<<<<< HEAD
     private static $_progressEta;
     private static $_progressEtaLastDone = 0;
     private static $_progressEtaLastUpdate;
+=======
+>>>>>>> official/master
 
     /**
      * Starts display of a progress bar on screen.
@@ -905,9 +932,12 @@ class BaseConsole
         self::$_progressStart = time();
         self::$_progressWidth = $width;
         self::$_progressPrefix = $prefix;
+<<<<<<< HEAD
         self::$_progressEta = null;
         self::$_progressEtaLastDone = 0;
         self::$_progressEtaLastUpdate = time();
+=======
+>>>>>>> official/master
 
         static::updateProgress($done, $total);
     }
@@ -949,6 +979,7 @@ class BaseConsole
         $info = sprintf("%d%% (%d/%d)", $percent * 100, $done, $total);
 
         if ($done > $total || $done == 0) {
+<<<<<<< HEAD
             self::$_progressEta = null;
             self::$_progressEtaLastUpdate = time();
         } elseif ($done < $total) {
@@ -964,6 +995,12 @@ class BaseConsole
             $info .= ' ETA: n/a';
         } else {
             $info .= sprintf(' ETA: %d sec.', self::$_progressEta);
+=======
+            $info .= ' ETA: n/a';
+        } elseif ($done < $total) {
+            $rate = (time() - self::$_progressStart) / $done;
+            $info .= sprintf(' ETA: %d sec.', $rate * ($total - $done));
+>>>>>>> official/master
         }
 
         $width -= 3 + static::ansiStrlen($info);
@@ -1013,8 +1050,11 @@ class BaseConsole
         self::$_progressStart = null;
         self::$_progressWidth = null;
         self::$_progressPrefix = '';
+<<<<<<< HEAD
         self::$_progressEta = null;
         self::$_progressEtaLastDone = 0;
         self::$_progressEtaLastUpdate = null;
+=======
+>>>>>>> official/master
     }
 }

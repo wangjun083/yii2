@@ -160,7 +160,11 @@ class Yii extends \yii\BaseYii
 }
 
 Yii::$classMap = include($yii2path . '/classes.php');
+<<<<<<< HEAD
 // register Yii 2 autoloader via Yii 1
+=======
+// register Yii2 autoloader via Yii1
+>>>>>>> official/master
 Yii::registerAutoloader(['Yii', 'autoload']);
 // create the dependency injection container
 Yii::$container = new yii\di\Container;

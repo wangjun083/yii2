@@ -171,17 +171,33 @@ class FontAwesomeAsset extends AssetBundle
     public $css = [ 
         'css/font-awesome.min.css', 
     ]; 
+<<<<<<< HEAD
     public $publishOptions = [
         'only' => [
             'fonts/',
             'css/',
         ]
     ],
+=======
+    
+    public function init()
+    {
+        parent::init();
+        $this->publishOptions['beforeCopy'] = function ($from, $to) {
+            $dirname = basename(dirname($from));
+            return $dirname === 'fonts' || $dirname === 'css';
+        };
+    }
+>>>>>>> official/master
 }  
 ```
 
 上記の例は、["fontawesome" パッケージ](http://fontawesome.io/) のためのアセットバンドルを定義するものです。
+<<<<<<< HEAD
 発行オプション `only` を指定して、`fonts` と `css` サブディレクトリだけが発行されるようにしています。
+=======
+`beforeCopy` という発行オプションを指定して、`fonts` と `css` サブディレクトリだけが発行されるようにしています。
+>>>>>>> official/master
 
 
 ### Bower と NPM のアセット <span id="bower-npm-assets"></span>

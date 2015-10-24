@@ -214,7 +214,11 @@ if they are empty. You can do so by using the [default](tutorial-core-validators
 ```
 
 By default, an input is considered empty if its value is an empty string, an empty array or a null.
+<<<<<<< HEAD
 You may customize the default empty detection logic by configuring the [[yii\validators\Validator::isEmpty]] property
+=======
+You may customize the default empty detection logic by configuring the the [[yii\validators\Validator::isEmpty]] property
+>>>>>>> official/master
 with a PHP callable. For example,
 
 ```php

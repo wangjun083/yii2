@@ -75,6 +75,7 @@ echo Html::tag('div', 'Pwede na', $options);
 // <div class="btn btn-success">Pwede na</div>
 ```
 
+<<<<<<< HEAD
 You may specify multiple CSS classes using the array style as well:
 
 ```php
@@ -126,6 +127,9 @@ echo Html::tag('div', 'Save', $options);
 ```
 
 CSS styles can be setup in similar way using `style` attribute:
+=======
+In order to do the same with styles for the `style` attribute:
+>>>>>>> official/master
 
 ```php
 $options = ['style' => ['width' => '100px', 'height' => '100px']];

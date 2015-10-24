@@ -325,6 +325,7 @@ class UrlManager extends Component
             }
 
             if ($url === false) {
+<<<<<<< HEAD
                 $cacheable = true;
                 foreach ($this->rules as $rule) {
                     if (!empty($rule->defaults) && $rule->mode !== UrlRule::PARSING_ONLY) {
@@ -335,6 +336,11 @@ class UrlManager extends Component
                         if ($cacheable) {
                             $this->_ruleCache[$cacheKey][] = $rule;
                         }
+=======
+                foreach ($this->rules as $rule) {
+                    if (($url = $rule->createUrl($this, $route, $params)) !== false) {
+                        $this->_ruleCache[$cacheKey][] = $rule;
+>>>>>>> official/master
                         break;
                     }
                 }

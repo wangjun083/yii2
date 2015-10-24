@@ -18,6 +18,7 @@ use yii\base\InvalidParamException;
 class QueryBuilder extends \yii\db\QueryBuilder
 {
     /**
+<<<<<<< HEAD
      * Defines a UNIQUE index for [[createIndex()]].
      * @since 2.0.6
      */
@@ -44,6 +45,8 @@ class QueryBuilder extends \yii\db\QueryBuilder
     const INDEX_GIN = 'gin';
 
     /**
+=======
+>>>>>>> official/master
      * @var array mapping from abstract column types (keys) to physical column types (values).
      */
     public $typeMap = [
@@ -92,6 +95,7 @@ class QueryBuilder extends \yii\db\QueryBuilder
 
 
     /**
+<<<<<<< HEAD
      * Builds a SQL statement for creating a new index.
      * @param string $name the name of the index. The name will be properly quoted by the method.
      * @param string $table the table that the new index will be created for. The table name will be properly quoted by the method.
@@ -122,6 +126,8 @@ class QueryBuilder extends \yii\db\QueryBuilder
     }
 
     /**
+=======
+>>>>>>> official/master
      * Builds a SQL statement for dropping an index.
      * @param string $name the name of the index to be dropped. The name will be properly quoted by the method.
      * @param string $table the table whose index is to be dropped. The name will be properly quoted by the method.
@@ -237,7 +243,11 @@ class QueryBuilder extends \yii\db\QueryBuilder
         foreach ($rows as $row) {
             $vs = [];
             foreach ($row as $i => $value) {
+<<<<<<< HEAD
                 if (isset($columns[$i], $columnSchemas[$columns[$i]]) && !is_array($value)) {
+=======
+                if (!is_array($value) && isset($columnSchemas[$columns[$i]])) {
+>>>>>>> official/master
                     $value = $columnSchemas[$columns[$i]]->dbTypecast($value);
                 }
                 if (is_string($value)) {

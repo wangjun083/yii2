@@ -238,6 +238,7 @@ abstract class Target extends Component
         list($text, $level, $category, $timestamp) = $message;
         $level = Logger::getLevelName($level);
         if (!is_string($text)) {
+<<<<<<< HEAD
             // exceptions may not be serializable if in the call stack somewhere is a Closure
             if ($text instanceof \Exception) {
                 $text = (string) $text;
@@ -248,6 +249,13 @@ abstract class Target extends Component
         $traces = [];
         if (isset($message[4])) {
             foreach ($message[4] as $trace) {
+=======
+            $text = VarDumper::export($text);
+        }
+        $traces = [];
+        if (isset($message[4])) {
+            foreach($message[4] as $trace) {
+>>>>>>> official/master
                 $traces[] = "in {$trace['file']}:{$trace['line']}";
             }
         }

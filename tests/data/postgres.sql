@@ -19,7 +19,10 @@ DROP TABLE IF EXISTS "constraints" CASCADE;
 DROP TABLE IF EXISTS "bool_values" CASCADE;
 DROP TABLE IF EXISTS "animal" CASCADE;
 DROP TABLE IF EXISTS "default_pk" CASCADE;
+<<<<<<< HEAD
 DROP TABLE IF EXISTS "document" CASCADE;
+=======
+>>>>>>> official/master
 DROP VIEW IF EXISTS "animal_view";
 DROP SCHEMA IF EXISTS "schema1" CASCADE;
 DROP SCHEMA IF EXISTS "schema2" CASCADE;
@@ -38,11 +41,14 @@ CREATE TABLE "profile" (
   description varchar(128) NOT NULL
 );
 
+<<<<<<< HEAD
 CREATE TABLE "schema1"."profile" (
   id serial not null primary key,
   description varchar(128) NOT NULL
 );
 
+=======
+>>>>>>> official/master
 CREATE TABLE "customer" (
   id serial not null primary key,
   email varchar(128) NOT NULL,
@@ -104,7 +110,11 @@ CREATE TABLE "composite_fk" (
 );
 
 CREATE TABLE "null_values" (
+<<<<<<< HEAD
   id serial NOT NULL,
+=======
+  id INT NOT NULL,
+>>>>>>> official/master
   var1 INT NULL,
   var2 INT NULL,
   var3 INT DEFAULT NULL,
@@ -137,6 +147,10 @@ CREATE TABLE "bool_values" (
   default_false boolean not null default false
 );
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> official/master
 CREATE TABLE "animal" (
   id serial primary key,
   type varchar(255) not null
@@ -147,6 +161,7 @@ CREATE TABLE "default_pk" (
   type varchar(255) not null
 );
 
+<<<<<<< HEAD
 CREATE TABLE "document" (
   id serial primary key,
   title varchar(255) not null,
@@ -154,6 +169,8 @@ CREATE TABLE "document" (
   version integer not null default 0
 );
 
+=======
+>>>>>>> official/master
 CREATE VIEW "animal_view" AS SELECT * FROM "animal";
 
 INSERT INTO "animal" (type) VALUES ('yiiunit\data\ar\Cat');
@@ -163,9 +180,12 @@ INSERT INTO "animal" (type) VALUES ('yiiunit\data\ar\Dog');
 INSERT INTO "profile" (description) VALUES ('profile customer 1');
 INSERT INTO "profile" (description) VALUES ('profile customer 3');
 
+<<<<<<< HEAD
 INSERT INTO "schema1"."profile" (description) VALUES ('profile customer 1');
 INSERT INTO "schema1"."profile" (description) VALUES ('profile customer 3');
 
+=======
+>>>>>>> official/master
 INSERT INTO "customer" (email, name, address, status, bool_status, profile_id) VALUES ('user1@example.com', 'user1', 'address1', 1, true, 1);
 INSERT INTO "customer" (email, name, address, status, bool_status) VALUES ('user2@example.com', 'user2', 'address2', 1, true);
 INSERT INTO "customer" (email, name, address, status, bool_status, profile_id) VALUES ('user3@example.com', 'user3', 'address3', 2, false, 2);
@@ -201,8 +221,11 @@ INSERT INTO "order_item_with_null_fk" (order_id, item_id, quantity, subtotal) VA
 INSERT INTO "order_item_with_null_fk" (order_id, item_id, quantity, subtotal) VALUES (2, 3, 1, 8.0);
 INSERT INTO "order_item_with_null_fk" (order_id, item_id, quantity, subtotal) VALUES (3, 2, 1, 40.0);
 
+<<<<<<< HEAD
 INSERT INTO "document" (title, content, version) VALUES ('Yii 2.0 guide', 'This is Yii 2.0 guide', 0);
 
+=======
+>>>>>>> official/master
 /**
  * (Postgres-)Database Schema for validator tests
  */
@@ -231,6 +254,7 @@ INSERT INTO "validator_ref" (id, a_field, ref) VALUES (3, 'ref_to_3', 3);
 INSERT INTO "validator_ref" (id, a_field, ref) VALUES (4, 'ref_to_4', 4);
 INSERT INTO "validator_ref" (id, a_field, ref) VALUES (5, 'ref_to_4', 4);
 INSERT INTO "validator_ref" (id, a_field, ref) VALUES (6, 'ref_to_5', 5);
+<<<<<<< HEAD
 
 /* bit test, see https://github.com/yiisoft/yii2/issues/9006 */
 
@@ -242,3 +266,5 @@ CREATE TABLE "bit_values" (
 );
 
 INSERT INTO "bit_values" (id, val) VALUES (1, '0'), (2, '1');
+=======
+>>>>>>> official/master

@@ -78,6 +78,7 @@ class RequestTest extends TestCase
         $request->acceptableLanguages = ['en-us', 'de'];
         $this->assertEquals('pl', $request->getPreferredLanguage(['pl', 'ru-ru']));
     }
+<<<<<<< HEAD
 
     public function testCsrfTokenValidation()
     {
@@ -146,4 +147,6 @@ class RequestTest extends TestCase
         $this->assertEquals(['post/view', ['id' => 21, 'token' => 'secret']], $result);
         $this->assertEquals($_GET, ['id' => 63]);
     }
+=======
+>>>>>>> official/master
 }

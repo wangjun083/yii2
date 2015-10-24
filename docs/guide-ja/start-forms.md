@@ -54,7 +54,11 @@ class EntryForm extends Model
 上記で宣言されている検証規則は次のことを述べています。
 
 * `name` と `email` は、ともに値を要求される
+<<<<<<< HEAD
 * `email` のデータは構文的に有効なメールアドレスでなければならない
+=======
+* `email` のデータは構文的に正当なメールアドレスでなければならない
+>>>>>>> official/master
 
 ユーザによって入力されたデータを `EntryForm` オブジェクトに投入した後、[[yii\base\Model::validate()|validate()]] を呼んでデータ検証ルーチンを始動することが出来ます。
 データ検証が失敗すると [[yii\base\Model::hasErrors|hasErrors]] プロパティが true に設定されます。
@@ -178,7 +182,11 @@ use yii\widgets\ActiveForm;
 試してみる <span id="trying-it-out"></span>
 ----------
 
+<<<<<<< HEAD
 どのように動作するかを見るために、ブラウザで下記の URL にアクセスしてください。
+=======
+どのように動作するかを見るために、ブラウザで下記の URL をアクセスしてください。
+>>>>>>> official/master
 
 ```
 http://hostname/index.php?r=site/entry

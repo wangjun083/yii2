@@ -29,4 +29,7 @@ namespace yii\base;
 interface Configurable
 {
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> official/master

@@ -74,6 +74,7 @@ echo Html::tag('div', 'Pwede na', $options);
 // <div class="btn btn-success">Pwede na</div>
 ```
 
+<<<<<<< HEAD
 配列形式を使って複数の CSS クラスを指定することも出来ます。
 
 ```php
@@ -125,6 +126,9 @@ echo Html::tag('div', 'Save', $options);
 ```
 
 CSS のスタイルも `style` 属性を使って、同じように設定することが出来ます。
+=======
+同じことを `style` 属性のスタイルについて行うためには、次のようにします。
+>>>>>>> official/master
 
 ```php
 $options = ['style' => ['width' => '100px', 'height' => '100px']];

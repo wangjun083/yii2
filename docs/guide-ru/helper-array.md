@@ -240,7 +240,11 @@ ArrayHelper::merge($a, $b);
 
 ```php
 $posts = Post::find()->limit(10)->all();
+<<<<<<< HEAD
 $data = ArrayHelper::toArray($posts, [
+=======
+$data = ArrayHelper::toArray($post, [
+>>>>>>> official/master
     'app\models\Post' => [
         'id',
         'title',
@@ -273,4 +277,8 @@ $data = ArrayHelper::toArray($posts, [
 ]
 ```
 
+<<<<<<< HEAD
 Вы можете определить способ конвертации из объекта в массив по-умолчанию реализовав интерфейс `yii\base\Arrayable` в этом классе
+=======
+Вы можете определить способ конвертации из объекта в массив по-умолчанию реализовав интерфейс `yii\base\Arrayable` в этом классе
+>>>>>>> official/master

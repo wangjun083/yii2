@@ -90,9 +90,12 @@ Regras e Observações
 - standalone action — ação standalone
 - advanced project template — template avançado de projetos
 - basic project template — template básico de projetos
+<<<<<<< HEAD
 - behaviors — behaviors (comportamentos)
 - pretty URL — URL amigável (pretty URL)
 - class member variable - atributo da classe
+=======
+>>>>>>> official/master
 
 ### Termos Sem Tradução
 
@@ -110,8 +113,12 @@ Regras e Observações
 - backend
 - frontend
 - web service
+<<<<<<< HEAD
 - template
 - query string
 - case-sensitive
 - case-insensitive
 - callback
+=======
+- template
+>>>>>>> official/master

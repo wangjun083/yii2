@@ -19,7 +19,11 @@ class BaseHtmlPurifier
 {
     /**
      * Passes markup through HTMLPurifier making it safe to output to end user
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> official/master
      * @param string $content The HTML content to purify
      * @param array|\Closure|null $config The config to use for HtmlPurifier.
      * If not specified or `null` the default config will be used.
@@ -34,7 +38,11 @@ class BaseHtmlPurifier
      *
      *   ~~~
      *   // Allow the HTML5 data attribute `data-type` on `img` elements.
+<<<<<<< HEAD
      *   $content = HtmlPurifier::process($content, function ($config) {
+=======
+     *   $content = HtmlPurifier::process($content, function($config) {
+>>>>>>> official/master
      *     $config->getHTMLDefinition(true)
      *            ->addAttribute('img', 'data-type', 'Text');
      *   });
@@ -46,7 +54,11 @@ class BaseHtmlPurifier
     {
         $configInstance = \HTMLPurifier_Config::create($config instanceof \Closure ? null : $config);
         $configInstance->autoFinalize = false;
+<<<<<<< HEAD
         $purifier = \HTMLPurifier::instance($configInstance);
+=======
+        $purifier=\HTMLPurifier::instance($configInstance);
+>>>>>>> official/master
         $purifier->config->set('Cache.SerializerPath', \Yii::$app->getRuntimePath());
         
         if ($config instanceof \Closure) {

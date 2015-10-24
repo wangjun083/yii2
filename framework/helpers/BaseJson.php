@@ -26,20 +26,34 @@ class BaseJson
      * The method enhances `json_encode()` by supporting JavaScript expressions.
      * In particular, the method will not encode a JavaScript expression that is
      * represented in terms of a [[JsExpression]] object.
+<<<<<<< HEAD
      * @param mixed $value the data to be encoded.
      * @param integer $options the encoding options. For more details please refer to
      * <http://www.php.net/manual/en/function.json-encode.php>. Default is `JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE`.
      * @return string the encoding result.
      * @throws InvalidParamException if there is any encoding error.
+=======
+     * @param mixed $value the data to be encoded
+     * @param integer $options the encoding options. For more details please refer to
+     * <http://www.php.net/manual/en/function.json-encode.php>. Default is `JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE`.
+     * @return string the encoding result
+>>>>>>> official/master
      */
     public static function encode($value, $options = 320)
     {
         $expressions = [];
+<<<<<<< HEAD
         $value = static::processData($value, $expressions, uniqid('', false));
         $json = json_encode($value, $options);
         static::handleJsonError(json_last_error());
 
         return $expressions === [] ? $json : strtr($json, $expressions);
+=======
+        $value = static::processData($value, $expressions, uniqid());
+        $json = json_encode($value, $options);
+
+        return empty($expressions) ? $json : strtr($json, $expressions);
+>>>>>>> official/master
     }
 
     /**
@@ -51,7 +65,10 @@ class BaseJson
      * @param mixed $value the data to be encoded
      * @return string the encoding result
      * @since 2.0.4
+<<<<<<< HEAD
      * @throws InvalidParamException if there is any encoding error
+=======
+>>>>>>> official/master
      */
     public static function htmlEncode($value)
     {
@@ -71,6 +88,7 @@ class BaseJson
             throw new InvalidParamException('Invalid JSON data.');
         }
         $decode = json_decode((string) $json, $asArray);
+<<<<<<< HEAD
         static::handleJsonError(json_last_error());
 
         return $decode;
@@ -86,6 +104,9 @@ class BaseJson
     protected static function handleJsonError($lastError)
     {
         switch ($lastError) {
+=======
+        switch (json_last_error()) {
+>>>>>>> official/master
             case JSON_ERROR_NONE:
                 break;
             case JSON_ERROR_DEPTH:
@@ -101,6 +122,11 @@ class BaseJson
             default:
                 throw new InvalidParamException('Unknown JSON decoding error.');
         }
+<<<<<<< HEAD
+=======
+
+        return $decode;
+>>>>>>> official/master
     }
 
     /**

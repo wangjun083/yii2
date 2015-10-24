@@ -70,7 +70,11 @@ class FileValidatorTest extends TestCase
 
     public function testGetSizeLimit()
     {
+<<<<<<< HEAD
         $size = min($this->sizeToBytes(ini_get('upload_max_filesize')),$this->sizeToBytes(ini_get('post_max_size')));
+=======
+        $size = $this->sizeToBytes(ini_get('upload_max_filesize'));
+>>>>>>> official/master
         $val = new FileValidator();
         $this->assertEquals($size, $val->getSizeLimit());
         $val->maxSize = $size + 1; // set and test if value is overridden

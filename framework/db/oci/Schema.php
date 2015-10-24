@@ -9,7 +9,10 @@ namespace yii\db\oci;
 
 use yii\base\InvalidCallException;
 use yii\db\Connection;
+<<<<<<< HEAD
 use yii\db\Expression;
+=======
+>>>>>>> official/master
 use yii\db\TableSchema;
 use yii\db\ColumnSchema;
 
@@ -32,7 +35,10 @@ class Schema extends \yii\db\Schema
         'ORA-00001: unique constraint' => 'yii\db\IntegrityException',
     ];
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> official/master
     /**
      * @inheritdoc
      */
@@ -71,6 +77,7 @@ class Schema extends \yii\db\Schema
     /**
      * @inheritdoc
      */
+<<<<<<< HEAD
     public function createColumnSchemaBuilder($type, $length = null)
     {
         return new ColumnSchemaBuilder($type, $length);
@@ -79,6 +86,8 @@ class Schema extends \yii\db\Schema
     /**
      * @inheritdoc
      */
+=======
+>>>>>>> official/master
     public function loadTableSchema($name)
     {
         $table = new TableSchema();
@@ -172,7 +181,11 @@ SQL;
      * Sequence name of table
      *
      * @param $tableName
+<<<<<<< HEAD
      * @internal param \yii\db\TableSchema $table->name the table schema
+=======
+     * @internal param \yii\db\TableSchema $table ->name the table schema
+>>>>>>> official/master
      * @return string whether the sequence exists
      */
     protected function getTableSequenceName($tableName)
@@ -263,7 +276,11 @@ SQL;
     protected function findConstraints($table)
     {
         $sql = <<<SQL
+<<<<<<< HEAD
 SELECT D.CONSTRAINT_NAME, D.CONSTRAINT_TYPE, C.COLUMN_NAME, C.POSITION, D.R_CONSTRAINT_NAME,
+=======
+SELECT D.CONSTRAINT_NAME, C.COLUMN_NAME, C.POSITION, D.R_CONSTRAINT_NAME,
+>>>>>>> official/master
         E.TABLE_NAME AS TABLE_REF, F.COLUMN_NAME AS COLUMN_REF,
         C.TABLE_NAME
 FROM ALL_CONS_COLUMNS C
@@ -272,6 +289,10 @@ LEFT JOIN ALL_CONSTRAINTS E ON E.OWNER = D.R_OWNER AND E.CONSTRAINT_NAME = D.R_C
 LEFT JOIN ALL_CONS_COLUMNS F ON F.OWNER = E.OWNER AND F.CONSTRAINT_NAME = E.CONSTRAINT_NAME AND F.POSITION = C.POSITION
 WHERE C.OWNER = :schemaName
    AND C.TABLE_NAME = :tableName
+<<<<<<< HEAD
+=======
+   AND D.CONSTRAINT_TYPE = 'R'
+>>>>>>> official/master
 ORDER BY D.CONSTRAINT_NAME, C.POSITION
 SQL;
         $command = $this->db->createCommand($sql, [
@@ -280,11 +301,14 @@ SQL;
         ]);
         $constraints = [];
         foreach ($command->queryAll() as $row) {
+<<<<<<< HEAD
             if ($row['CONSTRAINT_TYPE'] !== 'R') {
                 // this condition is not checked in SQL WHERE because of an Oracle Bug:
                 // see https://github.com/yiisoft/yii2/pull/8844
                 continue;
             }
+=======
+>>>>>>> official/master
             if ($this->db->slavePdo->getAttribute(\PDO::ATTR_CASE) === \PDO::CASE_LOWER) {
                 $row = array_change_key_case($row, CASE_UPPER);
             }
@@ -439,9 +463,15 @@ SQL;
      */
     protected function extractColumnSize($column, $dbType, $precision, $scale, $length)
     {
+<<<<<<< HEAD
         $column->size = trim($length) == '' ? null : (int) $length;
         $column->precision = trim($precision) == '' ? null : (int) $precision;
         $column->scale = trim($scale) == '' ? null : (int) $scale;
+=======
+        $column->size = trim($length) == '' ? null : (int)$length;
+        $column->precision = trim($precision) == '' ? null : (int)$precision;
+        $column->scale = trim($scale) == '' ? null : (int)$scale;
+>>>>>>> official/master
     }
 
     /**
@@ -457,7 +487,11 @@ SQL;
         if (!empty($returnColumns)) {
             $columnSchemas = $tableSchema->columns;
             $returning = [];
+<<<<<<< HEAD
             foreach ((array) $returnColumns as $name) {
+=======
+            foreach ((array)$returnColumns as $name) {
+>>>>>>> official/master
                 $phName = QueryBuilder::PARAM_PREFIX . (count($params) + count($returnParams));
                 $returnParams[$phName] = [
                     'column' => $name,
@@ -478,7 +512,11 @@ SQL;
         $command->prepare(false);
 
         foreach ($returnParams as $name => &$value) {
+<<<<<<< HEAD
             $command->pdoStatement->bindParam($name, $value['value'], $value['dataType'], $value['size']);
+=======
+            $command->pdoStatement->bindParam($name, $value['value'], $value['dataType'], $value['size'] );
+>>>>>>> official/master
         }
 
         if (!$command->execute()) {

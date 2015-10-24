@@ -38,8 +38,11 @@ use yii\di\Instance;
  */
 class Migration extends Component implements MigrationInterface
 {
+<<<<<<< HEAD
     use SchemaBuilderTrait;
 
+=======
+>>>>>>> official/master
     /**
      * @var Connection|array|string the DB connection object or the application component ID of the DB connection
      * that this migration should work with. Starting from version 2.0.2, this can also be a configuration array
@@ -62,12 +65,17 @@ class Migration extends Component implements MigrationInterface
 
     /**
      * Initializes the migration.
+<<<<<<< HEAD
      * This method will set [[db]] to be the 'db' application component, if it is `null`.
+=======
+     * This method will set [[db]] to be the 'db' application component, if it is null.
+>>>>>>> official/master
      */
     public function init()
     {
         parent::init();
         $this->db = Instance::ensure($this->db, Connection::className());
+<<<<<<< HEAD
         $this->db->getSchema()->refresh();
     }
 
@@ -78,6 +86,8 @@ class Migration extends Component implements MigrationInterface
     protected function getDb()
     {
         return $this->db;
+=======
+>>>>>>> official/master
     }
 
     /**
@@ -422,8 +432,12 @@ class Migration extends Component implements MigrationInterface
      * @param string $name the name of the index. The name will be properly quoted by the method.
      * @param string $table the table that the new index will be created for. The table name will be properly quoted by the method.
      * @param string|array $columns the column(s) that should be included in the index. If there are multiple columns, please separate them
+<<<<<<< HEAD
      * by commas or use an array. Each column name will be properly quoted by the method. Quoting will be skipped for column names that
      * include a left parenthesis "(".
+=======
+     * by commas or use an array. The column names will be properly quoted by the method.
+>>>>>>> official/master
      * @param boolean $unique whether to add UNIQUE constraint on the created index.
      */
     public function createIndex($name, $table, $columns, $unique = false)

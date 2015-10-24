@@ -83,7 +83,11 @@ class MyClass extends \yii\base\Object
 
 Yuqoridagi misolda oxirgi parametr obekt xususiyatlarini qiymatlovchi sozlashlar massivi ya'ni kalit-qiymat formatidagi juftlikdan iborat bo'lishi kerak. Siz sozlashlar qo'llanilganidan keyin initsializatsiya ishini amalga oshirish uchun oldindan [[yii\base\Object::init()|init()]] metod yaratib qo'yishingiz mumkin.
 
+<<<<<<< HEAD
 Ushbu kelishuvga asoslanib siz sozlash massivi yordamida yangi obektlarni yaratishingiz va sozlashingiz mumkin:
+=======
+Ushbu kelishuvga asoslanib siz sozlash massivi yordamida yangi obektlarni yaratish va sozlashingiz mumkin:
+>>>>>>> official/master
 
 ```php
 $object = Yii::createObject([

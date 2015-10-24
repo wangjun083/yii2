@@ -125,6 +125,7 @@ class UrlManagerTest extends TestCase
         $this->assertEquals('http://en.example.com/test/post/1/sample+post', $url);
         $url = $manager->createUrl(['post/index', 'page' => 1]);
         $this->assertEquals('/test/post/index?page=1', $url);
+<<<<<<< HEAD
 
         // create url with the same route but different params/defaults
         $manager = new UrlManager([
@@ -145,6 +146,8 @@ class UrlManagerTest extends TestCase
         $this->assertEquals('/test/page/services', $url);
         $url = $manager->createUrl(['frontend/page/view', 'slug' => 'index']);
         $this->assertEquals('/test/', $url);
+=======
+>>>>>>> official/master
     }
 
     /**

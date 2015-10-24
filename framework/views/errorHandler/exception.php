@@ -52,11 +52,16 @@ h1,h2,h3,p,img,ul li{
     font-family: Arial,sans-serif;
     color: #505050;
 }
+<<<<<<< HEAD
 /*corresponds to min-width of 860px for some elements (.header .footer .element ...)*/
 @media screen and (min-width: 960px) {
     html,body{
         overflow-x: hidden;
     }
+=======
+html,body{
+    overflow-x: hidden;
+>>>>>>> official/master
 }
 
 /* header */
@@ -155,7 +160,10 @@ h1,h2,h3,p,img,ul li{
 .call-stack ul li .element-wrap{
     cursor: pointer;
     padding: 15px 0;
+<<<<<<< HEAD
     background-color: #fdfdfd;
+=======
+>>>>>>> official/master
 }
 .call-stack ul li.application .element-wrap{
     background-color: #fafafa;
@@ -168,6 +176,10 @@ h1,h2,h3,p,img,ul li{
     margin: 0 auto;
     padding: 0 50px;
     position: relative;
+<<<<<<< HEAD
+=======
+    white-space: nowrap;
+>>>>>>> official/master
 }
 .call-stack ul li a{
     color: #505050;
@@ -186,19 +198,30 @@ h1,h2,h3,p,img,ul li{
     color: #505050;
 }
 .call-stack ul li .at{
+<<<<<<< HEAD
     float: right;
     display: inline-block;
     width: 7em;
     padding-left: 1em;
     text-align: left;
+=======
+    position: absolute;
+    right: 110px; /* 50px + 60px */
+>>>>>>> official/master
     color: #aaa;
 }
 .call-stack ul li.application .at{
     color: #505050;
 }
 .call-stack ul li .line{
+<<<<<<< HEAD
     display: inline-block;
     width: 3em;
+=======
+    position: absolute;
+    right: 50px;
+    width: 60px;
+>>>>>>> official/master
     text-align: right;
 }
 .call-stack ul li .code-wrap{
@@ -214,7 +237,11 @@ h1,h2,h3,p,img,ul li{
     position: absolute;
     width: 100%;
     z-index: 100;
+<<<<<<< HEAD
     margin-top: 0;
+=======
+    margin-top: -61px;
+>>>>>>> official/master
 }
 .call-stack ul li .hover-line{
     background: none;
@@ -238,7 +265,11 @@ h1,h2,h3,p,img,ul li{
     color: #aaa;
     line-height: 20px;
     font-size: 12px;
+<<<<<<< HEAD
     margin-top: 1px;
+=======
+    margin-top: -63px;
+>>>>>>> official/master
     font-family: Consolas, Courier New, monospace;
 }
 .call-stack ul li .code pre{
@@ -375,7 +406,11 @@ h1,h2,h3,p,img,ul li{
             <?= $handler->renderCallStackItem($exception->getFile(), $exception->getLine(), null, null, [], 1) ?>
             <?php for ($i = 0, $trace = $exception->getTrace(), $length = count($trace); $i < $length; ++$i): ?>
                 <?= $handler->renderCallStackItem(@$trace[$i]['file'] ?: null, @$trace[$i]['line'] ?: null,
+<<<<<<< HEAD
                     @$trace[$i]['class'] ?: null, @$trace[$i]['function'] ?: null, @$trace[$i]['args'] ?: [], $i + 2) ?>
+=======
+                    @$trace[$i]['class'] ?: null, @$trace[$i]['function'] ?: null, $trace[$i]['args'], $i + 2) ?>
+>>>>>>> official/master
             <?php endfor; ?>
         </ul>
     </div>
@@ -448,7 +483,11 @@ window.onload = function() {
         if (!Sizzle('pre', callStackItem)[0]) {
             return;
         }
+<<<<<<< HEAD
         var top = Sizzle('.code-wrap', callStackItem)[0].offsetTop - window.pageYOffset + 3,
+=======
+        var top = callStackItem.offsetTop - window.pageYOffset,
+>>>>>>> official/master
             lines = Sizzle('pre', callStackItem)[0].getClientRects(),
             lineNumbers = Sizzle('.lines-item', callStackItem),
             errorLine = Sizzle('.error-line', callStackItem)[0],
@@ -458,10 +497,17 @@ window.onload = function() {
                 continue;
             }
             lineNumbers[i].style.top = parseInt(lines[i].top - top) + 'px';
+<<<<<<< HEAD
             hoverLines[i].style.top = parseInt(lines[i].top - top) + 'px';
             hoverLines[i].style.height = parseInt(lines[i].bottom - lines[i].top + 6) + 'px';
             if (parseInt(callStackItem.getAttribute('data-line')) == i) {
                 errorLine.style.top = parseInt(lines[i].top - top) + 'px';
+=======
+            hoverLines[i].style.top = parseInt(lines[i].top - top - 3) + 'px';
+            hoverLines[i].style.height = parseInt(lines[i].bottom - lines[i].top + 6) + 'px';
+            if (parseInt(callStackItem.getAttribute('data-line')) == i) {
+                errorLine.style.top = parseInt(lines[i].top - top - 3) + 'px';
+>>>>>>> official/master
                 errorLine.style.height = parseInt(lines[i].bottom - lines[i].top + 6) + 'px';
             }
         }

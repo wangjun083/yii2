@@ -54,6 +54,7 @@ class PostgreSQLCommandTest extends CommandTest
         $command = $db->createCommand('SELECT COUNT(*) FROM "bool_values" WHERE bool_col = FALSE;');
         $this->assertEquals(1, $command->queryScalar());
     }
+<<<<<<< HEAD
 
     public function testLastInsertId()
     {
@@ -69,4 +70,6 @@ class PostgreSQLCommandTest extends CommandTest
         $command->execute();
         $this->assertEquals(3, $db->getSchema()->getLastInsertID('schema1.profile_id_seq'));
     }
+=======
+>>>>>>> official/master
 }

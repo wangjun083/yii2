@@ -80,7 +80,11 @@ use yii\caching\Cache;
  * You also can use shortcut for the above like the following:
  *
  * ~~~
+<<<<<<< HEAD
  * $connection->transaction(function () {
+=======
+ * $connection->transaction(function() {
+>>>>>>> official/master
  *     $order = new Order($customer);
  *     $order->save();
  *     $order->addItems($items);
@@ -90,7 +94,11 @@ use yii\caching\Cache;
  * If needed you can pass transaction isolation level as a second parameter:
  *
  * ~~~
+<<<<<<< HEAD
  * $connection->transaction(function (Connection $db) {
+=======
+ * $connection->transaction(function(Connection $db) {
+>>>>>>> official/master
  *     //return $db->...
  * }, Transaction::READ_UNCOMMITTED);
  * ~~~

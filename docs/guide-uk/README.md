@@ -5,7 +5,11 @@
 
 All Rights Reserved.
 
+<<<<<<< HEAD
 2014 (c) Yii Software LLC.
+=======
+2014 © Yii Software LLC.
+>>>>>>> official/master
 
 
 Введення
@@ -19,8 +23,13 @@ All Rights Reserved.
 ----------------
 
 * [Встановлення Yii](start-installation.md)
+<<<<<<< HEAD
 * [Виконання додатків](start-workflow.md)
 * [Говоримо "Привіт"](start-hello.md)
+=======
+* [Запуск додатка](start-workflow.md)
+* [Говоримо «Привіт»](start-hello.md)
+>>>>>>> official/master
 * [Робота з формами](start-forms.md)
 * [Робота з базами даних](start-databases.md)
 * [Генерація коду за допомогою Gii](start-gii.md)
@@ -35,7 +44,11 @@ All Rights Reserved.
 * [Додатки](structure-applications.md)
 * [Компоненти додатка](structure-application-components.md)
 * [Контролери](structure-controllers.md)
+<<<<<<< HEAD
 * [Моделі](structure-models.md)
+=======
+* **TBD** [Моделі](structure-models.md)
+>>>>>>> official/master
 * **TBD** [Представлення](structure-views.md)
 * **TBD** [Модулі](structure-modules.md)
 * **TBD** [Фільтри](structure-filters.md)
@@ -48,13 +61,21 @@ All Rights Reserved.
 ---------------
 
 * **TBD** [Огляд](runtime-overview.md)
+<<<<<<< HEAD
 * **TBD** [Початкове завантаження](runtime-bootstrapping.md)
+=======
+* **TBD** [Bootstrapping](runtime-bootstrapping.md)
+>>>>>>> official/master
 * **TBD** [Маршрутизація та створення URL](runtime-routing.md)
 * **TBD** [Запити](runtime-requests.md)
 * **TBD** [Відповіді](runtime-responses.md)
 * **TBD** [Сесії та кукі](runtime-sessions-cookies.md)
 * **TBD** [Обробка помилок](runtime-handling-errors.md)
+<<<<<<< HEAD
 * **TBD** [Журналювання](runtime-logging.md)
+=======
+* **TBD** [Логування](runtime-logging.md)
+>>>>>>> official/master
 
 
 Основні поняття
@@ -67,17 +88,28 @@ All Rights Reserved.
 * **TBD** [Конфігурації](concept-configurations.md)
 * [Псевдоніми](concept-aliases.md)
 * [Автозавантаження класів](concept-autoloading.md)
+<<<<<<< HEAD
 * **TBD** [Локатор служб](concept-service-locator.md)
+=======
+* **TBD** [Service Locator](concept-service-locator.md)
+>>>>>>> official/master
 * **TBD** [Dependency Injection Container](concept-di-container.md)
 
 
 Робота з базами даних
 ---------------------
 
+<<<<<<< HEAD
 * **TBD** [Обʼєкти доступу до даних (DAO)](db-dao.md): Зʼєднання з базою даних, прості запити, транзакції і робота зі схемою
 * **TBD** [Конструктор запитів](db-query-builder.md): Запити до бази даних через простий шар абстракції
 * **TBD** [Active Record](db-active-record.md): Отримання обʼєктів AR, робота з ними та визначення звʼязків
 * **TBD** [Міграції](db-migrations.md): Контроль версій схеми даних при роботі в команді
+=======
+* **TBD** [Обʼєкти доступу до даних (DAO)](db-dao.md) - Зʼєднання з базою даних, прості запити, транзакції і робота зі схемою
+* **TBD** [Конструктор запитів](db-query-builder.md) - Запити до бази даних через простий шар абстракції
+* **TBD** [Active Record](db-active-record.md) - Отримання обʼєктів AR, робота з ними та визначення звʼязків
+* **TBD** [Міграції](db-migrations.md) - Контроль версій схеми даних при роботі в команді
+>>>>>>> official/master
 * [Sphinx](https://github.com/yiisoft/yii2-sphinx/blob/master/docs/guide/README.md)
 * [Redis](https://github.com/yiisoft/yii2-redis/blob/master/docs/guide/README.md)
 * [MongoDB](https://github.com/yiisoft/yii2-mongodb/blob/master/docs/guide/README.md)
@@ -88,7 +120,11 @@ All Rights Reserved.
 -------------------------------
 
 * **TBD** [Створення форм](input-forms.md)
+<<<<<<< HEAD
 * **TBD** [Перевірка вводу](input-validation.md)
+=======
+* **TBD** [Валідація вводу](input-validation.md)
+>>>>>>> official/master
 * **TBD** [Завантаження файлів](input-file-uploading.md)
 * **TBD** [Збір табличного вводу](input-tabular-input.md)
 * **TBD** [Робота з декількома моделями](input-multiple-models.md)
@@ -98,7 +134,11 @@ All Rights Reserved.
 ------------------
 
 * **TBD** [Форматування даних](output-formatting.md)
+<<<<<<< HEAD
 * **TBD** [Розділення на сторінки](output-pagination.md)
+=======
+* **TBD** [Посторінкове розбиття](output-pagination.md)
+>>>>>>> official/master
 * **TBD** [Сортування](output-sorting.md)
 * **TBD** [Провайдери даних](output-data-providers.md)
 * **TBD** [Віджети даних](output-data-widgets.md)
@@ -126,7 +166,11 @@ All Rights Reserved.
 * **TBD** [HTTP кешування](caching-http.md)
 
 
+<<<<<<< HEAD
 Веб-сервіси RESTful
+=======
+RESTful веб-сервіси
+>>>>>>> official/master
 -------------------
 
 * **TBD** [Швидкий старт](rest-quick-start.md)
@@ -135,7 +179,11 @@ All Rights Reserved.
 * **TBD** [Маршрутизація](rest-routing.md)
 * **TBD** [Форматування відповіді](rest-response-formatting.md)
 * **TBD** [Аутентифікація](rest-authentication.md)
+<<<<<<< HEAD
 * [Обмеження частоти запитів](rest-rate-limiting.md)
+=======
+* **TBD** [Обмеження частоти запитів](rest-rate-limiting.md)
+>>>>>>> official/master
 * **TBD** [Версіонування](rest-versioning.md)
 * **TBD** [Обробка помилок](rest-error-handling.md)
 
@@ -143,9 +191,15 @@ All Rights Reserved.
 Інструменти розробника
 ----------------------
 
+<<<<<<< HEAD
 * [Панель налагодження та налагоджувач](https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-uk/README.md)
 * [Генерація коду за допомогою Gii](https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-uk/README.md)
 * **TBD** [Генерація документації API](https://github.com/yiisoft/yii2-apidoc)
+=======
+* **TBD** [Відладочна панель та відладчик](https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-uk/README.md)
+* **TBD** [Генерація коду з Gii](https://github.com/yiisoft/yii2-gii/blob/master/docs/guide-uk/README.md)
+* [Генератор документації API (en)](https://github.com/yiisoft/yii2-apidoc)
+>>>>>>> official/master
 
 
 Тестування
@@ -162,6 +216,7 @@ All Rights Reserved.
 Спеціальні теми
 ---------------
 
+<<<<<<< HEAD
 * **TBD** [Розширений шаблон проекту](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-uk/README.md)
 * **TBD** [Створення додатка з нуля](tutorial-start-from-scratch.md)
 * [Консольні додатки](tutorial-console.md)
@@ -172,6 +227,18 @@ All Rights Reserved.
 * **TBD** [Робота на віртуальному хостингу](tutorial-shared-hosting.md)
 * **TBD** [Шаблонізатори](tutorial-template-engines.md)
 * [Робота із стороннім кодом](tutorial-yii-integration.md)
+=======
+* **TBD** [Розширений шаблон додатка](https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-uk/README.md)
+* **TBD** [Створення додатка з нуля](tutorial-start-from-scratch.md)
+* **TBD** [Консольні команди](tutorial-console.md)
+* **TBD** [Основні валідатори](tutorial-core-validators.md)
+* **TBD** [Інтернаціонализація](tutorial-i18n.md)
+* **TBD** [Робота з поштою](tutorial-mailing.md)
+* **TBD** [Вдосконалення продуктивності](tutorial-performance-tuning.md)
+* **TBD** [Робота на shared хостингу](tutorial-shared-hosting.md)
+* **TBD** [Шаблонізатори](tutorial-template-engines.md)
+* **TBD** [Робота із стороннім кодом](tutorial-yii-integration.md)
+>>>>>>> official/master
 
 
 Віджети
@@ -192,7 +259,14 @@ All Rights Reserved.
 Хелпери
 -------
 
+<<<<<<< HEAD
 * **TBD** [Огляд хелперів](helper-overview.md)
 * **TBD** [ArrayHelper](helper-array.md)
 * **TBD** [Html](helper-html.md)
 * **TBD** [Url](helper-url.md)
+=======
+* [Огляд](helper-overview.md)
+* [ArrayHelper](helper-array.md)
+* [Html](helper-html.md)
+* [Url](helper-url.md)
+>>>>>>> official/master

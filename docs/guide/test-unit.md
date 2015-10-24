@@ -11,7 +11,11 @@ Unit tests are usually developed by people who write the classes being tested.
 Unit testing in Yii is built on top of PHPUnit and, optionally, Codeception so it's recommended to go through their docs:
 
 - [PHPUnit docs starting from chapter 2](http://phpunit.de/manual/current/en/writing-tests-for-phpunit.html).
+<<<<<<< HEAD
 - [Codeception Unit Tests](http://codeception.com/docs/05-UnitTests).
+=======
+- [Codeception Unit Tests](http://codeception.com/docs/06-UnitTests).
+>>>>>>> official/master
 
 Running basic and advanced template unit tests
 ----------------------------------------------
@@ -22,4 +26,8 @@ Framework unit tests
 --------------------
 
 If you want to run unit tests for Yii framework itself follow
+<<<<<<< HEAD
 "[Getting started with Yii 2 development](https://github.com/yiisoft/yii2/blob/master/docs/internals/getting-started.md)".
+=======
+"[Getting started with Yii2 development](https://github.com/yiisoft/yii2/blob/master/docs/internals/getting-started.md)".
+>>>>>>> official/master

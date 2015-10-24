@@ -83,7 +83,11 @@ class UniqueValidator extends Validator
         if (is_array($targetAttribute)) {
             $params = [];
             foreach ($targetAttribute as $k => $v) {
+<<<<<<< HEAD
                 $params[$v] = is_int($k) ? $model->$v : $model->$k;
+=======
+                $params[$v] = is_integer($k) ? $model->$v : $model->$k;
+>>>>>>> official/master
             }
         } else {
             $params = [$targetAttribute => $model->$attribute];

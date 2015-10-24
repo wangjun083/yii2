@@ -75,8 +75,12 @@ class ErrorAction extends Action
     public function run()
     {
         if (($exception = Yii::$app->getErrorHandler()->exception) === null) {
+<<<<<<< HEAD
             // action has been invoked not from error handler, but by direct route, so we display '404 Not Found'
             $exception = new HttpException(404, Yii::t('yii', 'Page not found.'));
+=======
+            return '';
+>>>>>>> official/master
         }
 
         if ($exception instanceof HttpException) {

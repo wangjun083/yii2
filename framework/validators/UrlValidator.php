@@ -124,7 +124,11 @@ class UrlValidator extends Validator
             'message' => Yii::$app->getI18n()->format($this->message, [
                 'attribute' => $model->getAttributeLabel($attribute),
             ], Yii::$app->language),
+<<<<<<< HEAD
             'enableIDN' => (bool) $this->enableIDN,
+=======
+            'enableIDN' => (boolean) $this->enableIDN,
+>>>>>>> official/master
         ];
         if ($this->skipOnEmpty) {
             $options['skipOnEmpty'] = 1;

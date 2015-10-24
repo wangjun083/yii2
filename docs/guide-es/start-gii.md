@@ -24,9 +24,13 @@ $config = [ ... ];
 
 if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'gii';
+<<<<<<< HEAD
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
     ];
+=======
+    $config['modules']['gii'] = 'yii\gii\Module';
+>>>>>>> official/master
 }
 ```
 

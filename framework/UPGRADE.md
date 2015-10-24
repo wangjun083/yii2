@@ -5,6 +5,7 @@ Upgrading Instructions for Yii Framework v2
 
 The following upgrading instructions are cumulative. That is,
 if you want to upgrade from version A to version C and there is
+<<<<<<< HEAD
 version B between A and C, you need to follow the instructions
 for both A and B.
 
@@ -23,6 +24,11 @@ Upgrade from Yii 2.0.4
 
 Upgrading from 2.0.4 to 2.0.5 does not require any changes.
 
+=======
+version B between A and C, you need to following the instructions
+for both A and B.
+
+>>>>>>> official/master
 Upgrade from Yii 2.0.3
 ----------------------
 

@@ -15,7 +15,11 @@
 Запускаем Gii <span id="starting-gii"></span>
 ------------
 
+<<<<<<< HEAD
 [Gii](tool-gii.md) представлен в Yii как [модуль](structure-modules.md). Вы можете активировать Gii,
+=======
+[Gii](tool-gii.md) предствален в Yii как [модуль](structure-modules.md). Вы можете активировать Gii,
+>>>>>>> official/master
 настроив его в свойстве [[yii\base\Application::modules|modules]]. В зависимости от того, каким образом вы создали приложение, вы можете удостовериться в наличии следующего кода в конфигурационном файле `config/web.php`,
 
 ```php
@@ -23,9 +27,13 @@ $config = [ ... ];
 
 if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'gii';
+<<<<<<< HEAD
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
     ];
+=======
+    $config['modules']['gii'] = 'yii\gii\Module';
+>>>>>>> official/master
 }
 ```
 

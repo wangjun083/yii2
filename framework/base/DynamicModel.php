@@ -66,7 +66,11 @@ class DynamicModel extends Model
     public function __construct(array $attributes = [], $config = [])
     {
         foreach ($attributes as $name => $value) {
+<<<<<<< HEAD
             if (is_int($name)) {
+=======
+            if (is_integer($name)) {
+>>>>>>> official/master
                 $this->_attributes[$value] = null;
             } else {
                 $this->_attributes[$name] = $value;
@@ -150,7 +154,11 @@ class DynamicModel extends Model
      * @param mixed $validator the validator for the rule.This can be a built-in validator name,
      * a method name of the model class, an anonymous function, or a validator class name.
      * @param array $options the options (name-value pairs) to be applied to the validator
+<<<<<<< HEAD
      * @return $this the model itself
+=======
+     * @return static the model itself
+>>>>>>> official/master
      */
     public function addRule($attributes, $validator, $options = [])
     {

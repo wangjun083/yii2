@@ -22,8 +22,11 @@ class Customer extends ActiveRecord
 
     public $status2;
 
+<<<<<<< HEAD
     public $sumTotal;
 
+=======
+>>>>>>> official/master
     public static function tableName()
     {
         return 'customer';
@@ -34,11 +37,14 @@ class Customer extends ActiveRecord
         return $this->hasOne(Profile::className(), ['id' => 'profile_id']);
     }
 
+<<<<<<< HEAD
     public function getOrdersPlain()
     {
         return $this->hasMany(Order::className(), ['customer_id' => 'id']);
     }
 
+=======
+>>>>>>> official/master
     public function getOrders()
     {
         return $this->hasMany(Order::className(), ['customer_id' => 'id'])->orderBy('id');

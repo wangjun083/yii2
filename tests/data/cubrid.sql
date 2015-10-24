@@ -17,7 +17,10 @@ DROP TABLE IF EXISTS "type";
 DROP TABLE IF EXISTS "constraints";
 DROP TABLE IF EXISTS "animal";
 DROP TABLE IF EXISTS "default_pk";
+<<<<<<< HEAD
 DROP TABLE IF EXISTS "document";
+=======
+>>>>>>> official/master
 DROP VIEW IF EXISTS "animal_view";
 
 CREATE TABLE "constraints"
@@ -140,6 +143,7 @@ CREATE TABLE "default_pk" (
   PRIMARY KEY ("id")
 );
 
+<<<<<<< HEAD
 CREATE TABLE "document" (
   "id" int(11) NOT NULL AUTO_INCREMENT,
   "title" varchar(255) NOT NULL,
@@ -148,6 +152,8 @@ CREATE TABLE "document" (
   PRIMARY KEY ("id")
 );
 
+=======
+>>>>>>> official/master
 CREATE VIEW "animal_view" AS SELECT * FROM "animal";
 
 INSERT INTO "animal" ("type") VALUES ('yiiunit\data\ar\Cat');
@@ -190,6 +196,7 @@ INSERT INTO "order_item_with_null_fk" (order_id, item_id, quantity, subtotal) VA
 INSERT INTO "order_item_with_null_fk" (order_id, item_id, quantity, subtotal) VALUES (2, 5, 1, 15.0);
 INSERT INTO "order_item_with_null_fk" (order_id, item_id, quantity, subtotal) VALUES (2, 3, 1, 8.0);
 INSERT INTO "order_item_with_null_fk" (order_id, item_id, quantity, subtotal) VALUES (3, 2, 1, 40.0);
+<<<<<<< HEAD
 
 INSERT INTO "document" (title, content, version) VALUES ('Yii 2.0 guide', 'This is Yii 2.0 guide', 0);
 
@@ -204,3 +211,5 @@ CREATE TABLE `bit_values` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `bit_values` (id, val) VALUES (1, b'0'), (2, b'1');
+=======
+>>>>>>> official/master

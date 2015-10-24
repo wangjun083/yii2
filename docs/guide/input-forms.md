@@ -10,7 +10,11 @@ to validate its input on the server side (Check the [Validating Input](input-val
 When creating model-based forms, the first step is to define the model itself. The model can be either based upon
 an [Active Record](db-active-record.md) class, representing some data from the database, or a generic Model class
 (extending from [[yii\base\Model]]) to capture arbitrary input, for example a login form.
+<<<<<<< HEAD
 In the following example, we show how a generic model can be used for a login form:
+=======
+In the following example we show, how a generic Model is used for a login form:
+>>>>>>> official/master
 
 ```php
 <?php
@@ -74,7 +78,11 @@ To customize the output, you can chain additional methods of [[yii\widgets\Activ
 ```
 
 This will create all the `<label>`, `<input>` and other tags according to the [[yii\widgets\ActiveField::$template|template]] defined by the form field.
+<<<<<<< HEAD
 The name of the input field is determined automatically from the model's [[yii\base\Model::formName()|form name]] and the attribute name.
+=======
+The name of the input field is determined automatically from the model's [[yii\base\Model::formName()|form name]] and the attribute's name.
+>>>>>>> official/master
 For example, the name for the input field for the `username` attribute in the above example will be `LoginForm[username]`. This naming rule will result in an array
 of all attributes for the login form to be available in `$_POST['LoginForm']` on the server side.
 
@@ -90,6 +98,7 @@ echo $form->field($model, 'uploadFile[]')->fileInput(['multiple'=>'multiple']);
 echo $form->field($model, 'items[]')->checkboxList(['a' => 'Item A', 'b' => 'Item B', 'c' => 'Item C']);
 ```
 
+<<<<<<< HEAD
 Be careful when naming form elements such as submit buttons. According to the [jQuery documentation](https://api.jquery.com/submit/) there
 are some reserved names that can cause conflicts:
 
@@ -97,16 +106,26 @@ are some reserved names that can cause conflicts:
 > such as `submit`, `length`, or `method`. Name conflicts can cause confusing failures.
 > For a complete list of rules and to check your markup for these problems, see [DOMLint](http://kangax.github.io/domlint/). 
 
+=======
+>>>>>>> official/master
 Additional HTML tags can be added to the form using plain HTML or using the methods from the [[yii\helpers\Html|Html]]-helper
 class like it is done in the above example with [[yii\helpers\Html::submitButton()|Html::submitButton()]].
 
 
 > Tip: If you are using Twitter Bootstrap CSS in your application you may want to use
+<<<<<<< HEAD
 > [[yii\bootstrap\ActiveForm]] instead of [[yii\widgets\ActiveForm]]. The former extends from the latter and
 > uses Bootstrap-specific styles when generating form input fields.
 
 
 > Tip: In order to style required fields with asterisks, you can use the following CSS:
+=======
+> [[yii\bootstrap\ActiveForm]] instead of [[yii\widgets\ActiveForm]], which is an extension of the
+> ActiveForm class that adds some additional styling that works well with the bootstrap CSS framework.
+
+
+> Tip: in order to style required fields with asterisk you can use the following CSS:
+>>>>>>> official/master
 >
 > ```css
 > div.required label:after {
@@ -115,6 +134,7 @@ class like it is done in the above example with [[yii\helpers\Html::submitButton
 > }
 > ```
 
+<<<<<<< HEAD
 Creating Dropdown list <span id="creating-activeform-dropdownlist"></span>
 ---------------------
 
@@ -140,11 +160,18 @@ The value of your model field will be automatically pre-selected.
 Further Reading <span id="further-reading"></span>
 ---------------
 
+=======
+>>>>>>> official/master
 The next section [Validating Input](input-validation.md) handles the validation of the submitted form data on the server
 side as well as ajax- and client side validation.
 
 To read about more complex usage of forms, you may want to check out the following sections:
 
+<<<<<<< HEAD
 - [Collecting Tabular Input](input-tabular-input.md) for collecting data for multiple models of the same kind.
 - [Getting Data for Multiple Models](input-multiple-models.md) for handling multiple different models in the same form.
+=======
+- [Collecting tabular input](input-tabular-input.md) for collecting data for multiple models of the same kind.
+- [Complex Forms with Multiple Models](input-multiple-models.md) for handling multiple different models in the same form.
+>>>>>>> official/master
 - [Uploading Files](input-file-upload.md) on how to use forms for uploading files.

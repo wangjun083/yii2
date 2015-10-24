@@ -24,7 +24,11 @@ use yii\mail\MailerInterface;
  *          'targets' => [
  *              [
  *                  'class' => 'yii\log\EmailTarget',
+<<<<<<< HEAD
  *                  'mailer' => 'mailer',
+=======
+ *                  'mailer' =>'mailer',
+>>>>>>> official/master
  *                  'levels' => ['error', 'warning'],
  *                  'message' => [
  *                      'from' => ['log@example.com'],

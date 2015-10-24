@@ -325,8 +325,13 @@ class HotelController extends Controller
 }
 ```
 
+<<<<<<< HEAD
 あなたがブラウザからこのコントローラにアクセスすると、 `BookingInterface` をインスタンス化できない、という不平を言う
 エラーが表示されるでしょう。これは、この依存関係に対処する方法を DI コンテナに教える必要があるからです:
+=======
+あなたがブラウザからこのコントローラにアクセスすると、 `BookingInterface` をインスタンス化できませんという
+不具合報告エラーが表示されるでしょう。これは、この依存関係に対処する方法を DI コンテナに教える必要があるからです:
+>>>>>>> official/master
 
 ```php
 \Yii::$container->set('app\components\BookingInterface', 'app\components\BookingService');

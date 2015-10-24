@@ -1,6 +1,7 @@
 Yii Framework 2 Change Log
 ==========================
 
+<<<<<<< HEAD
 2.0.7 under development
 -----------------------
 
@@ -79,12 +80,18 @@ Yii Framework 2 Change Log
 - Chg #8556: Extracted `yii\web\User::getAuthManager()` method (samdark)
 - Chg #9181: `yii\helpers\BaseStringHelper::truncateHtml()` is now using `runtime` directory for `HTMLPurifier` cache (webdevsega)
 
+=======
+>>>>>>> official/master
 
 2.0.5 July 11, 2015
 -------------------
 
+<<<<<<< HEAD
 - Bug #9070 (CVE-2015-5467): Fixed `ViewAction::resolveViewName()` not to accept `/../` and `/./` (thejahweh, samdark)
 
+=======
+Bug #9070 (CVE-2015-5467): Fixed `ViewAction::resolveViewName()` not to accept `/../` and `/./` (thejahweh, samdark)
+>>>>>>> official/master
 
 2.0.4 May 10, 2015
 ------------------

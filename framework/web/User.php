@@ -423,7 +423,11 @@ class User extends Component
             $this->setReturnUrl($request->getUrl());
         }
         if ($this->loginUrl !== null) {
+<<<<<<< HEAD
             $loginUrl = (array) $this->loginUrl;
+=======
+            $loginUrl = (array)$this->loginUrl;
+>>>>>>> official/master
             if ($loginUrl[0] !== Yii::$app->requestedRoute) {
                 return Yii::$app->getResponse()->redirect($this->loginUrl);
             }
@@ -655,16 +659,25 @@ class User extends Component
      */
     public function can($permissionName, $params = [], $allowCaching = true)
     {
+<<<<<<< HEAD
         if ($allowCaching && empty($params) && isset($this->_access[$permissionName])) {
             return $this->_access[$permissionName];
         }
         $access = $this->getAuthManager()->checkAccess($this->getId(), $permissionName, $params);
+=======
+        $auth = Yii::$app->getAuthManager();
+        if ($allowCaching && empty($params) && isset($this->_access[$permissionName])) {
+            return $this->_access[$permissionName];
+        }
+        $access = $auth->checkAccess($this->getId(), $permissionName, $params);
+>>>>>>> official/master
         if ($allowCaching && empty($params)) {
             $this->_access[$permissionName] = $access;
         }
 
         return $access;
     }
+<<<<<<< HEAD
 
     /**
      * Returns auth manager associated with the user component.
@@ -678,4 +691,6 @@ class User extends Component
     {
         return Yii::$app->getAuthManager();
     }
+=======
+>>>>>>> official/master
 }

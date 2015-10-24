@@ -3,7 +3,10 @@
 namespace yiiunit\framework\helpers;
 
 use Yii;
+<<<<<<< HEAD
 use yii\base\Model;
+=======
+>>>>>>> official/master
 use yii\helpers\Html;
 use yiiunit\TestCase;
 
@@ -64,15 +67,25 @@ class HtmlTest extends TestCase
     public function testStyle()
     {
         $content = 'a <>';
+<<<<<<< HEAD
         $this->assertEquals("<style>{$content}</style>", Html::style($content));
         $this->assertEquals("<style type=\"text/less\">{$content}</style>", Html::style($content, ['type' => 'text/less']));
+=======
+        $this->assertEquals("<style>$content</style>", Html::style($content));
+        $this->assertEquals("<style type=\"text/less\">$content</style>", Html::style($content, ['type' => 'text/less']));
+>>>>>>> official/master
     }
 
     public function testScript()
     {
         $content = 'a <>';
+<<<<<<< HEAD
         $this->assertEquals("<script>{$content}</script>", Html::script($content));
         $this->assertEquals("<script type=\"text/js\">{$content}</script>", Html::script($content, ['type' => 'text/js']));
+=======
+        $this->assertEquals("<script>$content</script>", Html::script($content));
+        $this->assertEquals("<script type=\"text/js\">$content</script>", Html::script($content, ['type' => 'text/js']));
+>>>>>>> official/master
     }
 
     public function testCssFile()
@@ -80,7 +93,10 @@ class HtmlTest extends TestCase
         $this->assertEquals('<link href="http://example.com" rel="stylesheet">', Html::cssFile('http://example.com'));
         $this->assertEquals('<link href="/test" rel="stylesheet">', Html::cssFile(''));
         $this->assertEquals("<!--[if IE 9]>\n" . '<link href="http://example.com" rel="stylesheet">' . "\n<![endif]-->", Html::cssFile('http://example.com', ['condition' => 'IE 9']));
+<<<<<<< HEAD
         $this->assertEquals("<!--[if (gte IE 9)|(!IE)]><!-->\n" . '<link href="http://example.com" rel="stylesheet">' . "\n<!--<![endif]-->", Html::cssFile('http://example.com', ['condition' => '(gte IE 9)|(!IE)']));
+=======
+>>>>>>> official/master
     }
 
     public function testJsFile()
@@ -88,7 +104,10 @@ class HtmlTest extends TestCase
         $this->assertEquals('<script src="http://example.com"></script>', Html::jsFile('http://example.com'));
         $this->assertEquals('<script src="/test"></script>', Html::jsFile(''));
         $this->assertEquals("<!--[if IE 9]>\n" . '<script src="http://example.com"></script>' . "\n<![endif]-->", Html::jsFile('http://example.com', ['condition' => 'IE 9']));
+<<<<<<< HEAD
         $this->assertEquals("<!--[if (gte IE 9)|(!IE)]><!-->\n" . '<script src="http://example.com"></script>' . "\n<!--<![endif]-->", Html::jsFile('http://example.com', ['condition' => '(gte IE 9)|(!IE)']));
+=======
+>>>>>>> official/master
     }
 
     public function testBeginForm()
@@ -538,10 +557,13 @@ EOD;
         $this->assertEquals('', Html::renderTagAttributes([]));
         $this->assertEquals(' name="test" value="1&lt;&gt;"', Html::renderTagAttributes(['name' => 'test', 'empty' => null, 'value' => '1<>']));
         $this->assertEquals(' checked disabled', Html::renderTagAttributes(['checked' => true, 'disabled' => true, 'hidden' => false]));
+<<<<<<< HEAD
         $this->assertEquals(' class="first second"', Html::renderTagAttributes(['class' => ['first', 'second']]));
         $this->assertEquals('', Html::renderTagAttributes(['class' => []]));
         $this->assertEquals(' style="width: 100px; height: 200px;"', Html::renderTagAttributes(['style' => ['width' => '100px', 'height' => '200px']]));
         $this->assertEquals('', Html::renderTagAttributes(['style' => []]));
+=======
+>>>>>>> official/master
     }
 
     public function testAddCssClass()
@@ -561,6 +583,7 @@ EOD;
         $this->assertEquals(['class' => 'test test2 test3'], $options);
         Html::addCssClass($options, 'test2');
         $this->assertEquals(['class' => 'test test2 test3'], $options);
+<<<<<<< HEAD
 
         $options = [
             'class' => ['test']
@@ -593,6 +616,8 @@ EOD;
         $this->assertEquals(['persistent' => 'test1'], $options['class']);
         Html::addCssClass($options, ['additional' => 'test2']);
         $this->assertEquals(['persistent' => 'test1', 'additional' => 'test2'], $options['class']);
+=======
+>>>>>>> official/master
     }
 
     public function testRemoveCssClass()
@@ -606,6 +631,7 @@ EOD;
         $this->assertEquals(['class' => 'test3'], $options);
         Html::removeCssClass($options, 'test3');
         $this->assertEquals([], $options);
+<<<<<<< HEAD
 
         $options = ['class' => ['test', 'test2', 'test3']];
         Html::removeCssClass($options, 'test2');
@@ -619,6 +645,8 @@ EOD;
         ];
         Html::removeCssClass($options, ['test1', 'test2']);
         $this->assertEquals(['class' => 'test'], $options);
+=======
+>>>>>>> official/master
     }
 
     public function testCssStyleFromArray()
@@ -660,6 +688,7 @@ EOD;
         $options = [];
         Html::addCssStyle($options, 'width: 110px; color: red;', false);
         $this->assertEquals('width: 110px; color: red;', $options['style']);
+<<<<<<< HEAD
 
         $options = [
             'style' => [
@@ -668,6 +697,8 @@ EOD;
         ];
         Html::addCssStyle($options, ['color' => 'red'], false);
         $this->assertEquals('width: 100px; color: red;', $options['style']);
+=======
+>>>>>>> official/master
     }
 
     public function testRemoveCssStyle()
@@ -683,6 +714,7 @@ EOD;
         $options = [];
         Html::removeCssStyle($options, ['color', 'background']);
         $this->assertTrue(!array_key_exists('style', $options));
+<<<<<<< HEAD
         $options = [
             'style' => [
                 'color' => 'red',
@@ -691,6 +723,8 @@ EOD;
         ];
         Html::removeCssStyle($options, ['color']);
         $this->assertEquals('width: 100px;', $options['style']);
+=======
+>>>>>>> official/master
     }
 
     public function testBooleanAttributes()
@@ -723,6 +757,7 @@ EOD;
             'value  2' => 'text  2',
         ];
     }
+<<<<<<< HEAD
 
     /**
      * Data provider for [[testActiveTextInput()]]
@@ -874,4 +909,6 @@ class HtmlTestModel extends Model
             ['description', 'string', 'max' => 500],
         ];
     }
+=======
+>>>>>>> official/master
 }

@@ -215,7 +215,11 @@ class Formatter extends Component
      */
     public $currencyCode;
     /**
+<<<<<<< HEAD
      * @var integer the base at which a kilobyte is calculated (1000 or 1024 bytes per kilobyte), used by [[asSize]] and [[asShortSize]].
+=======
+     * @var array the base at which a kilobyte is calculated (1000 or 1024 bytes per kilobyte), used by [[asSize]] and [[asShortSize]].
+>>>>>>> official/master
      * Defaults to 1024.
      */
     public $sizeFormatBase = 1024;
@@ -641,9 +645,15 @@ class Formatter extends Component
         }
         try {
             if (is_numeric($value)) { // process as unix timestamp, which is always in UTC
+<<<<<<< HEAD
                 $timestamp = new DateTime();
                 $timestamp->setTimezone(new DateTimeZone('UTC'));
                 $timestamp->setTimestamp($value);
+=======
+                if (($timestamp = DateTime::createFromFormat('U', $value, new DateTimeZone('UTC'))) === false) {
+                    throw new InvalidParamException("Failed to parse '$value' as a UNIX timestamp.");
+                }
+>>>>>>> official/master
                 return $checkTimeInfo ? [$timestamp, true] : $timestamp;
             } elseif (($timestamp = DateTime::createFromFormat('Y-m-d', $value, new DateTimeZone($this->defaultTimeZone))) !== false) { // try Y-m-d format (support invalid dates like 2012-13-01)
                 return $checkTimeInfo ? [$timestamp, false] : $timestamp;
@@ -658,7 +668,11 @@ class Formatter extends Component
             } else {
                 return new DateTime($value, new DateTimeZone($this->defaultTimeZone));
             }
+<<<<<<< HEAD
         } catch (\Exception $e) {
+=======
+        } catch(\Exception $e) {
+>>>>>>> official/master
             throw new InvalidParamException("'$value' is not a valid date time value: " . $e->getMessage()
                 . "\n" . print_r(DateTime::getLastErrors(), true), $e->getCode(), $e);
         }
@@ -1079,7 +1093,11 @@ class Formatter extends Component
      * @param array $options optional configuration for the number formatter. This parameter will be merged with [[numberFormatterOptions]].
      * @param array $textOptions optional configuration for the number formatter. This parameter will be merged with [[numberFormatterTextOptions]].
      * @return string the formatted result.
+<<<<<<< HEAD
      * @throws InvalidParamException if the input value is not numeric or the formatting failed.
+=======
+     * @throws InvalidParamException if the input value is not numeric  or the formatting failed.
+>>>>>>> official/master
      * @see sizeFormat
      * @see asShortSize
      */
@@ -1198,7 +1216,11 @@ class Formatter extends Component
      *
      * @param integer $style the type of the number formatter.
      * Values: NumberFormatter::DECIMAL, ::CURRENCY, ::PERCENT, ::SCIENTIFIC, ::SPELLOUT, ::ORDINAL
+<<<<<<< HEAD
      * ::DURATION, ::PATTERN_RULEBASED, ::DEFAULT_STYLE, ::IGNORE
+=======
+     *          ::DURATION, ::PATTERN_RULEBASED, ::DEFAULT_STYLE, ::IGNORE
+>>>>>>> official/master
      * @param integer $decimals the number of digits after the decimal point.
      * @param array $options optional configuration for the number formatter. This parameter will be merged with [[numberFormatterOptions]].
      * @param array $textOptions optional configuration for the number formatter. This parameter will be merged with [[numberFormatterTextOptions]].
@@ -1208,21 +1230,40 @@ class Formatter extends Component
     {
         $formatter = new NumberFormatter($this->locale, $style);
 
+<<<<<<< HEAD
         // set text attributes
+=======
+        if ($this->decimalSeparator !== null) {
+            $formatter->setSymbol(NumberFormatter::DECIMAL_SEPARATOR_SYMBOL, $this->decimalSeparator);
+        }
+        if ($this->thousandSeparator !== null) {
+            $formatter->setSymbol(NumberFormatter::GROUPING_SEPARATOR_SYMBOL, $this->thousandSeparator);
+        }
+
+        if ($decimals !== null) {
+            $formatter->setAttribute(NumberFormatter::MAX_FRACTION_DIGITS, $decimals);
+            $formatter->setAttribute(NumberFormatter::MIN_FRACTION_DIGITS, $decimals);
+        }
+
+>>>>>>> official/master
         foreach ($this->numberFormatterTextOptions as $name => $attribute) {
             $formatter->setTextAttribute($name, $attribute);
         }
         foreach ($textOptions as $name => $attribute) {
             $formatter->setTextAttribute($name, $attribute);
         }
+<<<<<<< HEAD
 
         // set attributes
+=======
+>>>>>>> official/master
         foreach ($this->numberFormatterOptions as $name => $value) {
             $formatter->setAttribute($name, $value);
         }
         foreach ($options as $name => $value) {
             $formatter->setAttribute($name, $value);
         }
+<<<<<<< HEAD
         if ($decimals !== null) {
             $formatter->setAttribute(NumberFormatter::MAX_FRACTION_DIGITS, $decimals);
             $formatter->setAttribute(NumberFormatter::MIN_FRACTION_DIGITS, $decimals);
@@ -1239,6 +1280,11 @@ class Formatter extends Component
             $formatter->setSymbol($name, $symbol);
         }
 
+=======
+        foreach ($this->numberFormatterSymbols as $name => $symbol) {
+            $formatter->setSymbol($name, $symbol);
+        }
+>>>>>>> official/master
         return $formatter;
     }
 }

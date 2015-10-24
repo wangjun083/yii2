@@ -30,7 +30,10 @@ composer.phar
 phpunit.phar
 # local phpunit config
 /phpunit.xml
+<<<<<<< HEAD
 
 # ignore sub directory for dev installed apps and extensions
 /apps
 /extensions
+=======
+>>>>>>> official/master

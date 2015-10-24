@@ -23,7 +23,10 @@ interface UrlRuleInterface
      * If false, it means this rule cannot be used to parse this path info.
      */
     public function parseRequest($manager, $request);
+<<<<<<< HEAD
 
+=======
+>>>>>>> official/master
     /**
      * Creates a URL according to the given route and parameters.
      * @param UrlManager $manager the URL manager

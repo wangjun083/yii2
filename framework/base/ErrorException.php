@@ -18,6 +18,7 @@ use Yii;
 class ErrorException extends \ErrorException
 {
     /**
+<<<<<<< HEAD
      * This constant represents a fatal error in the HHVM engine.
      *
      * PHP Zend runtime won't call the error handler on fatals, HHVM will, with an error code of 16777217
@@ -29,6 +30,8 @@ class ErrorException extends \ErrorException
 
 
     /**
+=======
+>>>>>>> official/master
      * Constructs the exception.
      * @link http://php.net/manual/en/errorexception.construct.php
      * @param $message [optional]
@@ -76,7 +79,11 @@ class ErrorException extends \ErrorException
      */
     public static function isFatalError($error)
     {
+<<<<<<< HEAD
         return isset($error['type']) && in_array($error['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_CORE_WARNING, E_COMPILE_ERROR, E_COMPILE_WARNING, self::E_HHVM_FATAL_ERROR]);
+=======
+        return isset($error['type']) && in_array($error['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_CORE_WARNING, E_COMPILE_ERROR, E_COMPILE_WARNING]);
+>>>>>>> official/master
     }
 
     /**
@@ -100,7 +107,10 @@ class ErrorException extends \ErrorException
             E_USER_NOTICE => 'PHP User Notice',
             E_USER_WARNING => 'PHP User Warning',
             E_WARNING => 'PHP Warning',
+<<<<<<< HEAD
             self::E_HHVM_FATAL_ERROR => 'HHVM Fatal Error',
+=======
+>>>>>>> official/master
         ];
 
         return isset($names[$this->getCode()]) ? $names[$this->getCode()] : 'Error';

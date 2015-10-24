@@ -34,7 +34,11 @@ trait ActiveQueryTrait
     /**
      * Sets the [[asArray]] property.
      * @param boolean $value whether to return the query results in terms of arrays instead of Active Records.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself
+>>>>>>> official/master
      */
     public function asArray($value = true)
     {
@@ -77,7 +81,11 @@ trait ActiveQueryTrait
      * Customer::find()->with('orders')->with('country')->all();
      * ~~~
      *
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself
+>>>>>>> official/master
      */
     public function with()
     {
@@ -91,7 +99,11 @@ trait ActiveQueryTrait
             $this->with = $with;
         } elseif (!empty($with)) {
             foreach ($with as $name => $value) {
+<<<<<<< HEAD
                 if (is_int($name)) {
+=======
+                if (is_integer($name)) {
+>>>>>>> official/master
                     // repeating relation is fine as normalizeRelations() handle it well
                     $this->with[] = $value;
                 } else {
@@ -180,7 +192,11 @@ trait ActiveQueryTrait
     {
         $relations = [];
         foreach ($with as $name => $callback) {
+<<<<<<< HEAD
             if (is_int($name)) {
+=======
+            if (is_integer($name)) {
+>>>>>>> official/master
                 $name = $callback;
                 $callback = null;
             }

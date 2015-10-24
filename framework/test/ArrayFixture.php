@@ -31,7 +31,10 @@ class ArrayFixture extends Fixture implements \IteratorAggregate, \ArrayAccess, 
      */
     public $dataFile;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> official/master
     /**
      * Loads the fixture.
      *

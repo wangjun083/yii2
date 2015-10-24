@@ -19,6 +19,7 @@ class OracleCommandTest extends CommandTest
         $command = $db->createCommand($sql);
         $this->assertEquals('SELECT "id", "t"."name" FROM "customer" t', $command->sql);
     }
+<<<<<<< HEAD
 
     public function testLastInsertId()
     {
@@ -29,4 +30,6 @@ class OracleCommandTest extends CommandTest
         $command->execute();
         $this->assertEquals(3, $db->getSchema()->getLastInsertID('profile_SEQ'));
     }
+=======
+>>>>>>> official/master
 }

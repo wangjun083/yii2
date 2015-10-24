@@ -183,7 +183,11 @@ class ActiveDataProvider extends BaseDataProvider
                     ];
                 }
             } else {
+<<<<<<< HEAD
                 foreach ($sort->attributes as $attribute => $config) {
+=======
+                foreach($sort->attributes as $attribute => $config) {
+>>>>>>> official/master
                     if (!isset($config['label'])) {
                         $sort->attributes[$attribute]['label'] = $model->getAttributeLabel($attribute);
                     }

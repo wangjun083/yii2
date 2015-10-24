@@ -38,12 +38,15 @@ class LinkSorter extends Widget
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
     public $options = ['class' => 'sorter'];
+<<<<<<< HEAD
     /**
      * @var array HTML attributes for the link in a sorter container tag which are passed to [[Sort::link()]].
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      * @since 2.0.6
      */
     public $linkOptions = [];
+=======
+>>>>>>> official/master
 
 
     /**
@@ -74,7 +77,11 @@ class LinkSorter extends Widget
         $attributes = empty($this->attributes) ? array_keys($this->sort->attributes) : $this->attributes;
         $links = [];
         foreach ($attributes as $name) {
+<<<<<<< HEAD
             $links[] = $this->sort->link($name, $this->linkOptions);
+=======
+            $links[] = $this->sort->link($name);
+>>>>>>> official/master
         }
 
         return Html::ul($links, array_merge($this->options, ['encode' => false]));

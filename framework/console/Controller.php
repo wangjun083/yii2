@@ -77,7 +77,11 @@ class Controller extends \yii\base\Controller
     {
         if (!empty($params)) {
             // populate options here so that they are available in beforeAction().
+<<<<<<< HEAD
             $options = $this->options($id === '' ? $this->defaultAction : $id);
+=======
+            $options = $this->options($id);
+>>>>>>> official/master
             foreach ($params as $name => $value) {
                 if (in_array($name, $options, true)) {
                     $default = $this->$name;

@@ -74,6 +74,7 @@ return [
     '{attribute} must be no less than {min}.' => '{attribute} يجب أن لا يكون أصغر من "{min}".',
     '{attribute} must be repeated exactly.' => '{attribute} يجب أن يكون متطابق.',
     '{attribute} must not be equal to "{compareValue}".' => '{attribute} يجب ان لا يساوي "{compareValue}"',
+<<<<<<< HEAD
     '{attribute} should contain at least {min, number} {min, plural, one{character} other{characters}}.' => '{attribute} يجب أن يحتوي على أكثر من {min, number} {min, plural, one{حرف} few{حروف} other{حرف}}.',
     '{attribute} should contain at most {max, number} {max, plural, one{character} other{characters}}.' => '{attribute} يجب أن لا يحتوي على أكثر من {max, number} {max, plural, one{حرف} few{حروف} other{حرف}}.',
     '{attribute} should contain {length, number} {length, plural, one{character} other{characters}}.' => '{attribute}  يجب أن يحتوي على {length, number} {length, plural, one{حرف} few{حروف} other{حرف}}.',
@@ -99,4 +100,9 @@ return [
     '{nFormatted} {n, plural, =1{petabyte} other{petabytes}}' => '{nFormatted} بيتابايت',
     '{nFormatted} {n, plural, =1{tebibyte} other{tebibytes}}' => '{nFormatted} تيبيبايت',
     '{nFormatted} {n, plural, =1{terabyte} other{terabytes}}' => '{nFormatted} تيرابايت',
+=======
+    '{attribute} should contain at least {min, number} {min, plural, one{character} other{characters}}.' => '{attribute} يجب أن يحتوي على أكثر من {min, number} {min, plural, one{حرف} few{حروف} many{حرف}}.',
+    '{attribute} should contain at most {max, number} {max, plural, one{character} other{characters}}.' => '{attribute} يجب أن لا يحتوي على أكثر من {max, number} {max, plural, one{حرف} few{حروف} many{حرف}}.',
+    '{attribute} should contain {length, number} {length, plural, one{character} other{characters}}.' => '{attribute}  يجب أن يحتوي على {length, number} {length, plural, one{حرف} few{حروف} many{حرف}}.',
+>>>>>>> official/master
 ];

@@ -1,7 +1,11 @@
 エントリスクリプト
 ==================
 
+<<<<<<< HEAD
 エントリスクリプトは、アプリケーションのブートストラップの過程における最初のステップです。
+=======
+エントリスクリプトは、アプリケーションのブートストラップ過程のチェーンにおける最初の環です。
+>>>>>>> official/master
 アプリケーションは (ウェブアプリケーションであれ、コンソールアプリケーションであれ）単一のエントリスクリプトを持ちます。
 エンドユーザはエントリスクリプトに対してリクエストを発行し、エントリスクリプトはアプリケーションのインスタンスを作成して、それにリクエストを送付します。
 
@@ -62,6 +66,13 @@ $config = require(__DIR__ . '/../config/web.php');
 
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 
+<<<<<<< HEAD
+=======
+// デフォルトでは fcgi が STDIN と STDOUT を定義していないので
+defined('STDIN') or define('STDIN', fopen('php://stdin', 'r'));
+defined('STDOUT') or define('STDOUT', fopen('php://stdout', 'w'));
+
+>>>>>>> official/master
 // Composer のオートローダを登録
 require(__DIR__ . '/vendor/autoload.php');
 

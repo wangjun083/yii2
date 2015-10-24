@@ -52,17 +52,28 @@ db-mongodb.md                       |
 db-elasticsearch.md                 |
 input-forms.md                      |
 input-validation.md                 | Yes
+<<<<<<< HEAD
 input-file-upload.md                | Yes
 input-multiple-models.md            | Yes
 input-tabular-input.md              |
 output-formatting.md                | Yes
+=======
+input-file-upload.md                |
+input-multiple-models.md            |
+input-tabular-input.md              |
+output-formatting.md                |
+>>>>>>> official/master
 output-pagination.md                | Yes
 output-sorting.md                   | Yes
 output-data-providers.md            | Yes
 output-data-widgets.md              |
 output-theming.md                   | Yes
 security-authentication.md          | Yes
+<<<<<<< HEAD
 security-authorization.md           | Yes
+=======
+security-authorization.md           |
+>>>>>>> official/master
 security-passwords.md               |
 security-auth-clients.md            |
 security-best-practices.md          |
@@ -93,7 +104,11 @@ tutorial-start-from-scratch.md      |
 tutorial-console.md                 |
 tutorial-i18n.md                    |
 tutorial-mailing.md                 |
+<<<<<<< HEAD
 tutorial-performance-tuning.md      | Yes
+=======
+tutorial-performance-tuning.md      |
+>>>>>>> official/master
 tutorial-shared-hosting.md          |
 tutorial-template-engines.md        |
 tutorial-core-validators.md         | Yes

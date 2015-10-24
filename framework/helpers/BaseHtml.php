@@ -80,6 +80,10 @@ class BaseHtml
         'rel',
         'media',
     ];
+<<<<<<< HEAD
+=======
+
+>>>>>>> official/master
     /**
      * @var array list of tag attributes that should be specially handled when their values are of array type.
      * In particular, if the value of the `data` attribute is `['name' => 'xyz', 'age' => 13]`, two attributes
@@ -223,7 +227,11 @@ class BaseHtml
         if (isset($options['condition'])) {
             $condition = $options['condition'];
             unset($options['condition']);
+<<<<<<< HEAD
             return self::wrapIntoCondition(static::tag('link', '', $options), $condition);
+=======
+            return "<!--[if $condition]>\n" . static::tag('link', '', $options) . "\n<![endif]-->";
+>>>>>>> official/master
         } elseif (isset($options['noscript']) && $options['noscript'] === true) {
             unset($options['noscript']);
             return "<noscript>" . static::tag('link', '', $options) . "</noscript>";
@@ -253,13 +261,18 @@ class BaseHtml
         if (isset($options['condition'])) {
             $condition = $options['condition'];
             unset($options['condition']);
+<<<<<<< HEAD
             return self::wrapIntoCondition(static::tag('script', '', $options), $condition);
+=======
+            return "<!--[if $condition]>\n" . static::tag('script', '', $options) . "\n<![endif]-->";
+>>>>>>> official/master
         } else {
             return static::tag('script', '', $options);
         }
     }
 
     /**
+<<<<<<< HEAD
      * Wraps given content into conditional comments for IE, e.g., `lt IE 9`.
      * @param string $content raw HTML content.
      * @param string $condition condition string.
@@ -274,6 +287,8 @@ class BaseHtml
     }
 
     /**
+=======
+>>>>>>> official/master
      * Generates the meta tags containing CSRF token information.
      * @return string the generated meta tags
      * @see Request::enableCsrfValidation
@@ -457,10 +472,13 @@ class BaseHtml
 
     /**
      * Generates a submit button tag.
+<<<<<<< HEAD
      *
      * Be careful when naming form elements such as submit buttons. According to the [jQuery documentation](https://api.jquery.com/submit/) there
      * are some reserved names that can cause conflicts, e.g. `submit`, `length`, or `method`.
      *
+=======
+>>>>>>> official/master
      * @param string $content the content enclosed within the button tag. It will NOT be HTML-encoded.
      * Therefore you can pass in HTML code such as an image tag. If this is is coming from end users,
      * you should consider [[encode()]] it to prevent XSS attacks.
@@ -532,10 +550,13 @@ class BaseHtml
 
     /**
      * Generates a submit input button.
+<<<<<<< HEAD
      *
      * Be careful when naming form elements such as submit buttons. According to the [jQuery documentation](https://api.jquery.com/submit/) there
      * are some reserved names that can cause conflicts, e.g. `submit`, `length`, or `method`.
      *
+=======
+>>>>>>> official/master
      * @param string $label the value attribute. If it is null, the value attribute will not be generated.
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
      * the attributes of the resulting tag. The values will be HTML-encoded using [[encode()]].
@@ -1213,6 +1234,7 @@ class BaseHtml
     }
 
     /**
+<<<<<<< HEAD
      * If `maxlength` option is set true and the model attribute is validated by a string validator,
      * the `maxlength` option will take the value of [[\yii\validators\StringValidator::max]].
      * @param Model $model the model object
@@ -1234,6 +1256,8 @@ class BaseHtml
     }
 
     /**
+=======
+>>>>>>> official/master
      * Generates a text input tag for the given model attribute.
      * This method will generate the "name" and "value" tag attributes automatically for the model attribute
      * unless they are explicitly specified in `$options`.
@@ -1253,7 +1277,20 @@ class BaseHtml
      */
     public static function activeTextInput($model, $attribute, $options = [])
     {
+<<<<<<< HEAD
         self::normalizeMaxLength($model, $attribute, $options);
+=======
+        if (isset($options['maxlength']) && $options['maxlength'] === true) {
+            unset($options['maxlength']);
+            $attrName = static::getAttributeName($attribute);
+            foreach ($model->getActiveValidators($attrName) as $validator) {
+                if ($validator instanceof StringValidator && $validator->max !== null) {
+                    $options['maxlength'] = $validator->max;
+                    break;
+                }
+            }
+        }
+>>>>>>> official/master
         return static::activeInput('text', $model, $attribute, $options);
     }
 
@@ -1284,17 +1321,23 @@ class BaseHtml
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
      * the attributes of the resulting tag. The values will be HTML-encoded using [[encode()]].
      * See [[renderTagAttributes()]] for details on how attributes are being rendered.
+<<<<<<< HEAD
      * The following special options are recognized:
      *
      * - maxlength: integer|boolean, when `maxlength` is set true and the model attribute is validated
      *   by a string validator, the `maxlength` option will take the value of [[\yii\validators\StringValidator::max]].
      *   This option is available since version 2.0.6.
      *
+=======
+>>>>>>> official/master
      * @return string the generated input tag
      */
     public static function activePasswordInput($model, $attribute, $options = [])
     {
+<<<<<<< HEAD
         self::normalizeMaxLength($model, $attribute, $options);
+=======
+>>>>>>> official/master
         return static::activeInput('password', $model, $attribute, $options);
     }
 
@@ -1327,17 +1370,21 @@ class BaseHtml
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
      * the attributes of the resulting tag. The values will be HTML-encoded using [[encode()]].
      * See [[renderTagAttributes()]] for details on how attributes are being rendered.
+<<<<<<< HEAD
      * The following special options are recognized:
      *
      * - maxlength: integer|boolean, when `maxlength` is set true and the model attribute is validated
      *   by a string validator, the `maxlength` option will take the value of [[\yii\validators\StringValidator::max]].
      *   This option is available since version 2.0.6.
      *
+=======
+>>>>>>> official/master
      * @return string the generated textarea tag
      */
     public static function activeTextarea($model, $attribute, $options = [])
     {
         $name = isset($options['name']) ? $options['name'] : static::getInputName($model, $attribute);
+<<<<<<< HEAD
         if (isset($options['value'])) {
             $value = $options['value'];
             unset($options['value']);
@@ -1348,6 +1395,12 @@ class BaseHtml
             $options['id'] = static::getInputId($model, $attribute);
         }
         self::normalizeMaxLength($model, $attribute, $options);
+=======
+        $value = static::getAttributeValue($model, $attribute);
+        if (!array_key_exists('id', $options)) {
+            $options['id'] = static::getInputId($model, $attribute);
+        }
+>>>>>>> official/master
         return static::textarea($name, $value, $options);
     }
 
@@ -1768,6 +1821,7 @@ class BaseHtml
                             $html .= " $name-$n=\"" . static::encode($v) . '"';
                         }
                     }
+<<<<<<< HEAD
                 } elseif ($name === 'class') {
                     if (empty($value)) {
                         continue;
@@ -1778,6 +1832,8 @@ class BaseHtml
                         continue;
                     }
                     $html .= " $name=\"" . static::encode(static::cssStyleFromArray($value)) . '"';
+=======
+>>>>>>> official/master
                 } else {
                     $html .= " $name='" . Json::htmlEncode($value) . "'";
                 }
@@ -1790,6 +1846,7 @@ class BaseHtml
     }
 
     /**
+<<<<<<< HEAD
      * Adds a CSS class (or several classes) to the specified options.
      * If the CSS class is already in the options, it will not be added again.
      * If class specification at given options is an array, and some class placed there with the named (string) key,
@@ -1803,15 +1860,27 @@ class BaseHtml
      *
      * @param array $options the options to be modified.
      * @param string|array $class the CSS class(es) to be added
+=======
+     * Adds a CSS class to the specified options.
+     * If the CSS class is already in the options, it will not be added again.
+     * @param array $options the options to be modified.
+     * @param string $class the CSS class to be added
+>>>>>>> official/master
      */
     public static function addCssClass(&$options, $class)
     {
         if (isset($options['class'])) {
+<<<<<<< HEAD
             if (is_array($options['class'])) {
                 $options['class'] = self::mergeCssClasses($options['class'], (array) $class);
             } else {
                 $classes = preg_split('/\s+/', $options['class'], -1, PREG_SPLIT_NO_EMPTY);
                 $options['class'] = implode(' ', self::mergeCssClasses($classes, (array) $class));
+=======
+            $classes = ' ' . $options['class'] . ' ';
+            if (strpos($classes, ' ' . $class . ' ') === false) {
+                $options['class'] .= ' ' . $class;
+>>>>>>> official/master
             }
         } else {
             $options['class'] = $class;
@@ -1819,6 +1888,7 @@ class BaseHtml
     }
 
     /**
+<<<<<<< HEAD
      * Merges already existing CSS classes with new one.
      * This method provides the priority for named existing classes over additional.
      * @param array $existingClasses already existing CSS classes.
@@ -1841,10 +1911,16 @@ class BaseHtml
      * Removes a CSS class from the specified options.
      * @param array $options the options to be modified.
      * @param string|array $class the CSS class(es) to be removed
+=======
+     * Removes a CSS class from the specified options.
+     * @param array $options the options to be modified.
+     * @param string $class the CSS class to be removed
+>>>>>>> official/master
      */
     public static function removeCssClass(&$options, $class)
     {
         if (isset($options['class'])) {
+<<<<<<< HEAD
             if (is_array($options['class'])) {
                 $classes = array_diff($options['class'], (array) $class);
                 if (empty($classes)) {
@@ -1860,6 +1936,16 @@ class BaseHtml
                 } else {
                     $options['class'] = implode(' ', $classes);
                 }
+=======
+            $classes = array_unique(preg_split('/\s+/', $options['class'] . ' ' . $class, -1, PREG_SPLIT_NO_EMPTY));
+            if (($index = array_search($class, $classes)) !== false) {
+                unset($classes[$index]);
+            }
+            if (empty($classes)) {
+                unset($options['class']);
+            } else {
+                $options['class'] = implode(' ', $classes);
+>>>>>>> official/master
             }
         }
     }
@@ -1889,7 +1975,11 @@ class BaseHtml
     public static function addCssStyle(&$options, $style, $overwrite = true)
     {
         if (!empty($options['style'])) {
+<<<<<<< HEAD
             $oldStyle = is_array($options['style']) ? $options['style'] : static::cssStyleToArray($options['style']);
+=======
+            $oldStyle = static::cssStyleToArray($options['style']);
+>>>>>>> official/master
             $newStyle = is_array($style) ? $style : static::cssStyleToArray($style);
             if (!$overwrite) {
                 foreach ($newStyle as $property => $value) {
@@ -1920,7 +2010,11 @@ class BaseHtml
     public static function removeCssStyle(&$options, $properties)
     {
         if (!empty($options['style'])) {
+<<<<<<< HEAD
             $style = is_array($options['style']) ? $options['style'] : static::cssStyleToArray($options['style']);
+=======
+            $style = static::cssStyleToArray($options['style']);
+>>>>>>> official/master
             foreach ((array) $properties as $property) {
                 unset($style[$property]);
             }
@@ -2102,6 +2196,7 @@ class BaseHtml
         $name = strtolower(static::getInputName($model, $attribute));
         return str_replace(['[]', '][', '[', ']', ' ', '.'], ['', '-', '-', '', '-', '-'], $name);
     }
+<<<<<<< HEAD
 
     /**
      * Escapes regular expression to use in JavaScript
@@ -2126,4 +2221,6 @@ class BaseHtml
 
         return $pattern;
     }
+=======
+>>>>>>> official/master
 }

@@ -41,6 +41,7 @@ Content-Type: application/json; charset=UTF-8
 * `422`: 数据验证失败 (例如，响应一个 `POST` 请求)。 请检查响应体内详细的错误消息。
 * `429`: 请求过多。 由于限速请求被拒绝。
 * `500`: 内部服务器错误。 这可能是由于内部程序错误引起的。
+<<<<<<< HEAD
 
 
 ## 自定义错误响应 <span id="customizing-error-response"></span>
@@ -92,3 +93,5 @@ return [
 
 当 `suppress_response_code` 作为 `GET` 参数传递时，上面的代码
 将重新按照自己定义的格式响应（无论失败还是成功）。
+=======
+>>>>>>> official/master

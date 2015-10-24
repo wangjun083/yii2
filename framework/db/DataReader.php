@@ -212,7 +212,11 @@ class DataReader extends \yii\base\Object implements \Iterator, \Countable
 
     /**
      * Resets the iterator to the initial state.
+<<<<<<< HEAD
      * This method is required by the interface [[\Iterator]].
+=======
+     * This method is required by the interface Iterator.
+>>>>>>> official/master
      * @throws InvalidCallException if this method is invoked twice
      */
     public function rewind()
@@ -227,7 +231,11 @@ class DataReader extends \yii\base\Object implements \Iterator, \Countable
 
     /**
      * Returns the index of the current row.
+<<<<<<< HEAD
      * This method is required by the interface [[\Iterator]].
+=======
+     * This method is required by the interface Iterator.
+>>>>>>> official/master
      * @return integer the index of the current row.
      */
     public function key()
@@ -237,7 +245,11 @@ class DataReader extends \yii\base\Object implements \Iterator, \Countable
 
     /**
      * Returns the current row.
+<<<<<<< HEAD
      * This method is required by the interface [[\Iterator]].
+=======
+     * This method is required by the interface Iterator.
+>>>>>>> official/master
      * @return mixed the current row.
      */
     public function current()
@@ -247,7 +259,11 @@ class DataReader extends \yii\base\Object implements \Iterator, \Countable
 
     /**
      * Moves the internal pointer to the next row.
+<<<<<<< HEAD
      * This method is required by the interface [[\Iterator]].
+=======
+     * This method is required by the interface Iterator.
+>>>>>>> official/master
      */
     public function next()
     {
@@ -257,7 +273,11 @@ class DataReader extends \yii\base\Object implements \Iterator, \Countable
 
     /**
      * Returns whether there is a row of data at current position.
+<<<<<<< HEAD
      * This method is required by the interface [[\Iterator]].
+=======
+     * This method is required by the interface Iterator.
+>>>>>>> official/master
      * @return boolean whether there is a row of data at current position.
      */
     public function valid()

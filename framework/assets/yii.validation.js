@@ -237,10 +237,15 @@ yii.validation = (function ($) {
             var $input = $form.find(attribute.input);
             var value = $input.val();
             if (!options.skipOnEmpty || !pub.isEmpty(value)) {
+<<<<<<< HEAD
                 value = $.trim(value);
                 $input.val(value);
             }
             return value;
+=======
+                $input.val($.trim(value));
+            }
+>>>>>>> official/master
         },
 
         captcha: function (value, messages, options) {

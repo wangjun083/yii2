@@ -165,7 +165,11 @@ class Validator extends Component
      *
      * ```php
      * function (attribute, value) {
+<<<<<<< HEAD
      *     return $('#country').val() === 'USA';
+=======
+     *     return $('#country').value == 'USA';
+>>>>>>> official/master
      * }
      * ```
      *

@@ -10,7 +10,10 @@ namespace yii\build\controllers;
 use Yii;
 use yii\base\Exception;
 use yii\console\Controller;
+<<<<<<< HEAD
 use yii\helpers\ArrayHelper;
+=======
+>>>>>>> official/master
 
 /**
  * ReleaseController is there to help preparing releases
@@ -26,6 +29,7 @@ class ReleaseController extends Controller
      * Usage:
      *
      * ```
+<<<<<<< HEAD
      * ./build/build release/prepare framework 2.0.0-beta
      * ./build/build release/prepare redis 2.0.0-beta
      * ```
@@ -39,12 +43,26 @@ class ReleaseController extends Controller
         if (in_array('framework', $what)) {
             $this->updateYiiVersion($version);
         }
+=======
+     * ./build/build release/prepare 2.0.0-beta
+     * ```
+     *
+     */
+    public function actionPrepare($version)
+    {
+        $this->resortChangelogs($version);
+        $this->mergeChangelogs($version);
+        $this->closeChangelogs($version);
+        $this->composerSetStability($version);
+        $this->updateYiiVersion($version);
+>>>>>>> official/master
     }
 
     /**
      * Usage:
      *
      * ```
+<<<<<<< HEAD
      * ./build/build release/done framework 2.0.0-dev 2.0.0-rc
      * ./build/build release/done redis 2.0.0-dev 2.0.0-rc
      * ```
@@ -59,12 +77,26 @@ class ReleaseController extends Controller
     }
 
     protected function closeChangelogs($what, $version)
+=======
+     * ./build/build release/done 2.0.0-dev 2.0.0-rc
+     * ```
+     */
+    public function actionDone($devVersion, $nextVersion)
+    {
+        $this->openChangelogs($nextVersion);
+        $this->composerSetStability('dev');
+        $this->updateYiiVersion($devVersion);
+    }
+
+    protected function closeChangelogs($version)
+>>>>>>> official/master
     {
         $v = str_replace('\\-', '[\\- ]', preg_quote($version, '/'));
         $headline = $version . ' ' . date('F d, Y');
         $this->sed(
             '/'.$v.' under development\n(-+?)\n/',
             $headline . "\n" . str_repeat('-', strlen($headline)) . "\n",
+<<<<<<< HEAD
             $this->getChangelogs($what)
         );
     }
@@ -74,6 +106,18 @@ class ReleaseController extends Controller
         $headline = "\n$version under development\n";
         $headline .= str_repeat('-', strlen($headline) - 2) . "\n\n";
         foreach($this->getChangelogs($what) as $file) {
+=======
+            $this->getChangelogs()
+        );
+    }
+
+    protected function openChangelogs($version)
+    {
+        $headline = "\n$version under development\n";
+        $headline .= str_repeat('-', strlen($headline) - 2) . "\n\n";
+        $headline .= "- no changes in this release.\n";
+        foreach($this->getChangelogs() as $file) {
+>>>>>>> official/master
             $lines = explode("\n", file_get_contents($file));
             $hl = [
                 array_shift($lines),
@@ -85,9 +129,15 @@ class ReleaseController extends Controller
         }
     }
 
+<<<<<<< HEAD
     protected function resortChangelogs($what, $version)
     {
         foreach($this->getChangelogs($what) as $file) {
+=======
+    protected function resortChangelogs($version)
+    {
+        foreach($this->getChangelogs() as $file) {
+>>>>>>> official/master
             // split the file into relevant parts
             list($start, $changelog, $end) = $this->splitChangelog($file, $version);
             $changelog = $this->resortChangelog($changelog);
@@ -95,6 +145,34 @@ class ReleaseController extends Controller
         }
     }
 
+<<<<<<< HEAD
+=======
+    protected function mergeChangelogs($version)
+    {
+        $file = $this->getFrameworkChangelog();
+        // split the file into relevant parts
+        list($start, $changelog, $end) = $this->splitChangelog($file, $version);
+
+        $changelog = $this->resortChangelog($changelog);
+
+        $changelog[] = '';
+        $extensions = $this->getExtensionChangelogs();
+        asort($extensions);
+        foreach($extensions as $changelogFile) {
+            if (!preg_match('~extensions/([a-z]+)/CHANGELOG\\.md~', $changelogFile, $m)) {
+                throw new Exception("Illegal extension changelog file: " . $changelogFile);
+            }
+            list( , $extensionChangelog, ) = $this->splitChangelog($changelogFile, $version);
+            $name = $m[1];
+            $ucname = ucfirst($name);
+            $changelog[] = "### $ucname Extension (yii2-$name)";
+            $changelog = array_merge($changelog, $extensionChangelog);
+        }
+
+        file_put_contents($file, implode("\n", array_merge($start, $changelog, $end)));
+    }
+
+>>>>>>> official/master
     /**
      * Extract changelog content for a specific version
      */
@@ -131,6 +209,7 @@ class ReleaseController extends Controller
         foreach($changelog as $i => $line) {
             $changelog[$i] = rtrim($line);
         }
+<<<<<<< HEAD
         $changelog = array_filter($changelog);
 
         $i = 0;
@@ -159,6 +238,16 @@ class ReleaseController extends Controller
         }
 
         return array_merge($changelogs, $this->getExtensionChangelogs($what));
+=======
+
+        // TODO sorting
+        return $changelog;
+    }
+
+    protected function getChangelogs()
+    {
+        return array_merge([$this->getFrameworkChangelog()], $this->getExtensionChangelogs());
+>>>>>>> official/master
     }
 
     protected function getFrameworkChangelog()
@@ -166,6 +255,7 @@ class ReleaseController extends Controller
         return YII2_PATH . '/CHANGELOG.md';
     }
 
+<<<<<<< HEAD
     protected function getExtensionChangelogs($what)
     {
         return array_filter(glob(dirname(YII2_PATH) . '/extensions/*/CHANGELOG.md'), function($elem) use ($what) {
@@ -194,6 +284,15 @@ class ReleaseController extends Controller
             return;
         }
 
+=======
+    protected function getExtensionChangelogs()
+    {
+        return glob(dirname(YII2_PATH) . '/extensions/*/CHANGELOG.md');
+    }
+
+    protected function composerSetStability($version)
+    {
+>>>>>>> official/master
         $stability = 'stable';
         if (strpos($version, 'alpha') !== false) {
             $stability = 'alpha';
@@ -208,7 +307,15 @@ class ReleaseController extends Controller
         $this->sed(
             '/"minimum-stability": "(.+?)",/',
             '"minimum-stability": "' . $stability . '",',
+<<<<<<< HEAD
             $apps
+=======
+            [
+                dirname(YII2_PATH) . '/apps/advanced/composer.json',
+                dirname(YII2_PATH) . '/apps/basic/composer.json',
+                dirname(YII2_PATH) . '/apps/benchmark/composer.json',
+            ]
+>>>>>>> official/master
         );
     }
 

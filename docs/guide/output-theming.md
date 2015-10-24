@@ -22,7 +22,11 @@ return [
     'components' => [
         'view' => [
             'theme' => [
+<<<<<<< HEAD
                 'basePath' => '@app/themes/basic',
+=======
+                'basePath' => '@app/themes/basic'
+>>>>>>> official/master
                 'baseUrl' => '@web/themes/basic',
                 'pathMap' => [
                     '@app/views' => '@app/themes/basic',

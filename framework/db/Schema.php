@@ -281,6 +281,7 @@ abstract class Schema extends Object
     }
 
     /**
+<<<<<<< HEAD
      * Refreshes the particular table schema.
      * This method cleans up cached table schema so that it can be re-created later
      * to reflect the database schema change.
@@ -299,6 +300,8 @@ abstract class Schema extends Object
     }
 
     /**
+=======
+>>>>>>> official/master
      * Creates a query builder for the database.
      * This method may be overridden by child classes to create a DBMS-specific query builder.
      * @return QueryBuilder query builder instance
@@ -309,6 +312,7 @@ abstract class Schema extends Object
     }
 
     /**
+<<<<<<< HEAD
      * Create a column schema builder instance giving the type and value precision.
      *
      * This method may be overridden by child classes to create a DBMS-specific column schema builder.
@@ -324,6 +328,8 @@ abstract class Schema extends Object
     }
 
     /**
+=======
+>>>>>>> official/master
      * Returns all schema names in the database, including the default one but not system schemas.
      * This method should be overridden by child classes in order to support this feature
      * because the default implementation simply throws an exception.
@@ -381,7 +387,11 @@ abstract class Schema extends Object
     public function getLastInsertID($sequenceName = '')
     {
         if ($this->db->isActive) {
+<<<<<<< HEAD
             return $this->db->pdo->lastInsertId($sequenceName === '' ? null : $this->quoteTableName($sequenceName));
+=======
+            return $this->db->pdo->lastInsertId($sequenceName === '' ? null : $this->quoteSimpleTableName($sequenceName));
+>>>>>>> official/master
         } else {
             throw new InvalidCallException('DB Connection is not active.');
         }

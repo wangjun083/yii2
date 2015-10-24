@@ -165,10 +165,17 @@ setting the scenario of a model:
 ```php
 // scenario is set as a property
 $model = new User;
+<<<<<<< HEAD
 $model->scenario = User::SCENARIO_LOGIN;
 
 // scenario is set through configuration
 $model = new User(['scenario' => User::SCENARIO_LOGIN]);
+=======
+$model->scenario = 'login';
+
+// scenario is set through configuration
+$model = new User(['scenario' => 'login']);
+>>>>>>> official/master
 ```
 
 By default, the scenarios supported by a model are determined by the [validation rules](#validation-rules) declared
@@ -182,6 +189,7 @@ use yii\db\ActiveRecord;
 
 class User extends ActiveRecord
 {
+<<<<<<< HEAD
     const SCENARIO_LOGIN = 'login';
     const SCENARIO_REGISTER = 'register';
 
@@ -190,6 +198,13 @@ class User extends ActiveRecord
         return [
             self::SCENARIO_LOGIN => ['username', 'password'],
             self::SCENARIO_REGISTER => ['username', 'email', 'password'],
+=======
+    public function scenarios()
+    {
+        return [
+            'login' => ['username', 'password'],
+            'register' => ['username', 'email', 'password'],
+>>>>>>> official/master
         ];
     }
 }
@@ -214,6 +229,7 @@ use yii\db\ActiveRecord;
 
 class User extends ActiveRecord
 {
+<<<<<<< HEAD
     const SCENARIO_LOGIN = 'login';
     const SCENARIO_REGISTER = 'register';
 
@@ -222,6 +238,13 @@ class User extends ActiveRecord
         $scenarios = parent::scenarios();
         $scenarios[self::SCENARIO_LOGIN] = ['username', 'password'];
         $scenarios[self::SCENARIO_REGISTER] = ['username', 'email', 'password'];
+=======
+    public function scenarios()
+    {
+        $scenarios = parent::scenarios();
+        $scenarios['login'] = ['username', 'password'];
+        $scenarios['register'] = ['username', 'email', 'password'];
+>>>>>>> official/master
         return $scenarios;
     }
 }
@@ -289,10 +312,17 @@ public function rules()
 {
     return [
         // username, email and password are all required in "register" scenario
+<<<<<<< HEAD
         [['username', 'email', 'password'], 'required', 'on' => self::SCENARIO_REGISTER],
 
         // username and password are required in "login" scenario
         [['username', 'password'], 'required', 'on' => self::SCENARIO_LOGIN],
+=======
+        [['username', 'email', 'password'], 'required', 'on' => 'register'],
+
+        // username and password are required in "login" scenario
+        [['username', 'password'], 'required', 'on' => 'login'],
+>>>>>>> official/master
     ];
 }
 ```
@@ -339,8 +369,13 @@ be kept untouched.
 public function scenarios()
 {
     return [
+<<<<<<< HEAD
         self::SCENARIO_LOGIN => ['username', 'password'],
         self::SCENARIO_REGISTER => ['username', 'email', 'password'],
+=======
+        'login' => ['username', 'password'],
+        'register' => ['username', 'email', 'password'],
+>>>>>>> official/master
     ];
 }
 ```
@@ -379,7 +414,11 @@ name when declaring it in `scenarios()`, like the `secret` attribute in the foll
 public function scenarios()
 {
     return [
+<<<<<<< HEAD
         self::SCENARIO_LOGIN => ['username', 'password', '!secret'],
+=======
+        'login' => ['username', 'password', '!secret'],
+>>>>>>> official/master
     ];
 }
 ```

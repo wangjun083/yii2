@@ -2,10 +2,15 @@
 namespace yiiunit\framework\db;
 
 use yiiunit\data\ar\ActiveRecord;
+<<<<<<< HEAD
 use yiiunit\data\ar\BitValues;
 use yiiunit\data\ar\Category;
 use yiiunit\data\ar\Customer;
 use yiiunit\data\ar\Document;
+=======
+use yiiunit\data\ar\Category;
+use yiiunit\data\ar\Customer;
+>>>>>>> official/master
 use yiiunit\data\ar\NullValues;
 use yiiunit\data\ar\OrderItem;
 use yiiunit\data\ar\Order;
@@ -120,6 +125,7 @@ class ActiveRecordTest extends DatabaseTestCase
         $this->assertEquals('user2', $customer->name);
     }
 
+<<<<<<< HEAD
     /**
      * @depends testFindBySql
      *
@@ -133,6 +139,8 @@ class ActiveRecordTest extends DatabaseTestCase
         $this->assertEquals(1, $query->count());
     }
 
+=======
+>>>>>>> official/master
     public function testFindLazyViaTable()
     {
         /* @var $order Order */
@@ -702,7 +710,11 @@ class ActiveRecordTest extends DatabaseTestCase
         $model->updateCounters(['status' => 1]);
         $this->assertEquals(1, $model->status);
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> official/master
     public function testPopulateRecordCallWhenQueryingOnParentClass() 
     {
         (new Cat())->save(false);
@@ -714,6 +726,7 @@ class ActiveRecordTest extends DatabaseTestCase
         $animal = Animal::find()->where(['type' => Cat::className()])->one();
         $this->assertEquals('meow', $animal->getDoes());
     }
+<<<<<<< HEAD
 
     public function testSaveEmpty()
     {
@@ -833,4 +846,6 @@ class ActiveRecordTest extends DatabaseTestCase
         $trueBit = BitValues::findOne(2);
         $this->assertEquals(true, $trueBit->val);
     }
+=======
+>>>>>>> official/master
 }

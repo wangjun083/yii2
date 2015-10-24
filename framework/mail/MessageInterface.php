@@ -41,7 +41,11 @@ interface MessageInterface
     /**
      * Sets the character set of this message.
      * @param string $charset character set name.
+<<<<<<< HEAD
      * @return $this self reference.
+=======
+     * @return static self reference.
+>>>>>>> official/master
      */
     public function setCharset($charset);
 
@@ -57,7 +61,11 @@ interface MessageInterface
      * You may pass an array of addresses if this message is from multiple people.
      * You may also specify sender name in addition to email address using format:
      * `[email => name]`.
+<<<<<<< HEAD
      * @return $this self reference.
+=======
+     * @return static self reference.
+>>>>>>> official/master
      */
     public function setFrom($from);
 
@@ -73,7 +81,11 @@ interface MessageInterface
      * You may pass an array of addresses if multiple recipients should receive this message.
      * You may also specify receiver name in addition to email address using format:
      * `[email => name]`.
+<<<<<<< HEAD
      * @return $this self reference.
+=======
+     * @return static self reference.
+>>>>>>> official/master
      */
     public function setTo($to);
 
@@ -89,7 +101,11 @@ interface MessageInterface
      * You may pass an array of addresses if this message should be replied to multiple people.
      * You may also specify reply-to name in addition to email address using format:
      * `[email => name]`.
+<<<<<<< HEAD
      * @return $this self reference.
+=======
+     * @return static self reference.
+>>>>>>> official/master
      */
     public function setReplyTo($replyTo);
 
@@ -105,7 +121,11 @@ interface MessageInterface
      * You may pass an array of addresses if multiple recipients should receive this message.
      * You may also specify receiver name in addition to email address using format:
      * `[email => name]`.
+<<<<<<< HEAD
      * @return $this self reference.
+=======
+     * @return static self reference.
+>>>>>>> official/master
      */
     public function setCc($cc);
 
@@ -121,7 +141,11 @@ interface MessageInterface
      * You may pass an array of addresses if multiple recipients should receive this message.
      * You may also specify receiver name in addition to email address using format:
      * `[email => name]`.
+<<<<<<< HEAD
      * @return $this self reference.
+=======
+     * @return static self reference.
+>>>>>>> official/master
      */
     public function setBcc($bcc);
 
@@ -134,21 +158,33 @@ interface MessageInterface
     /**
      * Sets the message subject.
      * @param string $subject message subject
+<<<<<<< HEAD
      * @return $this self reference.
+=======
+     * @return static self reference.
+>>>>>>> official/master
      */
     public function setSubject($subject);
 
     /**
      * Sets message plain text content.
      * @param string $text message plain text content.
+<<<<<<< HEAD
      * @return $this self reference.
+=======
+     * @return static self reference.
+>>>>>>> official/master
      */
     public function setTextBody($text);
 
     /**
      * Sets message HTML content.
      * @param string $html message HTML content.
+<<<<<<< HEAD
      * @return $this self reference.
+=======
+     * @return static self reference.
+>>>>>>> official/master
      */
     public function setHtmlBody($html);
 
@@ -160,7 +196,11 @@ interface MessageInterface
      * - fileName: name, which should be used to attach file.
      * - contentType: attached file MIME type.
      *
+<<<<<<< HEAD
      * @return $this self reference.
+=======
+     * @return static self reference.
+>>>>>>> official/master
      */
     public function attach($fileName, array $options = []);
 
@@ -172,7 +212,11 @@ interface MessageInterface
      * - fileName: name, which should be used to attach file.
      * - contentType: attached file MIME type.
      *
+<<<<<<< HEAD
      * @return $this self reference.
+=======
+     * @return static self reference.
+>>>>>>> official/master
      */
     public function attachContent($content, array $options = []);
 

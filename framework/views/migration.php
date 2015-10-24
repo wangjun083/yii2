@@ -24,13 +24,21 @@ class <?= $className ?> extends Migration
 
         return false;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> official/master
     /*
     // Use safeUp/safeDown to run migration code within a transaction
     public function safeUp()
     {
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> official/master
     public function safeDown()
     {
     }

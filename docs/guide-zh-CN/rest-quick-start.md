@@ -60,6 +60,7 @@ class UserController extends ActiveController
 用户的数据就能通过美化的 URL 和有意义的 http 动词进行访问和操作。
 
 
+<<<<<<< HEAD
 ## 启用 JSON 输入 <span id="enabling-json-input"></span>
 
 为了使 API 接收 JSON 格式的输入数据，配置 `request` 应用程序组件的 [[yii\web\Request::$parsers|parsers]]
@@ -77,6 +78,8 @@ class UserController extends ActiveController
   `application/x-www-form-urlencoded` 和 `multipart/form-data` 输入格式。
 
 
+=======
+>>>>>>> official/master
 ## 尝试 <span id="trying-it-out"></span>
 
 随着以上所做的最小的努力，你已经完成了创建用于访问用户数据
@@ -93,15 +96,26 @@ class UserController extends ActiveController
 * `OPTIONS /users/123`: 显示有关末端 `/users/123` 支持的动词
 
 > 补充：Yii 将在末端使用的控制器的名称自动变为复数。（译注：个人感觉这里应该变为注意）
+<<<<<<< HEAD
 > 你可以用 [[yii\rest\UrlRule::$pluralize]]-属性来配置此项。
 
 你可以访问你的API用 `curl` 命令如下，
+=======
+
+你可以访问你的API用`curl`命令如下，
+>>>>>>> official/master
 
 ```
 $ curl -i -H "Accept:application/json" "http://localhost/users"
 
 HTTP/1.1 200 OK
+<<<<<<< HEAD
 ...
+=======
+Date: Sun, 02 Mar 2014 05:31:43 GMT
+Server: Apache/2.2.26 (Unix) DAV/2 PHP/5.4.20 mod_ssl/2.2.26 OpenSSL/0.9.8y
+X-Powered-By: PHP/5.4.20
+>>>>>>> official/master
 X-Pagination-Total-Count: 1000
 X-Pagination-Page-Count: 50
 X-Pagination-Current-Page: 1
@@ -125,14 +139,24 @@ Content-Type: application/json; charset=UTF-8
 ]
 ```
 
+<<<<<<< HEAD
 试着改变可接受的内容类型为`application/xml`，
 你会看到结果以 XML 格式返回：
+=======
+试着改变可接受的内容类型为`application/xml`，你会看到结果以 XML 格式返回：
+>>>>>>> official/master
 
 ```
 $ curl -i -H "Accept:application/xml" "http://localhost/users"
 
 HTTP/1.1 200 OK
+<<<<<<< HEAD
 ...
+=======
+Date: Sun, 02 Mar 2014 05:31:43 GMT
+Server: Apache/2.2.26 (Unix) DAV/2 PHP/5.4.20 mod_ssl/2.2.26 OpenSSL/0.9.8y
+X-Powered-By: PHP/5.4.20
+>>>>>>> official/master
 X-Pagination-Total-Count: 1000
 X-Pagination-Page-Count: 50
 X-Pagination-Current-Page: 1
@@ -157,6 +181,7 @@ Content-Type: application/xml
 </response>
 ```
 
+<<<<<<< HEAD
 以下命令将创建一个新的用户通过发送JSON格式的用户数据的 POST 请求：
 
 ```
@@ -171,6 +196,8 @@ Content-Type: application/json; charset=UTF-8
 {"id":1,"username":"example","email":"user@example.com","created_at":1414674789,"updated_at":1414674789}
 ```
 
+=======
+>>>>>>> official/master
 > 技巧：你还可以通过 Web 浏览器中输入 URL `http://localhost/users` 来访问你的 API。
   尽管如此，你可能需要一些浏览器插件来发送特定的 headers 请求。
 
@@ -198,6 +225,10 @@ Content-Type: application/json; charset=UTF-8
 
 你可以使用 [[yii\rest\UrlRule]] 简化路由到你的 API 末端。
 
+<<<<<<< HEAD
 为了方便维护你的WEB前端和后端，建议你开发接口作为一个单独的应用程序，
 虽然这不是必须的。
+=======
+为了方便维护你的WEB前端和后端，建议你开发接口作为一个单独的应用程序，虽然这不是必须的。
+>>>>>>> official/master
 

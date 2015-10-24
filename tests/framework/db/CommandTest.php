@@ -5,8 +5,11 @@ namespace yiiunit\framework\db;
 use yii\caching\FileCache;
 use yii\db\Connection;
 use yii\db\DataReader;
+<<<<<<< HEAD
 use yii\db\Expression;
 use yii\db\Schema;
+=======
+>>>>>>> official/master
 
 /**
  * @group db
@@ -260,6 +263,7 @@ SQL;
         $this->assertEquals(2, $command->execute());
     }
 
+<<<<<<< HEAD
     public function testInsert()
     {
         $db = $this->getConnection();
@@ -353,6 +357,22 @@ SQL;
     }
 
     public function testDelete()
+=======
+    /*
+    public function testInsert()
+    {
+    }
+
+    public function testUpdate()
+    {
+    }
+
+    public function testDelete()
+    {
+    }
+
+    public function testCreateTable()
+>>>>>>> official/master
     {
     }
 
@@ -380,6 +400,13 @@ SQL;
     {
     }
 
+<<<<<<< HEAD
+=======
+    public function testAlterColumn()
+    {
+    }
+
+>>>>>>> official/master
     public function testAddForeignKey()
     {
     }
@@ -409,6 +436,7 @@ SQL;
         $command->execute();
     }
 
+<<<<<<< HEAD
     public function testLastInsertId()
     {
         $db = $this->getConnection();
@@ -419,6 +447,8 @@ SQL;
         $this->assertEquals(3, $db->getSchema()->getLastInsertID());
     }
 
+=======
+>>>>>>> official/master
     public function testQueryCache()
     {
         $db = $this->getConnection();
@@ -487,6 +517,7 @@ SQL;
         $this->assertTrue(isset($rows[0]['CUSTOMER_ID']));
         $this->assertTrue(isset($rows[0]['TOTAL']));
     }
+<<<<<<< HEAD
 
     /**
      * Data provider for [[testGetRawSql()]]
@@ -561,4 +592,6 @@ SQL;
         $db->createCommand()->dropTable($tableName)->execute();
         $this->assertNull($db->getSchema()->getTableSchema($tableName));
     }
+=======
+>>>>>>> official/master
 }

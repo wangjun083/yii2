@@ -242,7 +242,11 @@ class Container extends Component
      * - a string: a class name, an interface name or an alias name.
      * @param array $params the list of constructor parameters. The parameters will be passed to the class
      * constructor when [[get()]] is called.
+<<<<<<< HEAD
      * @return $this the container itself
+=======
+     * @return static the container itself
+>>>>>>> official/master
      */
     public function set($class, $definition = [], array $params = [])
     {
@@ -262,7 +266,11 @@ class Container extends Component
      * @param mixed $definition the definition associated with `$class`. See [[set()]] for more details.
      * @param array $params the list of constructor parameters. The parameters will be passed to the class
      * constructor when [[get()]] is called.
+<<<<<<< HEAD
      * @return $this the container itself
+=======
+     * @return static the container itself
+>>>>>>> official/master
      * @see set()
      */
     public function setSingleton($class, $definition = [], array $params = [])

@@ -17,7 +17,11 @@ use yii\base\Model;
  * ~~~php
  * class MyModel extends Model
  * {
+<<<<<<< HEAD
  *     public $categoryIDs = [];
+=======
+ *     public $arrayAttribute = [];
+>>>>>>> official/master
  *
  *     public function rules()
  *     {

@@ -234,7 +234,11 @@ use yii\data\BaseDataProvider;
 class CsvDataProvider extends BaseDataProvider
 {
     /**
+<<<<<<< HEAD
      * @var string 読み出す CSV ファイルの名前
+=======
+     * @var 読み出す CSV ファイルの名前
+>>>>>>> official/master
      */
     public $filename;
     

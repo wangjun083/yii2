@@ -44,10 +44,13 @@ abstract class ErrorHandler extends Component
      * @var string Used to reserve memory for fatal error handler.
      */
     private $_memoryReserve;
+<<<<<<< HEAD
     /**
      * @var \Exception from HHVM error that stores backtrace
      */
     private $_hhvmException;
+=======
+>>>>>>> official/master
 
 
     /**
@@ -57,11 +60,15 @@ abstract class ErrorHandler extends Component
     {
         ini_set('display_errors', false);
         set_exception_handler([$this, 'handleException']);
+<<<<<<< HEAD
         if (defined('HHVM_VERSION')) {
             set_error_handler([$this, 'handleHhvmError']);
         } else {
             set_error_handler([$this, 'handleError']);
         }
+=======
+        set_error_handler([$this, 'handleError']);
+>>>>>>> official/master
         if ($this->memoryReserveSize > 0) {
             $this->_memoryReserve = str_repeat('x', $this->memoryReserveSize);
         }
@@ -108,10 +115,13 @@ abstract class ErrorHandler extends Component
             }
             $this->renderException($exception);
             if (!YII_ENV_TEST) {
+<<<<<<< HEAD
                 \Yii::getLogger()->flush(true);
                 if (defined('HHVM_VERSION')) {
                     flush();
                 }
+=======
+>>>>>>> official/master
                 exit(1);
             }
         } catch (\Exception $e) {
@@ -131,9 +141,12 @@ abstract class ErrorHandler extends Component
             }
             $msg .= "\n\$_SERVER = " . VarDumper::export($_SERVER);
             error_log($msg);
+<<<<<<< HEAD
             if (defined('HHVM_VERSION')) {
                 flush();
             }
+=======
+>>>>>>> official/master
             exit(1);
         }
 
@@ -141,6 +154,7 @@ abstract class ErrorHandler extends Component
     }
 
     /**
+<<<<<<< HEAD
      * Handles HHVM execution errors such as warnings and notices.
      *
      * This method is used as a HHVM error handler. It will store exception that will
@@ -173,6 +187,8 @@ abstract class ErrorHandler extends Component
     }
 
     /**
+=======
+>>>>>>> official/master
      * Handles PHP execution errors such as warnings and notices.
      *
      * This method is used as a PHP error handler. It will simply raise an [[ErrorException]].
@@ -201,9 +217,12 @@ abstract class ErrorHandler extends Component
             foreach ($trace as $frame) {
                 if ($frame['function'] == '__toString') {
                     $this->handleException($exception);
+<<<<<<< HEAD
                     if (defined('HHVM_VERSION')) {
                         flush();
                     }
+=======
+>>>>>>> official/master
                     exit(1);
                 }
             }
@@ -229,11 +248,15 @@ abstract class ErrorHandler extends Component
         $error = error_get_last();
 
         if (ErrorException::isFatalError($error)) {
+<<<<<<< HEAD
             if (!empty($this->_hhvmException)) {
                 $exception = $this->_hhvmException;
             } else {
                 $exception = new ErrorException($error['message'], $error['type'], $error['type'], $error['file'], $error['line']);
             }
+=======
+            $exception = new ErrorException($error['message'], $error['type'], $error['type'], $error['file'], $error['line']);
+>>>>>>> official/master
             $this->exception = $exception;
 
             $this->logException($exception);
@@ -245,9 +268,13 @@ abstract class ErrorHandler extends Component
 
             // need to explicitly flush logs because exit() next will terminate the app immediately
             Yii::getLogger()->flush(true);
+<<<<<<< HEAD
             if (defined('HHVM_VERSION')) {
                 flush();
             }
+=======
+
+>>>>>>> official/master
             exit(1);
         }
     }
@@ -271,7 +298,11 @@ abstract class ErrorHandler extends Component
         } elseif ($exception instanceof \ErrorException) {
             $category .= ':' . $exception->getSeverity();
         }
+<<<<<<< HEAD
         Yii::error($exception, $category);
+=======
+        Yii::error((string) $exception, $category);
+>>>>>>> official/master
     }
 
     /**

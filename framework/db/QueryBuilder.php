@@ -153,8 +153,13 @@ class QueryBuilder extends \yii\base\Object
         }
 
         return 'INSERT INTO ' . $schema->quoteTableName($table)
+<<<<<<< HEAD
             . (!empty($names) ? ' (' . implode(', ', $names) . ')' : '')
             . (!empty($placeholders) ? ' VALUES (' . implode(', ', $placeholders) . ')' : ' DEFAULT VALUES');
+=======
+            . ' (' . implode(', ', $names) . ') VALUES ('
+            . implode(', ', $placeholders) . ')';
+>>>>>>> official/master
     }
 
     /**
@@ -586,15 +591,22 @@ class QueryBuilder extends \yii\base\Object
      * be ignored.
      *
      * If a type cannot be found in [[typeMap]], it will be returned without any change.
+<<<<<<< HEAD
      * @param string|ColumnSchemaBuilder $type abstract column type
+=======
+     * @param string $type abstract column type
+>>>>>>> official/master
      * @return string physical column type.
      */
     public function getColumnType($type)
     {
+<<<<<<< HEAD
         if ($type instanceof ColumnSchemaBuilder) {
             $type = $type->__toString();
         }
 
+=======
+>>>>>>> official/master
         if (isset($this->typeMap[$type])) {
             return $this->typeMap[$type];
         } elseif (preg_match('/^(\w+)\((.+?)\)(.*)$/', $type, $matches)) {
@@ -1206,7 +1218,11 @@ class QueryBuilder extends \yii\base\Object
             throw new InvalidParamException("Operator '$operator' requires two operands.");
         }
 
+<<<<<<< HEAD
         $escape = isset($operands[2]) ? $operands[2] : ['%' => '\%', '_' => '\_', '\\' => '\\\\'];
+=======
+        $escape = isset($operands[2]) ? $operands[2] : ['%'=>'\%', '_'=>'\_', '\\'=>'\\\\'];
+>>>>>>> official/master
         unset($operands[2]);
 
         if (!preg_match('/^(AND |OR |)(((NOT |))I?LIKE)/', $operator, $matches)) {

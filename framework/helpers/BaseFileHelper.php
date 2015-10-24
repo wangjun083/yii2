@@ -461,7 +461,11 @@ class BaseFileHelper
         try {
             $result = mkdir($path, $mode);
             chmod($path, $mode);
+<<<<<<< HEAD
         } catch (\Exception $e) {
+=======
+        } catch(\Exception $e) {
+>>>>>>> official/master
             throw new \yii\base\Exception("Failed to create directory '$path': " . $e->getMessage(), $e->getCode(), $e);
         }
 
@@ -477,7 +481,11 @@ class BaseFileHelper
      * @param string $pattern the pattern that $baseName will be compared against
      * @param integer|boolean $firstWildcard location of first wildcard character in the $pattern
      * @param integer $flags pattern flags
+<<<<<<< HEAD
      * @return boolean whether the name matches against pattern
+=======
+     * @return boolean wheter the name matches against pattern
+>>>>>>> official/master
      */
     private static function matchBasename($baseName, $pattern, $firstWildcard, $flags)
     {
@@ -511,7 +519,11 @@ class BaseFileHelper
      * @param string $pattern the pattern that path part will be compared against
      * @param integer|boolean $firstWildcard location of first wildcard character in the $pattern
      * @param integer $flags pattern flags
+<<<<<<< HEAD
      * @return boolean whether the path part matches against pattern
+=======
+     * @return boolean wheter the path part matches against pattern
+>>>>>>> official/master
      */
     private static function matchPathname($path, $basePath, $pattern, $firstWildcard, $flags)
     {
@@ -602,7 +614,11 @@ class BaseFileHelper
      * @param string $pattern
      * @param boolean $caseSensitive
      * @throws \yii\base\InvalidParamException
+<<<<<<< HEAD
      * @return array with keys: (string) pattern, (int) flags, (int|boolean) firstWildcard
+=======
+     * @return array with keys: (string) pattern, (int) flags, (int|boolean)firstWildcard
+>>>>>>> official/master
      */
     private static function parseExcludePattern($pattern, $caseSensitive)
     {
@@ -655,7 +671,11 @@ class BaseFileHelper
         $wildcardSearch = function ($r, $c) use ($pattern) {
             $p = strpos($pattern, $c);
 
+<<<<<<< HEAD
             return $r === false ? $p : ($p === false ? $r : min($r, $p));
+=======
+            return $r===false ? $p : ($p===false ? $r : min($r, $p));
+>>>>>>> official/master
         };
 
         return array_reduce($wildcards, $wildcardSearch, false);

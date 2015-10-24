@@ -10,7 +10,10 @@ namespace yii\db\oci;
 use yii\base\InvalidParamException;
 use yii\db\Connection;
 use yii\db\Exception;
+<<<<<<< HEAD
 use yii\db\Expression;
+=======
+>>>>>>> official/master
 
 /**
  * QueryBuilder is the query builder for Oracle databases.
@@ -163,6 +166,7 @@ EOD;
     }
 
     /**
+<<<<<<< HEAD
      * @inheritdoc
      */
     public function insert($table, $columns, &$params)
@@ -202,6 +206,8 @@ EOD;
     }
 
     /**
+=======
+>>>>>>> official/master
      * Generates a batch INSERT SQL statement.
      * For example,
      *

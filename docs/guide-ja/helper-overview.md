@@ -25,10 +25,17 @@ echo Html::encode('Test > test');
 
 以下のコアヘルパクラスが Yii のリリースにおいて提供されています。
 
+<<<<<<< HEAD
 - [配列ヘルパ](helper-array.md)
 - Console
 - FileHelper
 - [Html ヘルパ](helper-html.md)
+=======
+- [ArrayHelper](helper-array.md)
+- Console
+- FileHelper
+- [Html](helper-html.md)
+>>>>>>> official/master
 - HtmlPurifier
 - Image
 - Inflector
@@ -36,7 +43,11 @@ echo Html::encode('Test > test');
 - Markdown
 - Security
 - StringHelper
+<<<<<<< HEAD
 - [Url ヘルパ](helper-url.md)
+=======
+- [Url](helper-url.md)
+>>>>>>> official/master
 - VarDumper
 
 

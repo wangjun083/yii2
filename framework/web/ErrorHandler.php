@@ -69,12 +69,16 @@ class ErrorHandler extends \yii\base\ErrorHandler
     {
         if (Yii::$app->has('response')) {
             $response = Yii::$app->getResponse();
+<<<<<<< HEAD
             // reset parameters of response to avoid interference with partially created response data
             // in case the error occurred while sending the response.
             $response->isSent = false;
             $response->stream = null;
             $response->data = null;
             $response->content = null;
+=======
+            $response->isSent = false;
+>>>>>>> official/master
         } else {
             $response = new Response();
         }
@@ -266,11 +270,19 @@ class ErrorHandler extends \yii\base\ErrorHandler
         if ($file !== null && $line !== null) {
             $line--; // adjust line number from one-based to zero-based
             $lines = @file($file);
+<<<<<<< HEAD
             if ($line < 0 || $lines === false || ($lineCount = count($lines)) < $line) {
                 return '';
             }
 
             $half = (int) (($index === 1 ? $this->maxSourceLines : $this->maxTraceSourceLines) / 2);
+=======
+            if ($line < 0 || $lines === false || ($lineCount = count($lines)) < $line + 1) {
+                return '';
+            }
+
+            $half = (int) (($index == 1 ? $this->maxSourceLines : $this->maxTraceSourceLines) / 2);
+>>>>>>> official/master
             $begin = $line - $half > 0 ? $line - $half : 0;
             $end = $line + $half < $lineCount ? $line + $half : $lineCount - 1;
         }

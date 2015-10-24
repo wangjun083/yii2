@@ -377,6 +377,7 @@ abstract class BaseMessageControllerTest extends TestCase
         $this->assertArrayNotHasKey($message3, $messages2, "message3 not found in category2. Command output:\n\n" . $out);
         $this->assertArrayNotHasKey($message2, $messages2, "message2 found in category2. Command output:\n\n" . $out);
     }
+<<<<<<< HEAD
 
     /**
      * @depends testCreateTranslation
@@ -398,6 +399,8 @@ abstract class BaseMessageControllerTest extends TestCase
         $this->assertArrayHasKey($mainMessage, $messages, "\"$mainMessage\" is missing in translation file. Command output:\n\n" . $out);
         $this->assertArrayHasKey($nestedMessage, $messages, "\"$nestedMessage\" is missing in translation file. Command output:\n\n" . $out);
     }
+=======
+>>>>>>> official/master
 }
 
 class MessageControllerMock extends MessageController

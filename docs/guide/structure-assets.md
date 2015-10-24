@@ -189,6 +189,7 @@ class FontAwesomeAsset extends AssetBundle
     public $sourcePath = '@bower/font-awesome'; 
     public $css = [ 
         'css/font-awesome.min.css', 
+<<<<<<< HEAD
     ];
     public $publishOptions = [
         'only' => [
@@ -196,11 +197,27 @@ class FontAwesomeAsset extends AssetBundle
             'css/',
         ]
     ];
+=======
+    ]; 
+    
+    public function init()
+    {
+        parent::init();
+        $this->publishOptions['beforeCopy'] = function ($from, $to) {
+            $dirname = basename(dirname($from));
+            return $dirname === 'fonts' || $dirname === 'css';
+        };
+    }
+>>>>>>> official/master
 }  
 ```
 
 The above example defines an asset bundle for the ["fontawesome" package](http://fontawesome.io/). By specifying 
+<<<<<<< HEAD
 the `only` publishing option, only the `fonts` and `css` subdirectories will be published.
+=======
+the `beforeCopy` publishing option, only the `fonts` and `css` subdirectories will be published.
+>>>>>>> official/master
 
 
 ### Bower and NPM Assets <span id="bower-npm-assets"></span>

@@ -147,7 +147,11 @@ class UrlRule extends CompositeUrlRule
 
         $controllers = [];
         foreach ((array) $this->controller as $urlName => $controller) {
+<<<<<<< HEAD
             if (is_int($urlName)) {
+=======
+            if (is_integer($urlName)) {
+>>>>>>> official/master
                 $urlName = $this->pluralize ? Inflector::pluralize($controller) : $controller;
             }
             $controllers[$urlName] = $controller;

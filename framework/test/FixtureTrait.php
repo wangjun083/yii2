@@ -168,7 +168,11 @@ trait FixtureTrait
             if (!is_array($fixture)) {
                 $class = ltrim($fixture, '\\');
                 $fixtures[$name] = ['class' => $class];
+<<<<<<< HEAD
                 $aliases[$class] = is_int($name) ? $class : $name;
+=======
+                $aliases[$class] = is_integer($name) ? $class : $name;
+>>>>>>> official/master
             } elseif (isset($fixture['class'])) {
                 $class = ltrim($fixture['class'], '\\');
                 $config[$class] = $fixture;

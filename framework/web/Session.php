@@ -517,7 +517,11 @@ class Session extends Component implements \IteratorAggregate, \ArrayAccess, \Co
 
     /**
      * Returns an iterator for traversing the session variables.
+<<<<<<< HEAD
      * This method is required by the interface [[\IteratorAggregate]].
+=======
+     * This method is required by the interface IteratorAggregate.
+>>>>>>> official/master
      * @return SessionIterator an iterator for traversing the session variables.
      */
     public function getIterator()
@@ -538,7 +542,11 @@ class Session extends Component implements \IteratorAggregate, \ArrayAccess, \Co
 
     /**
      * Returns the number of items in the session.
+<<<<<<< HEAD
      * This method is required by [[\Countable]] interface.
+=======
+     * This method is required by Countable interface.
+>>>>>>> official/master
      * @return integer number of items in the session.
      */
     public function count()
@@ -671,14 +679,22 @@ class Session extends Component implements \IteratorAggregate, \ArrayAccess, \Co
      *
      * ```php
      * <?php
+<<<<<<< HEAD
      * foreach (Yii::$app->session->getAllFlashes() as $key => $message) {
+=======
+     * foreach(Yii::$app->session->getAllFlashes() as $key => $message) {
+>>>>>>> official/master
      *     echo '<div class="alert alert-' . $key . '">' . $message . '</div>';
      * } ?>
      * ```
      *
      * With the above code you can use the [bootstrap alert][] classes such as `success`, `info`, `danger`
      * as the flash message key to influence the color of the div.
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> official/master
      * Note that if you use [[addFlash()]], `$message` will be an array, and you will have to adjust the above code.
      *
      * [bootstrap alert]: http://getbootstrap.com/components/#alerts
@@ -820,7 +836,11 @@ class Session extends Component implements \IteratorAggregate, \ArrayAccess, \Co
     }
 
     /**
+<<<<<<< HEAD
      * This method is required by the interface [[\ArrayAccess]].
+=======
+     * This method is required by the interface ArrayAccess.
+>>>>>>> official/master
      * @param mixed $offset the offset to check on
      * @return boolean
      */
@@ -832,7 +852,11 @@ class Session extends Component implements \IteratorAggregate, \ArrayAccess, \Co
     }
 
     /**
+<<<<<<< HEAD
      * This method is required by the interface [[\ArrayAccess]].
+=======
+     * This method is required by the interface ArrayAccess.
+>>>>>>> official/master
      * @param integer $offset the offset to retrieve element.
      * @return mixed the element at the offset, null if no element is found at the offset
      */
@@ -844,7 +868,11 @@ class Session extends Component implements \IteratorAggregate, \ArrayAccess, \Co
     }
 
     /**
+<<<<<<< HEAD
      * This method is required by the interface [[\ArrayAccess]].
+=======
+     * This method is required by the interface ArrayAccess.
+>>>>>>> official/master
      * @param integer $offset the offset to set element
      * @param mixed $item the element value
      */
@@ -855,7 +883,11 @@ class Session extends Component implements \IteratorAggregate, \ArrayAccess, \Co
     }
 
     /**
+<<<<<<< HEAD
      * This method is required by the interface [[\ArrayAccess]].
+=======
+     * This method is required by the interface ArrayAccess.
+>>>>>>> official/master
      * @param mixed $offset the offset to unset element
      */
     public function offsetUnset($offset)

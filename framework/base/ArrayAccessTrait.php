@@ -22,7 +22,11 @@ trait ArrayAccessTrait
 {
     /**
      * Returns an iterator for traversing the data.
+<<<<<<< HEAD
      * This method is required by the SPL interface [[\IteratorAggregate]].
+=======
+     * This method is required by the SPL interface `IteratorAggregate`.
+>>>>>>> official/master
      * It will be implicitly called when you use `foreach` to traverse the collection.
      * @return \ArrayIterator an iterator for traversing the cookies in the collection.
      */
@@ -42,7 +46,11 @@ trait ArrayAccessTrait
     }
 
     /**
+<<<<<<< HEAD
      * This method is required by the interface [[\ArrayAccess]].
+=======
+     * This method is required by the interface ArrayAccess.
+>>>>>>> official/master
      * @param mixed $offset the offset to check on
      * @return boolean
      */
@@ -52,7 +60,11 @@ trait ArrayAccessTrait
     }
 
     /**
+<<<<<<< HEAD
      * This method is required by the interface [[\ArrayAccess]].
+=======
+     * This method is required by the interface ArrayAccess.
+>>>>>>> official/master
      * @param integer $offset the offset to retrieve element.
      * @return mixed the element at the offset, null if no element is found at the offset
      */
@@ -62,7 +74,11 @@ trait ArrayAccessTrait
     }
 
     /**
+<<<<<<< HEAD
      * This method is required by the interface [[\ArrayAccess]].
+=======
+     * This method is required by the interface ArrayAccess.
+>>>>>>> official/master
      * @param integer $offset the offset to set element
      * @param mixed $item the element value
      */
@@ -72,7 +88,11 @@ trait ArrayAccessTrait
     }
 
     /**
+<<<<<<< HEAD
      * This method is required by the interface [[\ArrayAccess]].
+=======
+     * This method is required by the interface ArrayAccess.
+>>>>>>> official/master
      * @param mixed $offset the offset to unset element
      */
     public function offsetUnset($offset)

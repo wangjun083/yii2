@@ -78,7 +78,11 @@ class Markdown extends \cebe\markdown\Parser
      */
     protected function renderEmph($element)
     {
+<<<<<<< HEAD
         return Console::ansiFormat($this->renderAbsy($element[1]), [Console::ITALIC]);
+=======
+        return Console::ansiFormat($this->renderAbsy($element[1]), Console::ITALIC);
+>>>>>>> official/master
     }
 
     /**
@@ -88,7 +92,11 @@ class Markdown extends \cebe\markdown\Parser
      */
     protected function renderStrong($element)
     {
+<<<<<<< HEAD
         return Console::ansiFormat($this->renderAbsy($element[1]), [Console::BOLD]);
+=======
+        return Console::ansiFormat($this->renderAbsy($element[1]), Console::BOLD);
+>>>>>>> official/master
     }
 
     /**

@@ -121,7 +121,11 @@ http://hostname/index.php?r=site/say&message=Привет+мир
   имени класса контроллера `PostCommentController`.
 
 
+<<<<<<< HEAD
 Заключение <span id="summary"></span>
+=======
+Резюме <span id="summary"></span>
+>>>>>>> official/master
 -----------------------------
 
 В этом разделе вы затронули тему контроллеров и представлений в паттерне MVC. Вы создали действие как часть контроллера,

@@ -10,13 +10,21 @@ the [entry script](structure-entry-scripts.md) and is globally accessible throug
 
 There are two types of applications: [[yii\web\Application|Web applications]] and
 [[yii\console\Application|console applications]]. As the names indicate, the former mainly handles
+<<<<<<< HEAD
 Web requests, while the latter handles console command requests.
+=======
+Web requests while the latter console command requests.
+>>>>>>> official/master
 
 
 ## Application Configurations <span id="application-configurations"></span>
 
 When an [entry script](structure-entry-scripts.md) creates an application, it will load
+<<<<<<< HEAD
 a [configuration](concept-configurations.md) and apply it to the application, as follows:
+=======
+a [configuration](concept-configurations.md) and apply it to the application, like the following:
+>>>>>>> official/master
 
 ```php
 require(__DIR__ . '/../vendor/autoload.php');
@@ -53,14 +61,22 @@ and [[yii\base\Application::basePath|basePath]].
 
 The [[yii\base\Application::id|id]] property specifies a unique ID that differentiates an application
 from others. It is mainly used programmatically. Although not a requirement, for best interoperability
+<<<<<<< HEAD
 it is recommended that you use only alphanumeric characters when specifying an application ID.
+=======
+it is recommended that you use alphanumeric characters only when specifying an application ID.
+>>>>>>> official/master
 
 
 #### [[yii\base\Application::basePath|basePath]] <span id="basePath"></span>
 
 The [[yii\base\Application::basePath|basePath]] property specifies the root directory of an application.
 It is the directory that contains all protected source code of an application system. Under this directory,
+<<<<<<< HEAD
 you normally will see sub-directories such as `models`, `views`, and `controllers`, which contain source code
+=======
+you normally will see sub-directories such as `models`, `views`, `controllers`, which contain source code
+>>>>>>> official/master
 corresponding to the MVC pattern.
 
 You may configure the [[yii\base\Application::basePath|basePath]] property using a directory path
@@ -82,7 +98,11 @@ different applications.
 
 This property allows you to define a set of [aliases](concept-aliases.md) in terms of an array.
 The array keys are alias names, and the array values are the corresponding path definitions.
+<<<<<<< HEAD
 For example:
+=======
+For example,
+>>>>>>> official/master
 
 ```php
 [
@@ -93,8 +113,13 @@ For example:
 ]
 ```
 
+<<<<<<< HEAD
 This property is provided so that you can define aliases in terms of application configurations instead of
 by calling the [[Yii::setAlias()]] method.
+=======
+This property is provided such that you can define aliases in terms of application configurations instead of
+the method calls [[Yii::setAlias()]].
+>>>>>>> official/master
 
 
 #### [[yii\base\Application::bootstrap|bootstrap]] <span id="bootstrap"></span>
@@ -106,6 +131,7 @@ you may list its ID as an element in this property.
 
 Each component listed in this property may be specified in one of the following formats:
 
+<<<<<<< HEAD
 - an application component ID as specified via [components](#components),
 - a module ID as specified via [modules](#modules),
 - a class name,
@@ -113,6 +139,15 @@ Each component listed in this property may be specified in one of the following 
 - an anonymous function that creates and returns a component.
 
 For example:
+=======
+- an application component ID as specified via [components](#components).
+- a module ID as specified via [modules](#modules).
+- a class name.
+- a configuration array.
+- an anonymous function that creates and returns a component.
+
+For example,
+>>>>>>> official/master
 
 ```php
 [
@@ -155,7 +190,11 @@ will also be called.
 
 Another practical example is in the application configuration for the [Basic Project Template](start-installation.md),
 where the `debug` and `gii` modules are configured as bootstrapping components when the application is running
+<<<<<<< HEAD
 in the development environment:
+=======
+in development environment,
+>>>>>>> official/master
 
 ```php
 if (YII_ENV_DEV) {
@@ -179,7 +218,11 @@ a [controller action](structure-controllers.md) which should handle all user req
 used when the application is in maintenance mode and needs to handle all incoming requests via a single action.
 
 The configuration is an array whose first element specifies the route of the action.
+<<<<<<< HEAD
 The rest of the array elements (key-value pairs) specify the parameters to be bound to the action. For example:
+=======
+The rest of the array elements (key-value pairs) specify the parameters to be bound to the action. For example,
+>>>>>>> official/master
 
 ```php
 [
@@ -195,7 +238,11 @@ The rest of the array elements (key-value pairs) specify the parameters to be bo
 #### [[yii\base\Application::components|components]] <span id="components"></span>
 
 This is the single most important property. It allows you to register a list of named components
+<<<<<<< HEAD
 called [application components](structure-application-components.md) that you can use in other places. For example:
+=======
+called [application components](structure-application-components.md) that you can use in other places. For example,
+>>>>>>> official/master
 
 ```php
 [
@@ -215,7 +262,11 @@ Each application component is specified as a key-value pair in the array. The ke
 while the value represents the component class name or [configuration](concept-configurations.md).
 
 You can register any component with an application, and the component can later be accessed globally
+<<<<<<< HEAD
 using the expression `\Yii::$app->componentID`.
+=======
+using the expression `\Yii::$app->ComponentID`.
+>>>>>>> official/master
 
 Please read the [Application Components](structure-application-components.md) section for details.
 
@@ -258,7 +309,11 @@ be `app\controllers\admin\PostController`.
 
 It is important that the fully qualified controller classes should be [autoloadable](concept-autoloading.md)
 and the actual namespace of your controller classes match the value of this property. Otherwise,
+<<<<<<< HEAD
 you will receive a "Page Not Found" error when accessing the application.
+=======
+you will receive "Page Not Found" error when accessing the application.
+>>>>>>> official/master
 
 In case you want to break the convention as described above, you may configure the [controllerMap](#controllerMap)
 property.
@@ -273,7 +328,11 @@ if your application needs to support multiple languages.
 The value of this property determines various [internationalization](tutorial-i18n.md) aspects,
 including message translation, date formatting, number formatting, etc. For example, the [[yii\jui\DatePicker]] widget
 will use this property value by default to determine in which language the calendar should be displayed and how
+<<<<<<< HEAD
 the date should be formatted.
+=======
+should the date be formatted.
+>>>>>>> official/master
 
 It is recommended that you specify a language in terms of an [IETF language tag](http://en.wikipedia.org/wiki/IETF_language_tag).
 For example, `en` stands for English, while `en-US` stands for English (United States).
@@ -286,7 +345,11 @@ More details about this property can be found in the [Internationalization](tuto
 This property specifies the [modules](structure-modules.md) that the application contains.
 
 The property takes an array of module classes or [configurations](concept-configurations.md) with the array keys
+<<<<<<< HEAD
 being the module IDs. For example:
+=======
+being the module IDs. For example,
+>>>>>>> official/master
 
 ```php
 [
@@ -309,8 +372,13 @@ Please refer to the [Modules](structure-modules.md) section for more details.
 #### [[yii\base\Application::name|name]] <span id="name"></span>
 
 This property specifies the application name that may be displayed to end users. Unlike the
+<<<<<<< HEAD
 [[yii\base\Application::id|id]] property, which should take a unique value, the value of this property is mainly for
 display purposes; it does not need to be unique.
+=======
+[[yii\base\Application::id|id]] property which should take a unique value, the value of this property is mainly for
+display purpose and does not need to be unique.
+>>>>>>> official/master
 
 You do not always need to configure this property if none of your code is using it.
 
@@ -330,15 +398,24 @@ image size as a parameter like the following:
 ]
 ```
 
+<<<<<<< HEAD
 Then in your code where you need to use the size value, you can simply use code like the following:
+=======
+Then in your code where you need to use the size value, you can simply use the code like the following:
+>>>>>>> official/master
 
 ```php
 $size = \Yii::$app->params['thumbnail.size'];
 $width = \Yii::$app->params['thumbnail.size'][0];
 ```
 
+<<<<<<< HEAD
 Later if you decide to change the thumbnail size, you only need to modify it in the application configuration;
 you don't need to touch any dependent code.
+=======
+Later if you decide to change the thumbnail size, you only need to modify it in the application configuration
+without touching any dependent code.
+>>>>>>> official/master
 
 
 #### [[yii\base\Application::sourceLanguage|sourceLanguage]] <span id="sourceLanguage"></span>
@@ -355,9 +432,15 @@ More details about this property can be found in the [Internationalization](tuto
 
 #### [[yii\base\Application::timeZone|timeZone]] <span id="timeZone"></span>
 
+<<<<<<< HEAD
 This property is provided as an alternative way of setting the default time zone of the PHP runtime.
 By configuring this property, you are essentially calling the PHP function
 [date_default_timezone_set()](http://php.net/manual/en/function.date-default-timezone-set.php). For example:
+=======
+This property is provided as an alternative way of setting the default time zone of PHP runtime.
+By configuring this property, you are essentially calling the PHP function
+[date_default_timezone_set()](http://php.net/manual/en/function.date-default-timezone-set.php). For example,
+>>>>>>> official/master
 
 ```php
 [
@@ -368,28 +451,47 @@ By configuring this property, you are essentially calling the PHP function
 
 #### [[yii\base\Application::version|version]] <span id="version"></span>
 
+<<<<<<< HEAD
 This property specifies the version of the application. It defaults to `'1.0'`. You do not need to configure
+=======
+This property specifies the version of the application. It defaults to `'1.0'`. You do not always need to configure
+>>>>>>> official/master
 this property if none of your code is using it.
 
 
 ### Useful Properties <span id="useful-properties"></span>
 
 The properties described in this subsection are not commonly configured because their default values
+<<<<<<< HEAD
 derive from common conventions. However, you may still configure them in case you want to break the conventions.
+=======
+stipulate common conventions. However, you may still configure them in case you want to break the conventions.
+>>>>>>> official/master
 
 
 #### [[yii\base\Application::charset|charset]] <span id="charset"></span>
 
+<<<<<<< HEAD
 This property specifies the charset that the application uses. The default value is `'UTF-8'`, which should
 be kept as-is for most applications unless you are working with a legacy system that uses a lot of non-Unicode data.
+=======
+This property specifies the charset that the application uses. The default value is `'UTF-8'` which should
+be kept as is for most applications unless you are working with some legacy systems that use a lot of non-unicode data.
+>>>>>>> official/master
 
 
 #### [[yii\base\Application::defaultRoute|defaultRoute]] <span id="defaultRoute"></span>
 
 This property specifies the [route](runtime-routing.md) that an application should use when a request
+<<<<<<< HEAD
 does not specify one. The route may consist of a child module ID, a controller ID, and/or an action ID.
 For example, `help`, `post/create`, or `admin/post/create`. If an action ID is not given, this property will take
 the default value specified in [[yii\base\Controller::defaultAction]].
+=======
+does not specify one. The route may consist of child module ID, controller ID, and/or action ID.
+For example, `help`, `post/create`, `admin/post/create`. If action ID is not given, it will take the default
+value as specified in [[yii\base\Controller::defaultAction]].
+>>>>>>> official/master
 
 For [[yii\web\Application|Web applications]], the default value of this property is `'site'`, which means
 the `SiteController` controller and its default action should be used. As a result, if you access
@@ -407,7 +509,11 @@ By default, it will take the array returned by the file `@vendor/yiisoft/extensi
 is generated and maintained automatically when you use [Composer](https://getcomposer.org) to install extensions.
 So in most cases, you do not need to configure this property.
 
+<<<<<<< HEAD
 In the special case when you want to maintain extensions manually, you may configure this property as follows:
+=======
+In the special case when you want to maintain extensions manually, you may configure this property like the following:
+>>>>>>> official/master
 
 ```php
 [
@@ -455,14 +561,24 @@ You may configure it as a directory or a path [alias](concept-aliases.md).
 
 #### [[yii\base\Application::runtimePath|runtimePath]] <span id="runtimePath"></span>
 
+<<<<<<< HEAD
 This property specifies the path where temporary files, such as log files and cache files, can be generated.
+=======
+This property specifies the path where temporary files, such as log files, cache files, can be generated.
+>>>>>>> official/master
 The default value is the directory represented by the alias `@app/runtime`.
 
 You may configure it as a directory or a path [alias](concept-aliases.md). Note that the runtime path must
 be writable by the process running the application. And the path should be protected from being accessed
+<<<<<<< HEAD
 by end users, because the temporary files under it may contain sensitive information.
 
 To simplify access to this path, Yii has predefined a path alias named `@runtime` for it.
+=======
+by end users because the temporary files under it may contain sensitive information.
+
+To simplify accessing to this path, Yii has predefined a path alias named `@runtime` for it.
+>>>>>>> official/master
 
 
 #### [[yii\base\Application::viewPath|viewPath]] <span id="viewPath"></span>
@@ -480,7 +596,11 @@ the directory represented by the alias `@app/vendor`.
 You may configure this property as a directory or a path [alias](concept-aliases.md). When you modify
 this property, make sure you also adjust the Composer configuration accordingly.
 
+<<<<<<< HEAD
 To simplify access to this path, Yii has predefined a path alias named `@vendor` for it.
+=======
+To simplify accessing to this path, Yii has predefined a path alias named `@vendor` for it.
+>>>>>>> official/master
 
 
 #### [[yii\console\Application::enableCoreCommands|enableCoreCommands]] <span id="enableCoreCommands"></span>
@@ -491,8 +611,13 @@ whether the core commands included in the Yii release should be enabled. The def
 
 ## Application Events <span id="application-events"></span>
 
+<<<<<<< HEAD
 An application triggers several events during the lifecycle of handling a request. You may attach event
 handlers to these events in application configurations as follows:
+=======
+An application triggers several events during the lifecycle of handling an request. You may attach event
+handlers to these events in application configurations like the following,
+>>>>>>> official/master
 
 ```php
 [
@@ -506,7 +631,11 @@ The use of the `on eventName` syntax is described in the [Configurations](concep
 section.
 
 Alternatively, you may attach event handlers during the [bootstrapping process](runtime-bootstrapping.md)
+<<<<<<< HEAD
 after the application instance is created. For example:
+=======
+after the application instance is created. For example,
+>>>>>>> official/master
 
 ```php
 \Yii::$app->on(\yii\base\Application::EVENT_BEFORE_REQUEST, function ($event) {
@@ -542,7 +671,11 @@ The actual event name is `beforeAction`.
 
 The event parameter is an instance of [[yii\base\ActionEvent]]. An event handler may set
 the [[yii\base\ActionEvent::isValid]] property to be `false` to stop running the action.
+<<<<<<< HEAD
 For example:
+=======
+For example,
+>>>>>>> official/master
 
 ```php
 [
@@ -558,7 +691,11 @@ For example:
 Note that the same `beforeAction` event is also triggered by [modules](structure-modules.md)
 and [controllers](structure-controllers.md). Application objects are the first ones
 triggering this event, followed by modules (if any), and finally controllers. If an event handler
+<<<<<<< HEAD
 sets [[yii\base\ActionEvent::isValid]] to be `false`, all of the subsequent events will NOT be triggered.
+=======
+sets [[yii\base\ActionEvent::isValid]] to be `false`, all the following events will NOT be triggered.
+>>>>>>> official/master
 
 
 ### [[yii\base\Application::EVENT_AFTER_ACTION|EVENT_AFTER_ACTION]] <span id="afterAction"></span>
@@ -568,7 +705,11 @@ The actual event name is `afterAction`.
 
 The event parameter is an instance of [[yii\base\ActionEvent]]. Through
 the [[yii\base\ActionEvent::result]] property, an event handler may access or modify the action result.
+<<<<<<< HEAD
 For example:
+=======
+For example,
+>>>>>>> official/master
 
 ```php
 [
@@ -605,7 +746,11 @@ an application will undergo the following lifecycle:
 3. The entry script calls [[yii\base\Application::run()]] to run the application:
   * Trigger the [[yii\base\Application::EVENT_BEFORE_REQUEST|EVENT_BEFORE_REQUEST]] event.
   * Handle the request: resolve the request into a [route](runtime-routing.md) and the associated parameters;
+<<<<<<< HEAD
     create the module, controller, and action objects as specified by the route; and run the action.
+=======
+    create the module, controller and action objects as specified by the route; and run the action.
+>>>>>>> official/master
   * Trigger the [[yii\base\Application::EVENT_AFTER_REQUEST|EVENT_AFTER_REQUEST]] event.
   * Send response to the end user.
 4. The entry script receives the exit status from the application and completes the request processing.

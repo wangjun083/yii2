@@ -95,7 +95,10 @@ return [
   'yii\db\BaseActiveRecord' => YII2_PATH . '/db/BaseActiveRecord.php',
   'yii\db\BatchQueryResult' => YII2_PATH . '/db/BatchQueryResult.php',
   'yii\db\ColumnSchema' => YII2_PATH . '/db/ColumnSchema.php',
+<<<<<<< HEAD
   'yii\db\ColumnSchemaBuilder' => YII2_PATH . '/db/ColumnSchemaBuilder.php',
+=======
+>>>>>>> official/master
   'yii\db\Command' => YII2_PATH . '/db/Command.php',
   'yii\db\Connection' => YII2_PATH . '/db/Connection.php',
   'yii\db\DataReader' => YII2_PATH . '/db/DataReader.php',
@@ -109,7 +112,10 @@ return [
   'yii\db\QueryInterface' => YII2_PATH . '/db/QueryInterface.php',
   'yii\db\QueryTrait' => YII2_PATH . '/db/QueryTrait.php',
   'yii\db\Schema' => YII2_PATH . '/db/Schema.php',
+<<<<<<< HEAD
   'yii\db\SchemaBuilderTrait' => YII2_PATH . '/db/SchemaBuilderTrait.php',
+=======
+>>>>>>> official/master
   'yii\db\StaleObjectException' => YII2_PATH . '/db/StaleObjectException.php',
   'yii\db\TableSchema' => YII2_PATH . '/db/TableSchema.php',
   'yii\db\Transaction' => YII2_PATH . '/db/Transaction.php',
@@ -122,7 +128,10 @@ return [
   'yii\db\mssql\TableSchema' => YII2_PATH . '/db/mssql/TableSchema.php',
   'yii\db\mysql\QueryBuilder' => YII2_PATH . '/db/mysql/QueryBuilder.php',
   'yii\db\mysql\Schema' => YII2_PATH . '/db/mysql/Schema.php',
+<<<<<<< HEAD
   'yii\db\oci\ColumnSchemaBuilder' => YII2_PATH . '/db/oci/ColumnSchemaBuilder.php',
+=======
+>>>>>>> official/master
   'yii\db\oci\QueryBuilder' => YII2_PATH . '/db/oci/QueryBuilder.php',
   'yii\db\oci\Schema' => YII2_PATH . '/db/oci/Schema.php',
   'yii\db\pgsql\QueryBuilder' => YII2_PATH . '/db/pgsql/QueryBuilder.php',
@@ -283,7 +292,10 @@ return [
   'yii\web\Link' => YII2_PATH . '/web/Link.php',
   'yii\web\Linkable' => YII2_PATH . '/web/Linkable.php',
   'yii\web\MethodNotAllowedHttpException' => YII2_PATH . '/web/MethodNotAllowedHttpException.php',
+<<<<<<< HEAD
   'yii\web\MultiFieldSession' => YII2_PATH . '/web/MultiFieldSession.php',
+=======
+>>>>>>> official/master
   'yii\web\NotAcceptableHttpException' => YII2_PATH . '/web/NotAcceptableHttpException.php',
   'yii\web\NotFoundHttpException' => YII2_PATH . '/web/NotFoundHttpException.php',
   'yii\web\Request' => YII2_PATH . '/web/Request.php',

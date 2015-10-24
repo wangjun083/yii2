@@ -67,6 +67,7 @@ class SchemaTest extends DatabaseTestCase
         $this->assertEquals($noCacheTable, $cachedTable);
     }
 
+<<<<<<< HEAD
     /**
      * @depends testSchemaCache
      */
@@ -84,6 +85,8 @@ class SchemaTest extends DatabaseTestCase
         $this->assertFalse($noCacheTable === $refreshedTable);
     }
 
+=======
+>>>>>>> official/master
     public function testCompositeFk()
     {
         /* @var $schema Schema */

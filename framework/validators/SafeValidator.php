@@ -10,6 +10,7 @@ namespace yii\validators;
 /**
  * SafeValidator serves as a dummy validator whose main purpose is to mark the attributes to be safe for massive assignment.
  *
+<<<<<<< HEAD
  * This class is required because of the way in which Yii determines whether a property is safe for massive assignment, that is,
  * when a user submits form data to be loaded into a model directly from the POST data, is it ok for a property to be copied.
  * In many cases, this is required but because sometimes properties are internal and you do not want the POST data to be able to
@@ -18,6 +19,8 @@ namespace yii\validators;
  * does not have a validation rule associated with it - for instance, due to no validation being performed, in which case, you use this class
  * as a validation rule for that property. Although it has no functionality, it allows Yii to determine that the property is safe to copy.
  *
+=======
+>>>>>>> official/master
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */

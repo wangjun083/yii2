@@ -8,8 +8,11 @@
 namespace yii\db\mssql;
 
 use yii\base\InvalidParamException;
+<<<<<<< HEAD
 use yii\base\NotSupportedException;
 use yii\db\Query;
+=======
+>>>>>>> official/master
 
 /**
  * QueryBuilder is the query builder for MS SQL Server databases (version 2008 and above).
@@ -119,6 +122,7 @@ class QueryBuilder extends \yii\db\QueryBuilder
 
     /**
      * Builds a SQL statement for renaming a DB table.
+<<<<<<< HEAD
      * @param string $oldName the table to be renamed. The name will be properly quoted by the method.
      * @param string $newName the new table name. The name will be properly quoted by the method.
      * @return string the SQL statement for renaming a DB table.
@@ -126,11 +130,21 @@ class QueryBuilder extends \yii\db\QueryBuilder
     public function renameTable($oldName, $newName)
     {
         return 'sp_rename ' . $this->db->quoteTableName($oldName) . ', ' . $this->db->quoteTableName($newName);
+=======
+     * @param string $table the table to be renamed. The name will be properly quoted by the method.
+     * @param string $newName the new table name. The name will be properly quoted by the method.
+     * @return string the SQL statement for renaming a DB table.
+     */
+    public function renameTable($table, $newName)
+    {
+        return "sp_rename '$table', '$newName'";
+>>>>>>> official/master
     }
 
     /**
      * Builds a SQL statement for renaming a column.
      * @param string $table the table whose column is to be renamed. The name will be properly quoted by the method.
+<<<<<<< HEAD
      * @param string $oldName the old name of the column. The name will be properly quoted by the method.
      * @param string $newName the new name of the column. The name will be properly quoted by the method.
      * @return string the SQL statement for renaming a DB column.
@@ -141,6 +155,15 @@ class QueryBuilder extends \yii\db\QueryBuilder
         $oldName = $this->db->quoteColumnName($oldName);
         $newName = $this->db->quoteColumnName($newName);
         return "sp_rename '{$table}.{$oldName}', {$newName}, 'COLUMN'";
+=======
+     * @param string $name the old name of the column. The name will be properly quoted by the method.
+     * @param string $newName the new name of the column. The name will be properly quoted by the method.
+     * @return string the SQL statement for renaming a DB column.
+     */
+    public function renameColumn($table, $name, $newName)
+    {
+        return "sp_rename '$table.$name', '$newName', 'COLUMN'";
+>>>>>>> official/master
     }
 
     /**
@@ -227,7 +250,11 @@ class QueryBuilder extends \yii\db\QueryBuilder
      *
      * @param string $operator
      * @param array $columns
+<<<<<<< HEAD
      * @param Query $values
+=======
+     * @param array $values
+>>>>>>> official/master
      * @param array $params
      * @return string SQL
      */

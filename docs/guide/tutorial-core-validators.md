@@ -58,7 +58,11 @@ to make sure an input is the same as the verification code displayed by [[yii\ca
   [[yii\captcha\CaptchaAction|CAPTCHA action]] that renders the CAPTCHA image. Defaults to `'site/captcha'`.
 - `skipOnEmpty`: whether the validation can be skipped if the input is empty. Defaults to false,
   which means the input is required.
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> official/master
 
 ## [[yii\validators\CompareValidator|compare]] <span id="compare"></span>
 
@@ -79,7 +83,11 @@ is as specified by the `operator` property.
   is being used to validate an attribute, the default value of this property would be the name of
   the attribute suffixed with `_repeat`. For example, if the attribute being validated is `password`,
   then this property will default to `password_repeat`.
+<<<<<<< HEAD
 - `compareValue`: a constant value that the input value should be compared with. When both
+=======
+- `compareValue`: a constant value that the input value should be compared with. When both 
+>>>>>>> official/master
   of this property and `compareAttribute` are specified, this property will take precedence.
 - `operator`: the comparison operator. Defaults to `==`, meaning checking if the input value is equal
   to that of `compareAttribute` or `compareValue`. The following operators are supported:
@@ -105,9 +113,15 @@ This validator checks if the input value is a date, time or datetime in a proper
 Optionally, it can convert the input value into a UNIX timestamp or other machine readable format and store it in an attribute
 specified via [[yii\validators\DateValidator::timestampAttribute|timestampAttribute]].
 
+<<<<<<< HEAD
 - `format`: the date/time format that the value being validated should be in.
    This can be a date time pattern as described in the [ICU manual](http://userguide.icu-project.org/formatparse/datetime#TOC-Date-Time-Format-Syntax).
    Alternatively this can be a string prefixed with `php:` representing a format that can be recognized by the PHP
+=======
+- `format`: the date/time format that the value being validated should be in. 
+   This can be a date time pattern as described in the [ICU manual](http://userguide.icu-project.org/formatparse/datetime#TOC-Date-Time-Format-Syntax).
+   Alternatively this can be a string prefixed with `php:` representing a format that can be recognized by the PHP 
+>>>>>>> official/master
    `Datetime` class. Please refer to <http://php.net/manual/en/datetime.createfromformat.php> on supported formats.
    If this is not set, it will take the value of `Yii::$app->formatter->dateFormat`.
    See the [[yii\validators\DateValidator::$format|API documentation]] for more details.
@@ -115,8 +129,13 @@ specified via [[yii\validators\DateValidator::timestampAttribute|timestampAttrib
 - `timestampAttribute`: the name of the attribute to which this validator may assign the UNIX timestamp
   converted from the input date/time. This can be the same attribute as the one being validated. If this is the case,
   the original value will be overwritten with the timestamp value after validation.
+<<<<<<< HEAD
   See ["Handling date input with the DatePicker"](https://github.com/yiisoft/yii2-jui/blob/master/docs/guide/topics-date-picker.md) for a usage example.
 
+=======
+  See ["Handling date input with the DatePicker"](widget-jui#datepicker-date-input) for a usage example.
+  
+>>>>>>> official/master
   Since version 2.0.4, a format and timezone can be specified for this attribute using
   [[yii\validators\DateValidator::$timestampAttributeFormat|$timestampAttributeFormat]] and
   [[yii\validators\DateValidator::$timestampAttributeTimeZone|$timestampAttributeTimeZone]].
@@ -199,7 +218,11 @@ This validator only works with an array attribute. It validates if *every* eleme
 validated by a specified validation rule. In the above example, the `categoryIDs` attribute must take an array value
 and each array element will be validated by the `integer` validation rule.
 
+<<<<<<< HEAD
 - `rule`: an array specifying a validation rule. The first element in the array specifies the class name or
+=======
+- `rule`: an array specifying a validation rule. The first element in the array specifies the class name or 
+>>>>>>> official/master
   the alias of the validator. The rest of the name-value pairs in the array are used to configure the validator object.
 - `allowMessageFromRule`: whether to use the error message returned by the embedded validation rule. Defaults to true.
   If false, it will use `message` as the error message.
@@ -252,7 +275,11 @@ This validator checks if the input value is a valid email address.
 ]
 ```
 
+<<<<<<< HEAD
 This validator checks if the input value can be found in a table column represented by
+=======
+This validator checks if the input value can be found in a table column represented by 
+>>>>>>> official/master
 an [Active Record](db-active-record.md) attribute. You can use `targetAttribute` to specify the
 [Active Record](db-active-record.md) attribute and `targetClass` the corresponding [Active Record](db-active-record.md)
 class. If you do not specify them, they will take the values of the attribute and the model class being validated.
@@ -295,7 +322,10 @@ This validator checks if the input is a valid uploaded file.
 - `mimeTypes`: a list of file MIME types that are allowed to be uploaded. This can be either an array
   or a string consisting of file MIME types separated by space or comma (e.g. "image/jpeg, image/png").
   Mime type names are case-insensitive. Defaults to null, meaning all MIME types are allowed.
+<<<<<<< HEAD
   For more details, please refer to [common media types](http://en.wikipedia.org/wiki/Internet_media_type#List_of_common_media_types).
+=======
+>>>>>>> official/master
 - `minSize`: the minimum number of bytes required for the uploaded file. Defaults to null, meaning no lower limit.
 - `maxSize`: the maximum number of bytes allowed for the uploaded file. Defaults to null, meaning no upper limit.
 - `maxFiles`: the maximum number of files that the given attribute can hold. Defaults to 1, meaning

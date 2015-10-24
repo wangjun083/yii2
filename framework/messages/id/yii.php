@@ -18,22 +18,37 @@
  */
 return [
     'The requested view "{name}" was not found.' => 'View "{name}" yang diminta tidak ditemukan.',
+<<<<<<< HEAD
     'You are requesting with an invalid access token.' => 'Anda melakukan permintaan dengan akses token yang tidak valid.',
     '(not set)' => '(belum diset)',
     'An internal server error occurred.' => 'Terjadi kesalahan internal server.',
     'Are you sure you want to delete this item?' => 'Apakah Anda yakin ingin menghapus item ini?',
+=======
+    'You are requesting with an invalid access token.' => 'Anda melakukan permintaan dengan akses token yang invalid.',
+    '(not set)' => '(belum diset)',
+    'An internal server error occurred.' => 'Terjadi kesalahan internal server.',
+    'Are you sure you want to delete this item?' => 'Apakah Anda yakin ingin menghapus ini?',
+>>>>>>> official/master
     'Delete' => 'Hapus',
     'Error' => 'Kesalahan',
     'File upload failed.' => 'Mengunggah berkas gagal.',
     'Home' => 'Beranda',
+<<<<<<< HEAD
     'Invalid data received for parameter "{param}".' => 'Data yang diterima tidak valid untuk parameter "{param}"',
+=======
+    'Invalid data received for parameter "{param}".' => 'Data yang diterima invalid untuk parameter "{param}"',
+>>>>>>> official/master
     'Login Required' => 'Diperlukan login',
     'Missing required arguments: {params}' => 'Argumen yang diperlukan tidak ada: {params}',
     'Missing required parameters: {params}' => 'Parameter yang diperlukan tidak ada: {params}',
     'No' => 'Tidak',
     'No help for unknown command "{command}".' => 'Tidak ada bantuan untuk perintah yang tidak diketahui "{command}".',
     'No help for unknown sub-command "{command}".' => 'Tidak ada bantuan untuk sub perintah yang tidak diketahui "{command}".',
+<<<<<<< HEAD
     'No results found.' => 'Tidak ada data yang ditemukan.',
+=======
+    'No results found.' => 'Tidak ada hasil yang ditemukan.',
+>>>>>>> official/master
     'Only files with these MIME types are allowed: {mimeTypes}.' => 'Hanya berkas dengan tipe MIME ini yang diperbolehkan: {mimeTypes}.',
     'Only files with these extensions are allowed: {extensions}.' => 'Hanya berkas dengan ekstensi ini yang diperbolehkan: {extensions}.',
     'Page not found.' => 'Halaman tidak ditemukan.',
@@ -50,7 +65,11 @@ return [
     'The image "{file}" is too small. The width cannot be smaller than {limit, number} {limit, plural, one{pixel} other{pixels}}.' => 'Gambar "{file}" terlalu kecil. Lebarnya tidak boleh lebih kecil dari {limit, number} {limit, plural, one{piksel} other{piksel}}.',
     'The verification code is incorrect.' => 'Kode verifikasi tidak benar.',
     'Total <b>{count, number}</b> {count, plural, one{item} other{items}}.' => 'Total <b>{count, number}</b> {count, plural, one{item} other{item}}.',
+<<<<<<< HEAD
     'Unable to verify your data submission.' => 'Tidak dapat mem-verifikasi pengiriman data Anda.',
+=======
+    'Unable to verify your data submission.' => 'Tidak dapat memverifikasi pengiriman data Anda.',
+>>>>>>> official/master
     'Unknown command "{command}".' => 'Perintah tidak dikenal "{command}".',
     'Unknown option: --{name}' => 'Opsi tidak dikenal: --{name}',
     'Update' => 'Ubah',

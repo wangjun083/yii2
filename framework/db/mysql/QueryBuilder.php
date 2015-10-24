@@ -7,9 +7,14 @@
 
 namespace yii\db\mysql;
 
+<<<<<<< HEAD
 use yii\base\InvalidParamException;
 use yii\db\Exception;
 use yii\db\Expression;
+=======
+use yii\db\Exception;
+use yii\base\InvalidParamException;
+>>>>>>> official/master
 
 /**
  * QueryBuilder is the query builder for MySQL databases.
@@ -81,6 +86,7 @@ class QueryBuilder extends \yii\db\QueryBuilder
     }
 
     /**
+<<<<<<< HEAD
      * @inheritdoc
      * @see https://bugs.mysql.com/bug.php?id=48875
      */
@@ -94,6 +100,8 @@ class QueryBuilder extends \yii\db\QueryBuilder
     }
 
     /**
+=======
+>>>>>>> official/master
      * Builds a SQL statement for dropping a foreign key constraint.
      * @param string $name the name of the foreign key constraint to be dropped. The name will be properly quoted by the method.
      * @param string $table the table whose foreign is to be dropped. The name will be properly quoted by the method.
@@ -149,8 +157,13 @@ class QueryBuilder extends \yii\db\QueryBuilder
     /**
      * Builds a SQL statement for enabling or disabling integrity check.
      * @param boolean $check whether to turn on or off the integrity check.
+<<<<<<< HEAD
      * @param string $schema the schema of the tables. Meaningless for MySQL.
      * @param string $table the table name. Meaningless for MySQL.
+=======
+     * @param string $table the table name. Meaningless for MySQL.
+     * @param string $schema the schema of the tables. Meaningless for MySQL.
+>>>>>>> official/master
      * @return string the SQL statement for checking integrity
      */
     public function checkIntegrity($check = true, $schema = '', $table = '')
@@ -178,6 +191,7 @@ class QueryBuilder extends \yii\db\QueryBuilder
 
         return $sql;
     }
+<<<<<<< HEAD
 
     /**
      * @inheritdoc
@@ -217,4 +231,6 @@ class QueryBuilder extends \yii\db\QueryBuilder
             . (!empty($names) ? ' (' . implode(', ', $names) . ')' : '')
             . (!empty($placeholders) ? ' VALUES (' . implode(', ', $placeholders) . ')' : ' DEFAULT VALUES');
     }
+=======
+>>>>>>> official/master
 }

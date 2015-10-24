@@ -185,6 +185,7 @@ class GridView extends BaseListView
      */
     public $columns = [];
     /**
+<<<<<<< HEAD
      * @var string the HTML display when the content of a cell is empty.
      * This property is used to render cells that have no defined content,
      * e.g. empty footer or filter cells.
@@ -192,6 +193,9 @@ class GridView extends BaseListView
      * Note that this is not used by the [[DataColumn]] if a data item is `null`. In that case
      * the [[\yii\i18n\Formatter::nullDisplay|nullDisplay]] property of the [[formatter]] will
      * be used to indicate an empty data value.
+=======
+     * @var string the HTML display when the content of a cell is empty
+>>>>>>> official/master
      */
     public $emptyCell = '&nbsp;';
     /**

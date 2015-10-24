@@ -72,7 +72,10 @@ class SecurityTest extends TestCase
             return;
         }
         $this->security->passwordHashStrategy = $passwordHashStrategy;
+<<<<<<< HEAD
         $this->security->passwordHashCost = 4;  // minimum blowfish's value is enough for tests
+=======
+>>>>>>> official/master
 
         $password = 'secret';
         $hash = $this->security->generatePasswordHash($password);

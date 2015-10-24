@@ -8,7 +8,11 @@
 namespace yii\web;
 
 /**
+<<<<<<< HEAD
  * SessionIterator implements an [[\Iterator|iterator]] for traversing session variables managed by [[Session]].
+=======
+ * SessionIterator implements an iterator for traversing session variables managed by [[Session]].
+>>>>>>> official/master
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
@@ -35,7 +39,11 @@ class SessionIterator implements \Iterator
 
     /**
      * Rewinds internal array pointer.
+<<<<<<< HEAD
      * This method is required by the interface [[\Iterator]].
+=======
+     * This method is required by the interface Iterator.
+>>>>>>> official/master
      */
     public function rewind()
     {
@@ -44,7 +52,11 @@ class SessionIterator implements \Iterator
 
     /**
      * Returns the key of the current array element.
+<<<<<<< HEAD
      * This method is required by the interface [[\Iterator]].
+=======
+     * This method is required by the interface Iterator.
+>>>>>>> official/master
      * @return mixed the key of the current array element
      */
     public function key()
@@ -54,7 +66,11 @@ class SessionIterator implements \Iterator
 
     /**
      * Returns the current array element.
+<<<<<<< HEAD
      * This method is required by the interface [[\Iterator]].
+=======
+     * This method is required by the interface Iterator.
+>>>>>>> official/master
      * @return mixed the current array element
      */
     public function current()
@@ -64,7 +80,11 @@ class SessionIterator implements \Iterator
 
     /**
      * Moves the internal pointer to the next array element.
+<<<<<<< HEAD
      * This method is required by the interface [[\Iterator]].
+=======
+     * This method is required by the interface Iterator.
+>>>>>>> official/master
      */
     public function next()
     {
@@ -75,7 +95,11 @@ class SessionIterator implements \Iterator
 
     /**
      * Returns whether there is an element at current position.
+<<<<<<< HEAD
      * This method is required by the interface [[\Iterator]].
+=======
+     * This method is required by the interface Iterator.
+>>>>>>> official/master
      * @return boolean
      */
     public function valid()

@@ -575,6 +575,7 @@ class FormatterDateTest extends TestCase
         $this->assertFalse(DateTime::createFromFormat('Y-m-d H:i:s', '2014-05-08'));
     }
 
+<<<<<<< HEAD
     public function testIntlInputFractionSeconds()
     {
         $this->testInputFractionSeconds();
@@ -630,4 +631,6 @@ class FormatterDateTest extends TestCase
 
     }
 
+=======
+>>>>>>> official/master
 }

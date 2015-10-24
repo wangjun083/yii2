@@ -231,9 +231,15 @@ interface ActiveRecordInterface
      * Updates records using the provided attribute values and conditions.
      * For example, to change the status to be 1 for all customers whose status is 2:
      *
+<<<<<<< HEAD
      * ```php
      * Customer::updateAll(['status' => 1], ['status' => '2']);
      * ```
+=======
+     * ~~~
+     * Customer::updateAll(['status' => 1], ['status' => '2']);
+     * ~~~
+>>>>>>> official/master
      *
      * @param array $attributes attribute values (name-value pairs) to be saved for the record.
      * Unlike [[update()]] these are not going to be validated.
@@ -250,9 +256,15 @@ interface ActiveRecordInterface
      *
      * For example, to delete all customers whose status is 3:
      *
+<<<<<<< HEAD
      * ```php
      * Customer::deleteAll([status = 3]);
      * ```
+=======
+     * ~~~
+     * Customer::deleteAll([status = 3]);
+     * ~~~
+>>>>>>> official/master
      *
      * @param array $condition the condition that matches the records that should get deleted.
      * Please refer to [[QueryInterface::where()]] on how to specify this parameter.
@@ -269,11 +281,16 @@ interface ActiveRecordInterface
      *
      * For example, to save a customer record:
      *
+<<<<<<< HEAD
      * ```php
+=======
+     * ~~~
+>>>>>>> official/master
      * $customer = new Customer; // or $customer = Customer::findOne($id);
      * $customer->name = $name;
      * $customer->email = $email;
      * $customer->save();
+<<<<<<< HEAD
      * ```
      *
      * @param boolean $runValidation whether to perform validation (calling [[validate()]])
@@ -282,6 +299,16 @@ interface ActiveRecordInterface
      * @param array $attributeNames list of attribute names that need to be saved. Defaults to null,
      * meaning all attributes that are loaded from DB will be saved.
      * @return boolean whether the saving succeeded (i.e. no validation errors occurred).
+=======
+     * ~~~
+     *
+     * @param boolean $runValidation whether to perform validation before saving the record.
+     * If the validation fails, the record will not be saved to database. `false` will be returned
+     * in this case.
+     * @param array $attributeNames list of attributes that need to be saved. Defaults to null,
+     * meaning all attributes that are loaded from DB will be saved.
+     * @return boolean whether the saving succeeds
+>>>>>>> official/master
      */
     public function save($runValidation = true, $attributeNames = null);
 
@@ -297,9 +324,14 @@ interface ActiveRecordInterface
      * $customer->insert();
      * ```
      *
+<<<<<<< HEAD
      * @param boolean $runValidation whether to perform validation (calling [[validate()]])
      * before saving the record. Defaults to `true`. If the validation fails, the record
      * will not be saved to the database and this method will return `false`.
+=======
+     * @param boolean $runValidation whether to perform validation before saving the record.
+     * If the validation fails, the record will not be inserted into the database.
+>>>>>>> official/master
      * @param array $attributes list of attributes that need to be saved. Defaults to null,
      * meaning all attributes that are loaded from DB will be saved.
      * @return boolean whether the attributes are valid and the record is inserted successfully.
@@ -318,9 +350,14 @@ interface ActiveRecordInterface
      * $customer->update();
      * ```
      *
+<<<<<<< HEAD
      * @param boolean $runValidation whether to perform validation (calling [[validate()]])
      * before saving the record. Defaults to `true`. If the validation fails, the record
      * will not be saved to the database and this method will return `false`.
+=======
+     * @param boolean $runValidation whether to perform validation before saving the record.
+     * If the validation fails, the record will not be inserted into the database.
+>>>>>>> official/master
      * @param array $attributeNames list of attributes that need to be saved. Defaults to null,
      * meaning all attributes that are loaded from DB will be saved.
      * @return integer|boolean the number of rows affected, or false if validation fails

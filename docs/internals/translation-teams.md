@@ -62,4 +62,7 @@ Ukrainian
 - **Alexandr Bordun [@borales](https://github.com/Borales), admin@yiiframework.com.ua**
 - Roman Bahatyi [@RichWeber](https://github.com/RichWeber), rbagatyi@gmail.com
 - Igor Zozulinskyi [@3y3ik](https://github.com/3y3ik)
+<<<<<<< HEAD
 - Vadym Chenin [@vchenin](https://github.com/vchenin), vchenin@meta.ua
+=======
+>>>>>>> official/master

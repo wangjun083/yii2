@@ -7,8 +7,11 @@
 
 namespace yii\db;
 
+<<<<<<< HEAD
 use yii\base\InvalidConfigException;
 
+=======
+>>>>>>> official/master
 /**
  * ActiveQuery represents a DB query associated with an Active Record class.
  *
@@ -237,7 +240,10 @@ class ActiveQuery extends Query implements ActiveQueryInterface
      * Removes duplicated models by checking their primary key values.
      * This method is mainly called when a join query is performed, which may cause duplicated rows being returned.
      * @param array $models the models to be checked
+<<<<<<< HEAD
      * @throws InvalidConfigException if model primary key is empty
+=======
+>>>>>>> official/master
      * @return array the distinctive models
      */
     private function removeDuplicatedModels($models)
@@ -248,6 +254,7 @@ class ActiveQuery extends Query implements ActiveQueryInterface
         $pks = $class::primaryKey();
 
         if (count($pks) > 1) {
+<<<<<<< HEAD
             // composite primary key
             foreach ($models as $i => $model) {
                 $key = [];
@@ -256,6 +263,11 @@ class ActiveQuery extends Query implements ActiveQueryInterface
                         // do not continue if the primary key is not part of the result set
                         break 2;
                     }
+=======
+            foreach ($models as $i => $model) {
+                $key = [];
+                foreach ($pks as $pk) {
+>>>>>>> official/master
                     $key[] = $model[$pk];
                 }
                 $key = serialize($key);
@@ -265,6 +277,7 @@ class ActiveQuery extends Query implements ActiveQueryInterface
                     $hash[$key] = true;
                 }
             }
+<<<<<<< HEAD
         } elseif (empty($pks)) {
             throw new InvalidConfigException("Primary key of '{$class}' can not be empty.");
         } else {
@@ -275,6 +288,11 @@ class ActiveQuery extends Query implements ActiveQueryInterface
                     // do not continue if the primary key is not part of the result set
                     break;
                 }
+=======
+        } else {
+            $pk = reset($pks);
+            foreach ($models as $i => $model) {
+>>>>>>> official/master
                 $key = $model[$pk];
                 if (isset($hash[$key])) {
                     unset($models[$i]);
@@ -331,6 +349,7 @@ class ActiveQuery extends Query implements ActiveQueryInterface
     }
 
     /**
+<<<<<<< HEAD
      * @inheritdoc
      */
     protected function queryScalar($selectExpression, $db)
@@ -351,6 +370,8 @@ class ActiveQuery extends Query implements ActiveQueryInterface
     }
 
     /**
+=======
+>>>>>>> official/master
      * Joins with the specified relations.
      *
      * This method allows you to reuse existing relation definitions to perform JOIN queries.
@@ -388,7 +409,11 @@ class ActiveQuery extends Query implements ActiveQueryInterface
      * @param string|array $joinType the join type of the relations specified in `$with`.
      * When this is a string, it applies to all relations specified in `$with`. Use an array
      * in the format of `relationName => joinType` to specify different join types for different relations.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself
+>>>>>>> official/master
      */
     public function joinWith($with, $eagerLoading = true, $joinType = 'LEFT JOIN')
     {
@@ -408,7 +433,11 @@ class ActiveQuery extends Query implements ActiveQueryInterface
 
             if (is_array($eagerLoading)) {
                 foreach ($with as $name => $callback) {
+<<<<<<< HEAD
                     if (is_int($name)) {
+=======
+                    if (is_integer($name)) {
+>>>>>>> official/master
                         if (!in_array($callback, $eagerLoading, true)) {
                             unset($with[$name]);
                         }
@@ -444,7 +473,11 @@ class ActiveQuery extends Query implements ActiveQueryInterface
      * Please refer to [[joinWith()]] for detailed usage of this method.
      * @param string|array $with the relations to be joined with
      * @param boolean|array $eagerLoading whether to eager loading the relations
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself
+>>>>>>> official/master
      * @see joinWith()
      */
     public function innerJoinWith($with, $eagerLoading = true)
@@ -463,7 +496,11 @@ class ActiveQuery extends Query implements ActiveQueryInterface
         $relations = [];
 
         foreach ($with as $name => $callback) {
+<<<<<<< HEAD
             if (is_int($name)) {
+=======
+            if (is_integer($name)) {
+>>>>>>> official/master
                 $name = $callback;
                 $callback = null;
             }
@@ -638,7 +675,11 @@ class ActiveQuery extends Query implements ActiveQueryInterface
      *
      * @param string|array $condition the ON condition. Please refer to [[Query::where()]] on how to specify this parameter.
      * @param array $params the parameters (name => value) to be bound to the query.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself
+>>>>>>> official/master
      */
     public function onCondition($condition, $params = [])
     {
@@ -653,7 +694,11 @@ class ActiveQuery extends Query implements ActiveQueryInterface
      * @param string|array $condition the new ON condition. Please refer to [[where()]]
      * on how to specify this parameter.
      * @param array $params the parameters (name => value) to be bound to the query.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself
+>>>>>>> official/master
      * @see onCondition()
      * @see orOnCondition()
      */
@@ -674,7 +719,11 @@ class ActiveQuery extends Query implements ActiveQueryInterface
      * @param string|array $condition the new ON condition. Please refer to [[where()]]
      * on how to specify this parameter.
      * @param array $params the parameters (name => value) to be bound to the query.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static the query object itself
+>>>>>>> official/master
      * @see onCondition()
      * @see andOnCondition()
      */
@@ -708,7 +757,11 @@ class ActiveQuery extends Query implements ActiveQueryInterface
      * in the [[primaryModel]] table.
      * @param callable $callable a PHP callback for customizing the relation associated with the junction table.
      * Its signature should be `function($query)`, where `$query` is the query to be customized.
+<<<<<<< HEAD
      * @return $this the query object itself
+=======
+     * @return static
+>>>>>>> official/master
      * @see via()
      */
     public function viaTable($tableName, $link, callable $callable = null)

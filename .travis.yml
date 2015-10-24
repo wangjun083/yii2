@@ -4,7 +4,10 @@ php:
   - 5.4
   - 5.5
   - 5.6
+<<<<<<< HEAD
   - 7.0
+=======
+>>>>>>> official/master
   - hhvm
   - hhvm-nightly
 
@@ -17,10 +20,19 @@ matrix:
   fast_finish: true
   allow_failures:
     - php: hhvm-nightly
+<<<<<<< HEAD
     - php: 7.0
 
 services:
   - memcached
+=======
+
+services:
+  - redis-server
+  - memcached
+  - elasticsearch
+  - mongodb
+>>>>>>> official/master
 
 # faster builds on new travis setup not using sudo
 sudo: false
@@ -28,7 +40,11 @@ sudo: false
 # cache vendor dirs
 cache:
   directories:
+<<<<<<< HEAD
 #    - cubrid/9.3.0
+=======
+#    - cubrid # caching cubrid breaks the build on a regular basis and has nearly no speedup
+>>>>>>> official/master
     - vendor
     - $HOME/.composer/cache
 
@@ -38,6 +54,7 @@ addons:
 
 install:
   - travis_retry composer self-update && composer --version
+<<<<<<< HEAD
   - travis_retry composer global require "fxp/composer-asset-plugin:~1.0.0"
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
 # core framework:
@@ -71,3 +88,55 @@ after_script:
       travis_retry wget https://scrutinizer-ci.com/ocular.phar
       php ocular.phar code-coverage:upload --format=php-clover coverage.clover
     fi
+=======
+  - travis_retry composer global require "fxp/composer-asset-plugin:1.0.0-beta4"
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+# core framework:
+  - travis_retry composer install --prefer-dist --no-interaction
+  - tests/unit/data/travis/mongodb-setup.sh
+# TODO: APC currently fails composer. https://github.com/composer/composer/issues/3405
+#  - tests/unit/data/travis/apc-setup.sh
+  - tests/unit/data/travis/memcache-setup.sh
+  - tests/unit/data/travis/cubrid-setup.sh
+# print elasticsearch version
+  - curl http://localhost:9200
+# codeception
+  - travis_retry composer global require "codeception/codeception=2.0.*" "codeception/specify=*" "codeception/verify=*"
+# basic and advanced application:
+  - tests/unit/data/travis/setup-apps.sh
+
+before_script:
+  - echo 'elasticsearch version ' && curl http://localhost:9200/
+  - mysql -e 'CREATE DATABASE yiitest;';
+  - psql -U postgres -c 'CREATE DATABASE yiitest;';
+  - tests/unit/data/travis/sphinx-setup.sh
+  - mongo yii2test --eval 'db.addUser("travis", "test");'
+# basic and advanced application:
+  - tests/unit/data/travis/init-apps.sh
+
+script:
+  - vendor/bin/phpunit --verbose --coverage-clover=coverage.clover --exclude-group mssql,oci,wincache,xcache,zenddata
+  - |
+    if (php --version | grep -i HipHop > /dev/null); then
+      echo "Skipping basic application tests on HHVM"
+    else
+      cd apps/basic/web
+      php -S localhost:8080 > /dev/null 2>&1 &
+      cd ../tests
+      codecept run
+    fi
+  - |
+    if (php --version | grep -i HipHop > /dev/null); then
+      echo "Skipping advanced application tests on HHVM"
+    else
+      cd apps/advanced
+      php -S localhost:8080 > /dev/null 2>&1 &
+      cd tests
+      codecept run
+    fi
+
+after_script:
+  - cd ../../..
+  - travis_retry wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+>>>>>>> official/master
